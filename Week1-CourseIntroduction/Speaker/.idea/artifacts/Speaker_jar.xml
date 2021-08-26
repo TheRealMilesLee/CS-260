@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Speaker:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Speaker_jar</output-path>
+    <root id="archive" name="Speaker.jar">
+      <element id="module-output" name="Speaker" />
+    </root>
+  </artifact>
+</component>

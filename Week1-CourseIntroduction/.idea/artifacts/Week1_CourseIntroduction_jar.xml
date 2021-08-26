@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Week1-CourseIntroduction:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Week1_CourseIntroduction_jar</output-path>
+    <root id="archive" name="Week1-CourseIntroduction_jar.jar">
+      <element id="archive" name="Week1-CourseIntroduction.jar">
+        <element id="module-output" name="Week1-CourseIntroduction" />
+      </element>
+    </root>
+  </artifact>
+</component>
