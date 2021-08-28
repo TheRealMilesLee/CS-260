@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="LaboLi:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LaboLi_jar</output-path>
+    <root id="archive" name="LaboLi.jar">
+      <element id="module-output" name="LaboLi" />
+    </root>
+  </artifact>
+</component>
