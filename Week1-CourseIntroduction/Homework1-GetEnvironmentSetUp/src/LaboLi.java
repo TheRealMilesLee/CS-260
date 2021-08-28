@@ -2,8 +2,13 @@ import edu.truman.cs260.Li.lab.Student;
 import java.util.Scanner;
 import java.util.Vector;
 
+<<<<<<< HEAD:Week1-CourseIntroduction/Homework1-GetEnvironmentSetUp/src/LaboLi.java
 public class LaboLi {
     public static void main(String[] args) {
+=======
+public class GetEnvironmentSetUp {
+    public static void main(String[] args){
+>>>>>>> parent of 5b792ba (Finally Let program running, now it's time to simplify):Week1-CourseIntroduction/Homework1-GetEnvironmentSetUp/src/GetEnvironmentSetUp.java
         Student studentObj1 = new Student();
         Student studentObj2 = new Student();
         Student studentObj3 = new Student();
@@ -30,35 +35,22 @@ public class LaboLi {
         studentNameVector.addElement(studentObj2.getName());
         studentNameVector.addElement(studentObj3.getName());
 
-        int VectorIndex = 0;
-        int smallestID;
-        int compareIndex = 0;
+        boolean flag = false;
+        int loopCount = 1;
+        int smallestID = 0;
         String smallestIdName;
-
-        if (studentIDVector.elementAt(VectorIndex) < studentIDVector.elementAt(VectorIndex + 1)) {
-            compareIndex = studentIDVector.elementAt(VectorIndex);
-            if (compareIndex < studentIDVector.elementAt(VectorIndex + 2)) {
-                smallestID = compareIndex;
-                smallestIdName = studentNameVector.elementAt(VectorIndex);
+        while(!flag)
+        {
+            if(studentIDVector.elementAt(loopCount) > studentIDVector.elementAt(loopCount -1))
+            {
+                smallestID = studentIDVector.elementAt(loopCount-1);
+                smallestIdName = studentNameVector.elementAt(loopCount-1);
+                flag = true;
                 System.out.println("The lowest id is: " + smallestID + " With corresponding name: " + smallestIdName);
             }
-            else if(compareIndex > studentIDVector.elementAt(VectorIndex + 2)){
-                smallestID = studentIDVector.elementAt(VectorIndex + 2);
-                smallestIdName = studentNameVector.elementAt(VectorIndex + 2);
-                System.out.println("The lowest id is: " + smallestID + " With corresponding name: " + smallestIdName);
-            }
-        }
-        else if(studentIDVector.elementAt(VectorIndex) > studentIDVector.elementAt(VectorIndex + 1)){
-            compareIndex = studentIDVector.elementAt(VectorIndex + 1);
-            if (compareIndex < studentIDVector.elementAt(VectorIndex + 2)) {
-                smallestID = compareIndex;
-                smallestIdName = studentNameVector.elementAt(VectorIndex + 1);
-                System.out.println("The lowest id is: " + smallestID + " With corresponding name: " + smallestIdName);
-            }
-            else if(compareIndex > studentIDVector.elementAt(VectorIndex + 2)){
-                smallestID = studentIDVector.elementAt(VectorIndex + 2);
-                smallestIdName = studentNameVector.elementAt(VectorIndex + 2);
-                System.out.println("The lowest id is: " + smallestID + " With corresponding name: " + smallestIdName);
+            else
+            {
+                loopCount++;
             }
         }
     }
