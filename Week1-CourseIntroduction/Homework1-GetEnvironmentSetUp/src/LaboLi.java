@@ -2,7 +2,7 @@ import edu.truman.cs260.Li.lab.Student;
 import java.util.Scanner;
 import java.util.Vector;
 
-public class GetEnvironmentSetUp {
+public class LaboLi {
     public static void main(String[] args) {
         Student studentObj1 = new Student();
         Student studentObj2 = new Student();
