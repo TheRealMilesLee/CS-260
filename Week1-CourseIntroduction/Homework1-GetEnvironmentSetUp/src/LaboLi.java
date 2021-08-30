@@ -4,6 +4,8 @@ import java.util.Vector;
 
 public class LaboLi {
     public static void main(String[] args) {
+        final int MAX = 100;
+        final int MIN = 0;
     	// Create three student object for processing.
         Student studentObj1 = new Student();
         Student studentObj2 = new Student();
@@ -24,57 +26,33 @@ public class LaboLi {
         studentObj1.setID(id.nextInt());
         studentObj2.setID(id.nextInt());
         studentObj3.setID(id.nextInt());
-      
-        // Create two vector object for indexing
+
         Vector<Integer> studentIDVector = new Vector<Integer>();
         studentIDVector.addElement(studentObj1.getID());
         studentIDVector.addElement(studentObj2.getID());
         studentIDVector.addElement(studentObj3.getID());
 
-        
         Vector<String> studentNameVector = new Vector<String>();
         studentNameVector.addElement(studentObj1.getName());
         studentNameVector.addElement(studentObj2.getName());
         studentNameVector.addElement(studentObj3.getName());
 
-        int VectorIndex = 0;
-        int smallestID;
-        int compareIndex = 0;
-        String smallestIdName;
-        
-        // If the first student id is smaller than the second, then compare the first student id with third student id. 
-	        // If the first student id is smaller than the third student, then the smallest id is the first student.
-	        // If the first student id is larger than the third student, then the smallest id is the third student.
-        if (studentIDVector.elementAt(VectorIndex) < studentIDVector.elementAt(VectorIndex + 1)) {
-            compareIndex = studentIDVector.elementAt(VectorIndex);
-            if (compareIndex < studentIDVector.elementAt(VectorIndex + 2)) {
-                smallestID = compareIndex;
-                smallestIdName = studentNameVector.elementAt(VectorIndex);
-                System.out.println("\nThe lowest id is: " + smallestID + " With corresponding name: " + smallestIdName);
+        int largest = MIN;
+        int smallest = MAX;
+        String SmallestName = " ";
+        for(int loop = 0; loop < studentIDVector.size(); loop++)
+        {
+            if(studentIDVector.elementAt(loop) < smallest)
+            {
+                smallest = studentIDVector.elementAt(loop);
+                SmallestName = studentNameVector.elementAt(loop);
             }
-            else if(compareIndex > studentIDVector.elementAt(VectorIndex + 2)){
-                smallestID = studentIDVector.elementAt(VectorIndex + 2);
-                smallestIdName = studentNameVector.elementAt(VectorIndex + 2);
-                System.out.println("\nThe lowest id is: " + smallestID + " With corresponding name: " + smallestIdName);
+            else if(studentIDVector.elementAt(loop) > largest)
+            {
+                largest = studentIDVector.elementAt(loop);
             }
         }
-        
-        // If the first student id is larger than the second student id, then compare the second student id with the third student id.
-	        // If third student id is smaller than second student id, then the smallest id is the third student.
-	        // If second student id is larger than third student id, then the smallest id is the second student.
-        else if(studentIDVector.elementAt(VectorIndex) > studentIDVector.elementAt(VectorIndex + 1)){
-            compareIndex = studentIDVector.elementAt(VectorIndex + 1);
-            if (compareIndex < studentIDVector.elementAt(VectorIndex + 2)) {
-                smallestID = compareIndex;
-                smallestIdName = studentNameVector.elementAt(VectorIndex + 1);
-                System.out.println("\nThe lowest id is: " + smallestID + " With corresponding name: " + smallestIdName);
-            }
-            else if(compareIndex > studentIDVector.elementAt(VectorIndex + 2)){
-                smallestID = studentIDVector.elementAt(VectorIndex + 2);
-                smallestIdName = studentNameVector.elementAt(VectorIndex + 2);
-                System.out.println("\nThe lowest id is: " + smallestID + " With corresponding name: " + smallestIdName);
-            }
-        }
+        System.out.println("The student " + SmallestName + " Has the minimum ID: " + smallest);
         // Close the file to prevent the leak.
         name.close();
         id.close();
