@@ -4,7 +4,9 @@ import java.util.Vector;
 
 public class LaboLi {
     public static void main(String[] args) {
-        final int MAX = 100;
+        
+    	// Set two constant for the compare the minimum and maximum values of the student. 
+    	final int MAX = Integer.MAX_VALUE;
         final int MIN = 0;
     	// Create three student object for processing.
         Student studentObj1 = new Student();
@@ -27,6 +29,7 @@ public class LaboLi {
         studentObj2.setID(id.nextInt());
         studentObj3.setID(id.nextInt());
 
+        // Create two vector only for indexing the ID compare and the corresponding name.
         Vector<Integer> studentIDVector = new Vector<Integer>();
         studentIDVector.addElement(studentObj1.getID());
         studentIDVector.addElement(studentObj2.getID());
@@ -37,9 +40,12 @@ public class LaboLi {
         studentNameVector.addElement(studentObj2.getName());
         studentNameVector.addElement(studentObj3.getName());
 
+        // Two integer values for compare the minimum and maximum of the student id value, they'll be cover during the loop.
         int largest = MIN;
         int smallest = MAX;
+        // This string value is only for output the minimum student ID corresponding name       
         String SmallestName = " ";
+        // Indexing through all the studentIDVector and locate the minimum
         for(int loop = 0; loop < studentIDVector.size(); loop++)
         {
             if(studentIDVector.elementAt(loop) < smallest)
@@ -52,6 +58,7 @@ public class LaboLi {
                 largest = studentIDVector.elementAt(loop);
             }
         }
+        // Output the minimum value of the student information.
         System.out.println("The student " + SmallestName + " Has the minimum ID: " + smallest);
         // Close the file to prevent the leak.
         name.close();
