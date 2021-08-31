@@ -2,6 +2,12 @@ import edu.truman.cs260.Li.lab.Student;
 import java.util.Scanner;
 import java.util.Vector;
 
+/**
+ * This is the main class.
+ * @author Hengyi Li
+ * Finished at August.30.2021
+ * Copyright (c) 2021 Hengyi Li. All rights reserved.
+ */
 public class LaboLi {
     public static void main(String[] args) {
         
@@ -46,15 +52,12 @@ public class LaboLi {
         // This string value is only for output the minimum student ID corresponding name       
         String SmallestName = " ";
         // Indexing through all the studentIDVector and locate the minimum
-        for(int loop = 0; loop < studentIDVector.size(); loop++)
-        {
-            if(studentIDVector.elementAt(loop) < smallest)
-            {
+        for(int loop = 0; loop < studentIDVector.size(); loop++){
+            if(studentIDVector.elementAt(loop) < smallest){
                 smallest = studentIDVector.elementAt(loop);
                 SmallestName = studentNameVector.elementAt(loop);
             }
-            else if(studentIDVector.elementAt(loop) > largest)
-            {
+            else if(studentIDVector.elementAt(loop) > largest){
                 largest = studentIDVector.elementAt(loop);
             }
         }
