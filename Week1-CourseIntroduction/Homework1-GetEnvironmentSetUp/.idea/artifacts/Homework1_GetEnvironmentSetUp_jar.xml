@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="Homework1-GetEnvironmentSetUp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Homework1_GetEnvironmentSetUp_jar</output-path>
+    <root id="archive" name="Homework1-GetEnvironmentSetUp.jar">
+      <element id="module-output" name="Homework1-GetEnvironmentSetUp" />
+    </root>
+  </artifact>
+</component>
