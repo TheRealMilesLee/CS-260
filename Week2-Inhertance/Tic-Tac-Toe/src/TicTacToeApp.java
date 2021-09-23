@@ -8,7 +8,5 @@ public class TicTacToeApp {
         CompPlayer computerPlayerObject;
         HumanPlayer humanPlayerObject;
         Player playerObject;
-
-        
     }
 }
