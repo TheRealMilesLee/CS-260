@@ -41,7 +41,6 @@ public class HumanPlayer extends Player
         }
       }
     }while(!validate);
-    System.out.println("See if the Row: " + getRow() + " And Column is working: " + getColumn());
   }
   
   public String returnRowAndColumn()
