@@ -61,17 +61,32 @@ public class Board
   
   public void ComputerChangeBoard()
   {
-    boolean ChoiceIsDone = false;
-    for(int rowArray = 0; rowArray < boardArray.length && !ChoiceIsDone; rowArray++)
+    for(int row = 0; row < boardArray.length; row++)
     {
-      for(int columnArray = 0; columnArray < boardArray.length && !ChoiceIsDone; columnArray++)
+      for(int column = 0; column < boardArray.length; column++)
       {
-        if(boardArray[rowArray][columnArray].equals("H"))
+        if(boardArray[row][column].equals("H"))
         {
-          if(boardArray[rowArray + 1][columnArray].equals("+"))
+          if(row + 1 <= 2)
           {
-            boardArray[rowArray + 1][columnArray] = "C";
-            ChoiceIsDone = true;
+            if(boardArray[row + 1][column].equals("+"))
+            {
+              boardArray[row + 1][column] = "C";
+            }
+          }
+          else if(column + 1 <= 2)
+          {
+            if(boardArray[row][column + 1].equals("+"))
+            {
+              boardArray[row][column + 1] = "C";
+            }
+          }
+          else
+          {
+            if (boardArray[row - 1][column - 1].equals("+"))
+            {
+              boardArray[row - 1][column - 1] = "C";
+            }
           }
         }
       }
@@ -161,6 +176,11 @@ public class Board
     {
       System.out.println("The human is the winner!");
       Winner = "Computer";
+    }
+    else
+    {
+      System.out.println ("There is no winner, Tie");
+      Winner = "Tie";
     }
     return Winner;
   }
