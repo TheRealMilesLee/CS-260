@@ -49,7 +49,6 @@ public class Board
     boardArray[HumanRow][HumanColumn] = "H";
   }
   
-  /**
   public void ComputerInitialMove()
   {
     String PositionFromComputer = computerPlayerObject.generateComputerMove();
@@ -57,7 +56,6 @@ public class Board
     int ComputerColumn = Integer.parseInt(PositionFromComputer.substring(2,3));
     boardArray[ComputerRow][ComputerColumn] = "C";
   }
-   */
   
   public void ComputerChangeBoard()
   {
@@ -87,6 +85,14 @@ public class Board
             {
               boardArray[row - 1][column - 1] = "C";
             }
+            else if(boardArray[row - 1][column].equals("+"))
+            {
+              boardArray[row - 1][column] = "C";
+            }
+            else if(boardArray[row][column - 1].equals("+"))
+            {
+              boardArray[row][column - 1] = "C";
+            }
           }
         }
       }
@@ -98,88 +104,71 @@ public class Board
     String Winner = " ";
     if(boardArray[0][0].equals("H") && boardArray[0][1].equals("H") && boardArray[0][2].equals("H"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Human";
     }
     else if(boardArray[1][0].equals("H") && boardArray[1][1].equals("H") && boardArray[1][2].equals("H"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Human";
     }
     else if(boardArray[2][0].equals("H") && boardArray[2][1].equals("H") && boardArray[2][2].equals("H"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Human";
     }
     else if(boardArray[0][0].equals("H") && boardArray[1][1].equals("H") && boardArray[2][2].equals("H"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Human";
     }
     else if(boardArray[0][2].equals("H") && boardArray[1][1].equals("H") && boardArray[2][0].equals("H"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Human";
     }
     else if(boardArray[0][0].equals("H") && boardArray[1][0].equals("H") && boardArray[2][0].equals("H"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Human";
     }
     else if(boardArray[0][1].equals("H") && boardArray[1][1].equals("H") && boardArray[2][1].equals("H"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Human";
     }
     else if(boardArray[0][2].equals("H") && boardArray[1][2].equals("H") && boardArray[2][2].equals("H"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Human";
     }
     // Situation When Computer Win
-    if(boardArray[0][0].equals("C") && boardArray[0][1].equals("C") && boardArray[0][2].equals("C"))
+    else if(boardArray[0][0].equals("C") && boardArray[0][1].equals("C") && boardArray[0][2].equals("C"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Computer";
     }
     else if(boardArray[1][0].equals("C") && boardArray[1][1].equals("C") && boardArray[1][2].equals("C"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Computer";
     }
     else if(boardArray[2][0].equals("C") && boardArray[2][1].equals("C") && boardArray[2][2].equals("C"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Computer";
     }
     else if(boardArray[0][0].equals("C") && boardArray[1][1].equals("C") && boardArray[2][2].equals("C"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Computer";
     }
     else if(boardArray[0][2].equals("C") && boardArray[1][1].equals("C") && boardArray[2][0].equals("C"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Computer";
     }
     else if(boardArray[0][0].equals("C") && boardArray[1][0].equals("C") && boardArray[2][0].equals("C"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Computer";
     }
     else if(boardArray[0][1].equals("C") && boardArray[1][1].equals("C") && boardArray[2][1].equals("C"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Computer";
     }
     else if(boardArray[0][2].equals("C") && boardArray[1][2].equals("C") && boardArray[2][2].equals("C"))
     {
-      System.out.println("The human is the winner!");
       Winner = "Computer";
     }
     else
     {
-      System.out.println ("There is no winner, Tie");
       Winner = "Tie";
     }
     return Winner;

@@ -2,10 +2,22 @@ package com.edu.truman.li.cs260;
 
 public class PlayTheGame
 {
-  public void Game (Board chessBoardObject)
+  public void HumanSideGame (Board chessBoardObject)
   {
-    boolean WinnerDecided = false;
-    for(int fillPlate = 0; fillPlate < 5 && !WinnerDecided; fillPlate++)
+    CoreGame(chessBoardObject);
+  }
+  
+  public void ComputerSideGame (Board chessBoardObject)
+  {
+    chessBoardObject.ComputerInitialMove();
+    chessBoardObject.DisplayBoard();
+    CoreGame(chessBoardObject);
+  }
+  
+  public void CoreGame (Board chessBoardObject)
+  {
+    boolean ComputerSideWinnerDecided = false;
+    for(int fillPlate = 0; fillPlate < 5 && !ComputerSideWinnerDecided; fillPlate++)
     {
       chessBoardObject.HumanChangeBoard();
       chessBoardObject.DisplayBoard();
@@ -15,9 +27,8 @@ public class PlayTheGame
       if(chessBoardObject.JudgeWinner().equals("Human") || chessBoardObject.JudgeWinner().equals("Computer"))
       {
         System.out.println("We have a winner! The winner is: " + chessBoardObject.JudgeWinner());
-        WinnerDecided = true;
+        ComputerSideWinnerDecided = true;
       }
-      
     }
     System.out.println("Continue? (Press q to quit the game) ");
   }
