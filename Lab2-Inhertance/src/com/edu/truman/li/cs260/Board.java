@@ -1,5 +1,7 @@
 package com.edu.truman.li.cs260;
 
+import java.util.ArrayList;
+
 public class Board
 {
   protected String[][] boardArray;
@@ -102,75 +104,41 @@ public class Board
   public String JudgeWinner()
   {
     String Winner = " ";
-    if(boardArray[0][0].equals("H") && boardArray[0][1].equals("H") && boardArray[0][2].equals("H"))
-    {
-      Winner = "Human";
-    }
-    else if(boardArray[1][0].equals("H") && boardArray[1][1].equals("H") && boardArray[1][2].equals("H"))
-    {
-      Winner = "Human";
-    }
-    else if(boardArray[2][0].equals("H") && boardArray[2][1].equals("H") && boardArray[2][2].equals("H"))
-    {
-      Winner = "Human";
-    }
-    else if(boardArray[0][0].equals("H") && boardArray[1][1].equals("H") && boardArray[2][2].equals("H"))
-    {
-      Winner = "Human";
-    }
-    else if(boardArray[0][2].equals("H") && boardArray[1][1].equals("H") && boardArray[2][0].equals("H"))
-    {
-      Winner = "Human";
-    }
-    else if(boardArray[0][0].equals("H") && boardArray[1][0].equals("H") && boardArray[2][0].equals("H"))
-    {
-      Winner = "Human";
-    }
-    else if(boardArray[0][1].equals("H") && boardArray[1][1].equals("H") && boardArray[2][1].equals("H"))
-    {
-      Winner = "Human";
-    }
-    else if(boardArray[0][2].equals("H") && boardArray[1][2].equals("H") && boardArray[2][2].equals("H"))
-    {
-      Winner = "Human";
-    }
-    // Situation When Computer Win
-    else if(boardArray[0][0].equals("C") && boardArray[0][1].equals("C") && boardArray[0][2].equals("C"))
+    String DiagonalLeftConcatenate = boardArray[0][0] + boardArray[1][1] + boardArray[2][2];
+    String DiagonalRightConcatenate = boardArray[0][2] + boardArray[1][1] + boardArray[2][0];
+    if(DiagonalLeftConcatenate.equals("CCC") || DiagonalRightConcatenate.equals("CCC"))
     {
       Winner = "Computer";
     }
-    else if(boardArray[1][0].equals("C") && boardArray[1][1].equals("C") && boardArray[1][2].equals("C"))
+    if(DiagonalLeftConcatenate.equals("HHH") || DiagonalRightConcatenate.equals("HHH"))
+    {
+      Winner = "Human";
+    }
+    
+    String RowOne = boardArray[0][0] + boardArray[0][1] + boardArray[0][2];
+    String RowTwo = boardArray[1][0] + boardArray[1][1] + boardArray[1][2];
+    String RowThree = boardArray[2][0] + boardArray[2][1] + boardArray[2][2];
+    String ColumnOne = boardArray[0][0] + boardArray[1][0] + boardArray[2][0];
+    String ColumnTwo = boardArray[0][1] + boardArray[1][1] + boardArray[2][1];
+    String ColumnThree = boardArray[0][2] + boardArray[1][2] + boardArray[2][2];
+  
+    if(RowOne.equals("CCC") || RowTwo.equals("CCC") || RowThree.equals("CCC"))
     {
       Winner = "Computer";
     }
-    else if(boardArray[2][0].equals("C") && boardArray[2][1].equals("C") && boardArray[2][2].equals("C"))
+    if(RowOne.equals("HHH") || RowTwo.equals("HHH") || RowThree.equals("HHH"))
+    {
+      Winner = "Human";
+    }
+    if(ColumnOne.equals("CCC") || ColumnTwo.equals("CCC") || ColumnThree.equals("CCC"))
     {
       Winner = "Computer";
     }
-    else if(boardArray[0][0].equals("C") && boardArray[1][1].equals("C") && boardArray[2][2].equals("C"))
+    if(ColumnOne.equals("HHH") || ColumnTwo.equals("HHH") || ColumnThree.equals("HHH"))
     {
-      Winner = "Computer";
+      Winner = "Human";
     }
-    else if(boardArray[0][2].equals("C") && boardArray[1][1].equals("C") && boardArray[2][0].equals("C"))
-    {
-      Winner = "Computer";
-    }
-    else if(boardArray[0][0].equals("C") && boardArray[1][0].equals("C") && boardArray[2][0].equals("C"))
-    {
-      Winner = "Computer";
-    }
-    else if(boardArray[0][1].equals("C") && boardArray[1][1].equals("C") && boardArray[2][1].equals("C"))
-    {
-      Winner = "Computer";
-    }
-    else if(boardArray[0][2].equals("C") && boardArray[1][2].equals("C") && boardArray[2][2].equals("C"))
-    {
-      Winner = "Computer";
-    }
-    else
-    {
-      Winner = "Tie";
-    }
+    
     return Winner;
   }
 }
