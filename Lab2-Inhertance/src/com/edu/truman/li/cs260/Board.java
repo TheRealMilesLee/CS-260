@@ -61,6 +61,36 @@ public class Board
   
   public void ComputerChangeBoard()
   {
+  
+    String DiagonalLeftConcatenate = boardArray[0][0] + boardArray[1][1] + boardArray[2][2];
+    String DiagonalRightConcatenate = boardArray[0][2] + boardArray[1][1] + boardArray[2][0];
+    String RowOne = boardArray[0][0] + boardArray[0][1] + boardArray[0][2];
+    String RowTwo = boardArray[1][0] + boardArray[1][1] + boardArray[1][2];
+    String RowThree = boardArray[2][0] + boardArray[2][1] + boardArray[2][2];
+    String ColumnOne = boardArray[0][0] + boardArray[1][0] + boardArray[2][0];
+    String ColumnTwo = boardArray[0][1] + boardArray[1][1] + boardArray[2][1];
+    String ColumnThree = boardArray[0][2] + boardArray[1][2] + boardArray[2][2];
+    
+    boolean computerChoice = false;
+    for(int index = 0; index < DiagonalLeftConcatenate.length() && !computerChoice; index++)
+    {
+      if(DiagonalLeftConcatenate.substring(index).equals("+"))
+      {
+        boardArray[index][index] = "C";
+        computerChoice = true;
+      }
+      for(int reverseIndex = DiagonalRightConcatenate.length() - 1; reverseIndex >= 0 && !computerChoice; reverseIndex--)
+      {
+        if(DiagonalRightConcatenate.substring(reverseIndex).equals("+"))
+        {
+          boardArray[index][reverseIndex] = "C";
+          computerChoice = true;
+        }
+      }
+
+    }
+    
+    /**
     for(int row = 0; row < boardArray.length; row++)
     {
       for(int column = 0; column < boardArray.length; column++)
@@ -99,6 +129,7 @@ public class Board
         }
       }
     }
+     */
   }
   
   public String JudgeWinner()
