@@ -107,6 +107,10 @@ public class Board
     {
       boardArray[2][0] = "C";
     }
+    else
+    {
+      boardArray[1][1] = "C";
+    }
   }
   
   public String JudgeWinner()
