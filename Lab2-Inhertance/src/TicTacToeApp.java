@@ -1,6 +1,7 @@
 import com.edu.truman.li.cs260.Board;
 import com.edu.truman.li.cs260.PlayTheGame;
 import java.util.*;
+
 public class TicTacToeApp {
   public static void main (String[] args) {
     PlayTheGame gameObject = new PlayTheGame();
@@ -24,7 +25,6 @@ public class TicTacToeApp {
       else
       {
         System.out.println("Computer Side choice! ");
-        System.out.println("Game Start! ");
         gameObject.ComputerSideGame(ComputerSideObject);
         GameEndFlag = continuePlayFlag.next();
         if (GameEndFlag.equals("q") || GameEndFlag.equals("Q"))

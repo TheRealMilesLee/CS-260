@@ -70,112 +70,43 @@ public class Board
     String ColumnTwo = boardArray[0][1] + boardArray[1][1] + boardArray[2][1];
     String ColumnThree = boardArray[0][2] + boardArray[1][2] + boardArray[2][2];
     
-    //Row One
-    if(RowOne.charAt(0) == 'H' && RowOne.charAt(2) == 'H')
+    if( (RowOne.charAt(0) == 'H' && RowOne.charAt(2) == 'H')  || (ColumnTwo.charAt(1) == 'H' && ColumnTwo.charAt(2) == 'H'))
     {
       boardArray[0][1] = "C";
     }
-    if(RowOne.charAt(0) == 'H' && RowOne.charAt(1) == 'H')
+    else if((RowOne.charAt(0) == 'H' && RowOne.charAt(1) == 'H') || (ColumnThree.charAt(1) == 'H' && ColumnThree.charAt(2) == 'H') || (DiagonalRightConcatenate.charAt(1) == 'H' && DiagonalRightConcatenate.charAt(2) == 'H'))
     {
       boardArray[0][2] = "C";
     }
-    if(RowOne.charAt(1) == 'H' && RowOne.charAt(2) == 'H')
+    else if((RowOne.charAt(1) == 'H' && RowOne.charAt(2) == 'H') || (ColumnOne.charAt(1) == 'H' && ColumnOne.charAt(2) == 'H') || (DiagonalLeftConcatenate.charAt(1) == 'H' && DiagonalLeftConcatenate.charAt(2) == 'H'))
     {
       boardArray[0][0] = "C";
     }
-  // Row Two
-    if(RowTwo.charAt(0) == 'H' && RowTwo.charAt(2) == 'H')
+    else if((RowTwo.charAt(0) == 'H' && RowTwo.charAt(2) == 'H') ||(ColumnTwo.charAt(0) == 'H' && ColumnTwo.charAt(2) == 'H') || (DiagonalRightConcatenate.charAt(0) == 'H' && DiagonalRightConcatenate.charAt(2) == 'H') || (DiagonalLeftConcatenate.charAt(0) == 'H' && DiagonalLeftConcatenate.charAt(2) == 'H'))
     {
       boardArray[1][1] = "C";
     }
-    if(RowTwo.charAt(0) == 'H' && RowTwo.charAt(1) == 'H')
+    else if((RowTwo.charAt(0) == 'H' && RowTwo.charAt(1) == 'H') ||(ColumnThree.charAt(0) == 'H' && ColumnThree.charAt(2) == 'H'))
     {
       boardArray[1][2] = "C";
     }
-    if(RowTwo.charAt(1) == 'H' && RowTwo.charAt(2) == 'H')
+    else if((RowTwo.charAt(1) == 'H' && RowTwo.charAt(2) == 'H') || (ColumnOne.charAt(0) == 'H' && ColumnOne.charAt(2) == 'H'))
     {
       boardArray[1][0] = "C";
     }
-  
-    if(RowThree.charAt(0) == 'H' && RowThree.charAt(2) == 'H')
+
+    else if((RowThree.charAt(0) == 'H' && RowThree.charAt(2) == 'H') || (ColumnTwo.charAt(0) == 'H' && ColumnTwo.charAt(1) == 'H'))
     {
       boardArray[2][1] = "C";
     }
-    if(RowThree.charAt(0) == 'H' && RowThree.charAt(1) == 'H')
+    else if((RowThree.charAt(0) == 'H' && RowThree.charAt(1) == 'H') || (ColumnThree.charAt(0) == 'H' && ColumnThree.charAt(1) == 'H') || (DiagonalLeftConcatenate.charAt(0) == 'H' && DiagonalLeftConcatenate.charAt(1) == 'H'))
     {
       boardArray[2][2] = "C";
     }
-    if(RowThree.charAt(1) == 'H' && RowThree.charAt(2) == 'H')
+    else if((RowThree.charAt(1) == 'H' && RowThree.charAt(2) == 'H') || (ColumnOne.charAt(0) == 'H' && ColumnOne.charAt(1) == 'H') || (DiagonalRightConcatenate.charAt(0) == 'H' && DiagonalRightConcatenate.charAt(1) == 'H') )
     {
       boardArray[2][0] = "C";
     }
-  
-    if(ColumnOne.charAt(0) == 'H' && ColumnOne.charAt(2) == 'H')
-    {
-      boardArray[1][0] = "C";
-    }
-    if(ColumnOne.charAt(0) == 'H' && ColumnOne.charAt(1) == 'H')
-    {
-      boardArray[2][0] = "C";
-    }
-    if(ColumnOne.charAt(1) == 'H' && ColumnOne.charAt(2) == 'H')
-    {
-      boardArray[0][0] = "C";
-    }
-  
-    if(ColumnTwo.charAt(0) == 'H' && ColumnTwo.charAt(2) == 'H')
-    {
-      boardArray[1][1] = "C";
-    }
-    if(ColumnTwo.charAt(0) == 'H' && ColumnTwo.charAt(1) == 'H')
-    {
-      boardArray[2][1] = "C";
-    }
-    if(ColumnTwo.charAt(1) == 'H' && ColumnTwo.charAt(2) == 'H')
-    {
-      boardArray[0][1] = "C";
-    }
-  
-    if(ColumnThree.charAt(0) == 'H' && ColumnThree.charAt(2) == 'H')
-    {
-      boardArray[1][2] = "C";
-    }
-    if(ColumnThree.charAt(0) == 'H' && ColumnThree.charAt(1) == 'H')
-    {
-      boardArray[2][2] = "C";
-    }
-    if(ColumnThree.charAt(1) == 'H' && ColumnThree.charAt(2) == 'H')
-    {
-      boardArray[0][2] = "C";
-    }
-  
-    if(DiagonalLeftConcatenate.charAt(0) == 'H' && DiagonalLeftConcatenate.charAt(2) == 'H')
-    {
-      boardArray[1][1] = "C";
-    }
-    if(DiagonalLeftConcatenate.charAt(0) == 'H' && DiagonalLeftConcatenate.charAt(1) == 'H')
-    {
-      boardArray[2][2] = "C";
-    }
-    if(DiagonalLeftConcatenate.charAt(1) == 'H' && DiagonalLeftConcatenate.charAt(2) == 'H')
-    {
-      boardArray[0][0] = "C";
-    }
-  
-    if(DiagonalRightConcatenate.charAt(0) == 'H' && DiagonalRightConcatenate.charAt(2) == 'H')
-    {
-      boardArray[1][1] = "C";
-    }
-    if(DiagonalRightConcatenate.charAt(0) == 'H' && DiagonalRightConcatenate.charAt(1) == 'H')
-    {
-      boardArray[2][0] = "C";
-    }
-    if(DiagonalRightConcatenate.charAt(1) == 'H' && DiagonalRightConcatenate.charAt(2) == 'H')
-    {
-      boardArray[0][2] = "C";
-    }
-    
-    
   }
   
   public String JudgeWinner()
