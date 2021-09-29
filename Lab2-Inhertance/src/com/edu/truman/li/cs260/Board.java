@@ -61,7 +61,6 @@ public class Board
   
   public void ComputerChangeBoard()
   {
-  
     String DiagonalLeftConcatenate = boardArray[0][0] + boardArray[1][1] + boardArray[2][2];
     String DiagonalRightConcatenate = boardArray[0][2] + boardArray[1][1] + boardArray[2][0];
     String RowOne = boardArray[0][0] + boardArray[0][1] + boardArray[0][2];
@@ -71,65 +70,112 @@ public class Board
     String ColumnTwo = boardArray[0][1] + boardArray[1][1] + boardArray[2][1];
     String ColumnThree = boardArray[0][2] + boardArray[1][2] + boardArray[2][2];
     
-    boolean computerChoice = false;
-    for(int index = 0; index < DiagonalLeftConcatenate.length() && !computerChoice; index++)
+    //Row One
+    if(RowOne.charAt(0) == 'H' && RowOne.charAt(2) == 'H')
     {
-      if(DiagonalLeftConcatenate.substring(index).equals("+"))
-      {
-        boardArray[index][index] = "C";
-        computerChoice = true;
-      }
-      for(int reverseIndex = DiagonalRightConcatenate.length() - 1; reverseIndex >= 0 && !computerChoice; reverseIndex--)
-      {
-        if(DiagonalRightConcatenate.substring(reverseIndex).equals("+"))
-        {
-          boardArray[index][reverseIndex] = "C";
-          computerChoice = true;
-        }
-      }
-
+      boardArray[0][1] = "C";
+    }
+    if(RowOne.charAt(0) == 'H' && RowOne.charAt(1) == 'H')
+    {
+      boardArray[0][2] = "C";
+    }
+    if(RowOne.charAt(1) == 'H' && RowOne.charAt(2) == 'H')
+    {
+      boardArray[0][0] = "C";
+    }
+  // Row Two
+    if(RowTwo.charAt(0) == 'H' && RowTwo.charAt(2) == 'H')
+    {
+      boardArray[1][1] = "C";
+    }
+    if(RowTwo.charAt(0) == 'H' && RowTwo.charAt(1) == 'H')
+    {
+      boardArray[1][2] = "C";
+    }
+    if(RowTwo.charAt(1) == 'H' && RowTwo.charAt(2) == 'H')
+    {
+      boardArray[1][0] = "C";
+    }
+  
+    if(RowThree.charAt(0) == 'H' && RowThree.charAt(2) == 'H')
+    {
+      boardArray[2][1] = "C";
+    }
+    if(RowThree.charAt(0) == 'H' && RowThree.charAt(1) == 'H')
+    {
+      boardArray[2][2] = "C";
+    }
+    if(RowThree.charAt(1) == 'H' && RowThree.charAt(2) == 'H')
+    {
+      boardArray[2][0] = "C";
+    }
+  
+    if(ColumnOne.charAt(0) == 'H' && ColumnOne.charAt(2) == 'H')
+    {
+      boardArray[1][0] = "C";
+    }
+    if(ColumnOne.charAt(0) == 'H' && ColumnOne.charAt(1) == 'H')
+    {
+      boardArray[2][0] = "C";
+    }
+    if(ColumnOne.charAt(1) == 'H' && ColumnOne.charAt(2) == 'H')
+    {
+      boardArray[0][0] = "C";
+    }
+  
+    if(ColumnTwo.charAt(0) == 'H' && ColumnTwo.charAt(2) == 'H')
+    {
+      boardArray[1][1] = "C";
+    }
+    if(ColumnTwo.charAt(0) == 'H' && ColumnTwo.charAt(1) == 'H')
+    {
+      boardArray[2][1] = "C";
+    }
+    if(ColumnTwo.charAt(1) == 'H' && ColumnTwo.charAt(2) == 'H')
+    {
+      boardArray[0][1] = "C";
+    }
+  
+    if(ColumnThree.charAt(0) == 'H' && ColumnThree.charAt(2) == 'H')
+    {
+      boardArray[1][2] = "C";
+    }
+    if(ColumnThree.charAt(0) == 'H' && ColumnThree.charAt(1) == 'H')
+    {
+      boardArray[2][2] = "C";
+    }
+    if(ColumnThree.charAt(1) == 'H' && ColumnThree.charAt(2) == 'H')
+    {
+      boardArray[0][2] = "C";
+    }
+  
+    if(DiagonalLeftConcatenate.charAt(0) == 'H' && DiagonalLeftConcatenate.charAt(2) == 'H')
+    {
+      boardArray[1][1] = "C";
+    }
+    if(DiagonalLeftConcatenate.charAt(0) == 'H' && DiagonalLeftConcatenate.charAt(1) == 'H')
+    {
+      boardArray[2][2] = "C";
+    }
+    if(DiagonalLeftConcatenate.charAt(1) == 'H' && DiagonalLeftConcatenate.charAt(2) == 'H')
+    {
+      boardArray[0][0] = "C";
+    }
+  
+    if(DiagonalRightConcatenate.charAt(0) == 'H' && DiagonalRightConcatenate.charAt(2) == 'H')
+    {
+      boardArray[1][1] = "C";
+    }
+    if(DiagonalRightConcatenate.charAt(0) == 'H' && DiagonalRightConcatenate.charAt(1) == 'H')
+    {
+      boardArray[2][0] = "C";
+    }
+    if(DiagonalRightConcatenate.charAt(1) == 'H' && DiagonalRightConcatenate.charAt(2) == 'H')
+    {
+      boardArray[0][2] = "C";
     }
     
-    /**
-    for(int row = 0; row < boardArray.length; row++)
-    {
-      for(int column = 0; column < boardArray.length; column++)
-      {
-        if(boardArray[row][column].equals("H"))
-        {
-          if(row + 1 <= 2)
-          {
-            if(boardArray[row + 1][column].equals("+"))
-            {
-              boardArray[row + 1][column] = "C";
-            }
-          }
-          else if(column + 1 <= 2)
-          {
-            if(boardArray[row][column + 1].equals("+"))
-            {
-              boardArray[row][column + 1] = "C";
-            }
-          }
-          else
-          {
-            if (boardArray[row - 1][column - 1].equals("+"))
-            {
-              boardArray[row - 1][column - 1] = "C";
-            }
-            else if(boardArray[row - 1][column].equals("+"))
-            {
-              boardArray[row - 1][column] = "C";
-            }
-            else if(boardArray[row][column - 1].equals("+"))
-            {
-              boardArray[row][column - 1] = "C";
-            }
-          }
-        }
-      }
-    }
-     */
+    
   }
   
   public String JudgeWinner()
@@ -169,7 +215,6 @@ public class Board
     {
       Winner = "Human";
     }
-    
     return Winner;
   }
 }
