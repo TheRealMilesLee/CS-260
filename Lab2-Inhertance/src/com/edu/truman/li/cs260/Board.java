@@ -58,61 +58,34 @@ public class Board
 
   public void ComputerChangeBoard()
   {
-    String DiagonalLeftConcatenate = boardArray[0][0] + boardArray[1][1] + boardArray[2][2];
-    String DiagonalRightConcatenate = boardArray[0][2] + boardArray[1][1] + boardArray[2][0];
-    String RowOne = boardArray[0][0] + boardArray[0][1] + boardArray[0][2];
-    String RowTwo = boardArray[1][0] + boardArray[1][1] + boardArray[1][2];
-    String RowThree = boardArray[2][0] + boardArray[2][1] + boardArray[2][2];
-    String ColumnOne = boardArray[0][0] + boardArray[1][0] + boardArray[2][0];
-    String ColumnTwo = boardArray[0][1] + boardArray[1][1] + boardArray[2][1];
-    String ColumnThree = boardArray[0][2] + boardArray[1][2] + boardArray[2][2];
-    boolean HaveDecided = false;
-    int count = 0;
-    while(!HaveDecided)
+    boolean makeChoice = false;
+    for(int rowLoop = 0; rowLoop < boardArray.length && !makeChoice; rowLoop++)
     {
-      if(RowOne.charAt(count) == '+')
+      for(int columnLoop = 0; columnLoop < boardArray.length && !makeChoice; columnLoop++)
       {
-        boardArray[0][count] = "C";
-        HaveDecided = true;
-      }
-      else
-      {
-        if(RowOne.equals("CHH") || RowOne.equals("HCH") || RowOne.equals("HHC"))
+        if (boardArray[0][columnLoop].equals("+"))
         {
-          if(RowOne.equals("CHH"))
-          {
-            if(ColumnOne.charAt(count) == '+')
-            {
-              boardArray[count][0] = "C";
-              HaveDecided = true;
-            }
-          }
-          else if( RowOne.equals("HCH"))
-          {
-            if(ColumnTwo.charAt(count) == '+')
-            {
-              boardArray[count][1] = "C";
-              HaveDecided = true;
-            }
-          }
-          else
-          {
-            if(ColumnThree.charAt(count) == '+')
-            {
-              boardArray[count][2] = "C";
-              HaveDecided = true;
-            }
-          }
-
+          boardArray[0][columnLoop] = "C";
+          makeChoice = true;
         }
-        else
+        else if(boardArray[1][columnLoop].equals("+"))
         {
-          count++;
+          boardArray[1][columnLoop] = "C";
+          makeChoice = true;
+        }
+        else if(boardArray[2][columnLoop].equals("+"))
+        {
+          boardArray[2][columnLoop] = "C";
+          makeChoice = true;
+        }
+        else if(boardArray[rowLoop][columnLoop].equals("+"))
+        {
+          boardArray[rowLoop][columnLoop] = "C";
+          makeChoice = true;
         }
       }
     }
-
-}
+  }
   public String JudgeWinner()
   {
     String Winner = " ";
@@ -126,7 +99,6 @@ public class Board
     {
       Winner = "Human";
     }
-    
     String RowOne = boardArray[0][0] + boardArray[0][1] + boardArray[0][2];
     String RowTwo = boardArray[1][0] + boardArray[1][1] + boardArray[1][2];
     String RowThree = boardArray[2][0] + boardArray[2][1] + boardArray[2][2];
