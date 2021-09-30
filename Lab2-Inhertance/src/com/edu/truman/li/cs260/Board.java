@@ -1,7 +1,4 @@
 package com.edu.truman.li.cs260;
-
-import java.util.ArrayList;
-
 public class Board
 {
   protected String[][] boardArray;
@@ -69,49 +66,54 @@ public class Board
     String ColumnOne = boardArray[0][0] + boardArray[1][0] + boardArray[2][0];
     String ColumnTwo = boardArray[0][1] + boardArray[1][1] + boardArray[2][1];
     String ColumnThree = boardArray[0][2] + boardArray[1][2] + boardArray[2][2];
-    
-    if( (RowOne.charAt(0) == 'H' && RowOne.charAt(2) == 'H')  || (ColumnTwo.charAt(1) == 'H' && ColumnTwo.charAt(2) == 'H'))
+    boolean HaveDecided = false;
+    int count = 0;
+    while(!HaveDecided)
     {
-      boardArray[0][1] = "C";
-    }
-    else if((RowOne.charAt(0) == 'H' && RowOne.charAt(1) == 'H') || (ColumnThree.charAt(1) == 'H' && ColumnThree.charAt(2) == 'H') || (DiagonalRightConcatenate.charAt(1) == 'H' && DiagonalRightConcatenate.charAt(2) == 'H'))
-    {
-      boardArray[0][2] = "C";
-    }
-    else if((RowOne.charAt(1) == 'H' && RowOne.charAt(2) == 'H') || (ColumnOne.charAt(1) == 'H' && ColumnOne.charAt(2) == 'H') || (DiagonalLeftConcatenate.charAt(1) == 'H' && DiagonalLeftConcatenate.charAt(2) == 'H'))
-    {
-      boardArray[0][0] = "C";
-    }
-    else if((RowTwo.charAt(0) == 'H' && RowTwo.charAt(2) == 'H') ||(ColumnTwo.charAt(0) == 'H' && ColumnTwo.charAt(2) == 'H') || (DiagonalRightConcatenate.charAt(0) == 'H' && DiagonalRightConcatenate.charAt(2) == 'H') || (DiagonalLeftConcatenate.charAt(0) == 'H' && DiagonalLeftConcatenate.charAt(2) == 'H'))
-    {
-      boardArray[1][1] = "C";
-    }
-    else if((RowTwo.charAt(0) == 'H' && RowTwo.charAt(1) == 'H') ||(ColumnThree.charAt(0) == 'H' && ColumnThree.charAt(2) == 'H'))
-    {
-      boardArray[1][2] = "C";
-    }
-    else if((RowTwo.charAt(1) == 'H' && RowTwo.charAt(2) == 'H') || (ColumnOne.charAt(0) == 'H' && ColumnOne.charAt(2) == 'H'))
-    {
-      boardArray[1][0] = "C";
+      if(RowOne.charAt(count) == '+')
+      {
+        boardArray[0][count] = "C";
+        HaveDecided = true;
+      }
+      else
+      {
+        if(RowOne.equals("CHH") || RowOne.equals("HCH") || RowOne.equals("HHC"))
+        {
+          if(RowOne.equals("CHH"))
+          {
+            if(ColumnOne.charAt(count) == '+')
+            {
+              boardArray[count][0] = "C";
+              HaveDecided = true;
+            }
+          }
+          else if( RowOne.equals("HCH"))
+          {
+            if(ColumnTwo.charAt(count) == '+')
+            {
+              boardArray[count][1] = "C";
+              HaveDecided = true;
+            }
+          }
+          else
+          {
+            if(ColumnThree.charAt(count) == '+')
+            {
+              boardArray[count][2] = "C";
+              HaveDecided = true;
+            }
+          }
+
+        }
+        else
+        {
+          count++;
+        }
+        
+      }
     }
 
-    else if((RowThree.charAt(0) == 'H' && RowThree.charAt(2) == 'H') || (ColumnTwo.charAt(0) == 'H' && ColumnTwo.charAt(1) == 'H'))
-    {
-      boardArray[2][1] = "C";
-    }
-    else if((RowThree.charAt(0) == 'H' && RowThree.charAt(1) == 'H') || (ColumnThree.charAt(0) == 'H' && ColumnThree.charAt(1) == 'H') || (DiagonalLeftConcatenate.charAt(0) == 'H' && DiagonalLeftConcatenate.charAt(1) == 'H'))
-    {
-      boardArray[2][2] = "C";
-    }
-    else if((RowThree.charAt(1) == 'H' && RowThree.charAt(2) == 'H') || (ColumnOne.charAt(0) == 'H' && ColumnOne.charAt(1) == 'H') || (DiagonalRightConcatenate.charAt(0) == 'H' && DiagonalRightConcatenate.charAt(1) == 'H') )
-    {
-      boardArray[2][0] = "C";
-    }
-    else
-    {
-      boardArray[1][1] = "C";
-    }
-  }
+}
   
   public String JudgeWinner()
   {
