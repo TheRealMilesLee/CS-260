@@ -38,7 +38,7 @@ public class Board
     }
     System.out.println(" -------------");
   }
-  
+
   public void HumanChangeBoard()
   {
     humanPlayerObject.LetUserInput();
@@ -47,7 +47,7 @@ public class Board
     int HumanColumn = Integer.parseInt(PositionFromUser.substring(2, 3));
     boardArray[HumanRow][HumanColumn] = "H";
   }
-  
+
   public void ComputerInitialMove()
   {
     String PositionFromComputer = computerPlayerObject.generateComputerMove();
@@ -55,7 +55,7 @@ public class Board
     int ComputerColumn = Integer.parseInt(PositionFromComputer.substring(2,3));
     boardArray[ComputerRow][ComputerColumn] = "C";
   }
-  
+
   public void ComputerChangeBoard()
   {
     String DiagonalLeftConcatenate = boardArray[0][0] + boardArray[1][1] + boardArray[2][2];
@@ -109,12 +109,10 @@ public class Board
         {
           count++;
         }
-        
       }
     }
 
 }
-  
   public String JudgeWinner()
   {
     String Winner = " ";
