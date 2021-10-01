@@ -58,12 +58,18 @@ public class Board
 
   public void ComputerChangeBoard()
   {
+    String DiagonalRightConcatenate = boardArray[0][2] + boardArray[1][1] + boardArray[2][0];
     boolean makeChoice = false;
     for(int rowLoop = 0; rowLoop < boardArray.length && !makeChoice; rowLoop++)
     {
       for(int columnLoop = 0; columnLoop < boardArray.length && !makeChoice; columnLoop++)
       {
-        if (boardArray[0][columnLoop].equals("+"))
+        if(boardArray[columnLoop][columnLoop].equals("+"))
+        {
+          boardArray[columnLoop][columnLoop] = "C";
+          makeChoice = true;
+        }
+        else if (boardArray[0][columnLoop].equals("+"))
         {
           boardArray[0][columnLoop] = "C";
           makeChoice = true;
@@ -78,11 +84,7 @@ public class Board
           boardArray[2][columnLoop] = "C";
           makeChoice = true;
         }
-        else if(boardArray[rowLoop][columnLoop].equals("+"))
-        {
-          boardArray[rowLoop][columnLoop] = "C";
-          makeChoice = true;
-        }
+
       }
     }
   }
