@@ -17,7 +17,7 @@ public class HumanPlayer extends Player
       }
       else if(Location.charAt(0) == ' ' || Location.charAt(2) == ' ')
       {
-        System.out.println("USE NUMBERS IDIOT! NOT SPACE!");
+        System.out.println("USE NUMBERS! NOT SPACE!");
       }
       else
       {
