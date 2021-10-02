@@ -19,7 +19,7 @@ public class TicTacToeApp
       HumanSideObject.clearBoard();
       System.out.println("Human Side choice! ");
       boolean WinnerDecided = false;
-      for (int fillPlate = 0; fillPlate < 5 && !WinnerDecided && !HumanSideObject.boardIsFull(); fillPlate++)
+      for (int fillPlate = 0; fillPlate < 5 && !WinnerDecided; fillPlate++)
       {
         HumanSideObject.HumanChangeBoard();
         HumanSideObject.DisplayBoard();
@@ -57,7 +57,7 @@ public class TicTacToeApp
         System.out.println("Computer Side choice! ");
         ComputerSideObject.ComputerSide();
         ComputerSideObject.DisplayBoard();
-        for (int ComputerSideRoll = 0; ComputerSideRoll < 5 && !WinnerDecided && !ComputerSideObject.boardIsFull(); ComputerSideRoll++)
+        for (int ComputerSideRoll = 0; ComputerSideRoll < 5 && !WinnerDecided; ComputerSideRoll++)
         {
           System.out.println("Human change board! ");
           ComputerSideObject.HumanChangeBoard();
@@ -77,12 +77,17 @@ public class TicTacToeApp
               System.out.println("We have a winner! The winner is: " + ComputerSideObject.JudgeWinner());
               WinnerDecided = true;
             }
+            if(ComputerSideObject.boardIsFull())
+            {
+              if(HumanSideObject.JudgeWinner().equals("Tie"))
+              {
+                System.out.println("There is no Winner! Tie Game");
+                WinnerDecided = true;
+              }
+            }
           }
         }
-        if(HumanSideObject.JudgeWinner().equals("Tie"))
-        {
-          System.out.println("There is no Winner! Tie Game");
-        }
+        
         System.out.println("Continue? (Press q to quit the game) ");
         GameEndFlag = continuePlayFlag.next();
         if (GameEndFlag.equals("q") || GameEndFlag.equals("Q"))
