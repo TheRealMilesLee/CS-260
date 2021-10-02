@@ -58,33 +58,47 @@ public class Board
 
   public void ComputerChangeBoard()
   {
-    String DiagonalRightConcatenate = boardArray[0][2] + boardArray[1][1] + boardArray[2][0];
     boolean makeChoice = false;
+    
+    for(int Index = 0; Index < boardArray.length && !makeChoice; Index++)
+    {
+      if(boardArray[Index][Index].equals("+"))
+      {
+        boardArray[Index][Index] = "C";
+        makeChoice = true;
+      }
+    }
+    for(int indexRow=0; indexRow < boardArray.length && !makeChoice; indexRow++)
+    {
+      for(int columnLoop = 0; columnLoop < boardArray.length && !makeChoice; columnLoop++)
+      {
+        if(boardArray[columnLoop][indexRow].equals("+"))
+        {
+          boardArray[columnLoop][indexRow] = "C";
+          makeChoice = true;
+        }
+      }
+    }
+    for(int IndexRight = 0; IndexRight < boardArray.length && !makeChoice; IndexRight++)
+    {
+      for(int IndexIncreasing = boardArray.length - 1; IndexIncreasing >= 0; IndexIncreasing--)
+      {
+        if(boardArray[IndexRight][IndexIncreasing].equals("+"))
+        {
+          boardArray[IndexRight][IndexIncreasing] = "C";
+          makeChoice = true;
+        }
+      }
+    }
     for(int rowLoop = 0; rowLoop < boardArray.length && !makeChoice; rowLoop++)
     {
       for(int columnLoop = 0; columnLoop < boardArray.length && !makeChoice; columnLoop++)
       {
-        if(boardArray[columnLoop][columnLoop].equals("+"))
+        if(boardArray[rowLoop][columnLoop].equals("+"))
         {
-          boardArray[columnLoop][columnLoop] = "C";
+          boardArray[rowLoop][columnLoop] = "C";
           makeChoice = true;
         }
-        else if (boardArray[0][columnLoop].equals("+"))
-        {
-          boardArray[0][columnLoop] = "C";
-          makeChoice = true;
-        }
-        else if(boardArray[1][columnLoop].equals("+"))
-        {
-          boardArray[1][columnLoop] = "C";
-          makeChoice = true;
-        }
-        else if(boardArray[2][columnLoop].equals("+"))
-        {
-          boardArray[2][columnLoop] = "C";
-          makeChoice = true;
-        }
-
       }
     }
   }
