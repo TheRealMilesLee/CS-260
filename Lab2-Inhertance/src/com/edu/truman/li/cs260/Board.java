@@ -57,42 +57,59 @@ public class Board
   {
     ComputerObject.ComputerChangeBoard(boardArray);
   }
-  
+  public boolean boardIsFull()
+  {
+    boolean initialState = true;
+    for (String[] strings : boardArray)
+    {
+      for (int col = 0; col < boardArray.length; col++)
+      {
+        if (strings[col].equals("+"))
+        {
+          initialState = false;
+        }
+      }
+    }
+    return initialState;
+  }
   public String JudgeWinner()
   {
     String Winner = " ";
     String DiagonalLeftConcatenate = boardArray[0][0] + boardArray[1][1] + boardArray[2][2];
     String DiagonalRightConcatenate = boardArray[0][2] + boardArray[1][1] + boardArray[2][0];
-    if(DiagonalLeftConcatenate.equals("CCC") || DiagonalRightConcatenate.equals("CCC"))
-    {
-      Winner = "Computer";
-    }
-    if(DiagonalLeftConcatenate.equals("HHH") || DiagonalRightConcatenate.equals("HHH"))
-    {
-      Winner = "Human";
-    }
     String RowOne = boardArray[0][0] + boardArray[0][1] + boardArray[0][2];
     String RowTwo = boardArray[1][0] + boardArray[1][1] + boardArray[1][2];
     String RowThree = boardArray[2][0] + boardArray[2][1] + boardArray[2][2];
     String ColumnOne = boardArray[0][0] + boardArray[1][0] + boardArray[2][0];
     String ColumnTwo = boardArray[0][1] + boardArray[1][1] + boardArray[2][1];
     String ColumnThree = boardArray[0][2] + boardArray[1][2] + boardArray[2][2];
-  
-    if(RowOne.equals("CCC") || RowTwo.equals("CCC") || RowThree.equals("CCC"))
+    if(DiagonalLeftConcatenate.equals("CCC") || DiagonalRightConcatenate.equals("CCC"))
     {
       Winner = "Computer";
     }
-    if(RowOne.equals("HHH") || RowTwo.equals("HHH") || RowThree.equals("HHH"))
+    else if(DiagonalLeftConcatenate.equals("HHH") || DiagonalRightConcatenate.equals("HHH"))
     {
       Winner = "Human";
     }
-    if(ColumnOne.equals("CCC") || ColumnTwo.equals("CCC") || ColumnThree.equals("CCC"))
+    else if(RowOne.equals("CCC") || RowTwo.equals("CCC") || RowThree.equals("CCC"))
     {
       Winner = "Computer";
     }
-    if(ColumnOne.equals("HHH") || ColumnTwo.equals("HHH") || ColumnThree.equals("HHH"))
+    else if(RowOne.equals("HHH") || RowTwo.equals("HHH") || RowThree.equals("HHH"))
     {
       Winner = "Human";
+    }
+    else if(ColumnOne.equals("CCC") || ColumnTwo.equals("CCC") || ColumnThree.equals("CCC"))
+    {
+      Winner = "Computer";
+    }
+    else if(ColumnOne.equals("HHH") || ColumnTwo.equals("HHH") || ColumnThree.equals("HHH"))
+    {
+      Winner = "Human";
+    }
+    else
+    {
+      Winner = "Tie";
     }
     return Winner;
   }
