@@ -15,6 +15,14 @@ public class CompPlayer extends Player
       {
         boardArray[1][0] = "C";
       }
+      else if (boardArray[2][0].equals("+") && boardArray[2][1].equals("H") && boardArray[2][2].equals("H"))
+      {
+        boardArray[2][0] = "C";
+      }
+      else if (boardArray[2][0].equals("H") && boardArray[2][1].equals("H") && boardArray[2][2].equals("+"))
+      {
+        boardArray[2][2] = "C";
+      }
       else if (boardArray[0][2].equals("H") && boardArray[2][2].equals("H") && boardArray[1][2].equals("+"))
       {
         boardArray[1][2] = "C";
