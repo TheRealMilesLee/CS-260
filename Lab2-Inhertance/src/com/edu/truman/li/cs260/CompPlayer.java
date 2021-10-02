@@ -11,81 +11,67 @@ public class CompPlayer extends Player
     }
     else
     {
-      for (int indexRow = 0; indexRow < boardArray.length - 1 && !makeChoice; indexRow++)
+      if (boardArray[0][0].equals("H") && boardArray[2][0].equals("H") && boardArray[1][0].equals("+"))
       {
-        for (int columnLoop = 0; columnLoop < boardArray.length -1 && !makeChoice; columnLoop++)
+        boardArray[1][0] = "C";
+      }
+      else if (boardArray[0][2].equals("H") && boardArray[2][2].equals("H") && boardArray[1][2].equals("+"))
+      {
+        boardArray[1][2] = "C";
+      }
+      else if(boardArray[0][1].equals("+") && boardArray[2][1].equals("H") && boardArray[1][1].equals("H"))
+      {
+        boardArray[0][1] = "C";
+      }
+      else if(boardArray[0][1].equals("H") && boardArray[2][1].equals("+") && boardArray[1][1].equals("H"))
+      {
+        boardArray[2][1] = "C";
+      }
+      else
+      {
+        for (int IndexRight = 0; IndexRight < boardArray.length && !makeChoice; IndexRight++)
         {
-          if (boardArray[columnLoop][indexRow].equals("+"))
+          for (int IndexIncreasing = boardArray.length - 1; IndexIncreasing >= 0 && !makeChoice; IndexIncreasing--)
           {
-            boardArray[columnLoop][indexRow] = "C";
-            makeChoice = true;
+            if (boardArray[IndexRight][IndexIncreasing].equals("+"))
+            {
+              boardArray[IndexRight][IndexIncreasing] = "C";
+              makeChoice = true;
+            }
           }
-          else if (boardArray[columnLoop + 1][indexRow].equals("+"))
+        }
+        for (int Index = 0; Index < boardArray.length && !makeChoice; Index++)
+        {
+          if (boardArray[Index][Index].equals("+"))
           {
-            boardArray[columnLoop + 1][indexRow] = "C";
-            makeChoice = true;
-          }
-          else if (boardArray[columnLoop + 1][indexRow + 1].equals("+"))
-          {
-            boardArray[columnLoop + 1][indexRow + 1] = "C";
-            makeChoice = true;
-          }
-          else if (boardArray[columnLoop][indexRow + 1].equals("+"))
-          {
-            boardArray[columnLoop][indexRow + 1] = "C";
+            boardArray[Index][Index] = "C";
             makeChoice = true;
           }
         }
-      }
-      for (int rowLoop = 0; rowLoop < boardArray.length - 1 && !makeChoice; rowLoop++)
-      {
-        for (int columnLoop = 0; columnLoop < boardArray.length - 1 && !makeChoice; columnLoop++)
+  
+        for (int indexRow = 0; indexRow < boardArray.length - 1 && !makeChoice; indexRow++)
         {
-          if (boardArray[rowLoop][columnLoop].equals("+"))
+          for (int columnLoop = 0; columnLoop < boardArray.length - 1 && !makeChoice; columnLoop++)
           {
-            boardArray[rowLoop][columnLoop] = "C";
-            makeChoice = true;
+            if (boardArray[columnLoop][indexRow].equals("+"))
+            {
+              boardArray[columnLoop][indexRow] = "C";
+              makeChoice = true;
+            }
           }
-          else if (boardArray[rowLoop + 1][columnLoop].equals("+"))
+        }
+        for (int rowLoop = 0; rowLoop < boardArray.length - 1 && !makeChoice; rowLoop++)
+        {
+          for (int columnLoop = 0; columnLoop < boardArray.length - 1 && !makeChoice; columnLoop++)
           {
-            boardArray[rowLoop + 1][columnLoop] = "C";
-            makeChoice = true;
-          }
-          else if((boardArray[rowLoop + 1][columnLoop + 1].equals("+")))
-          {
-            boardArray[rowLoop + 1][columnLoop + 1] = "C";
-            makeChoice = true;
-          }
-          else if(boardArray[rowLoop][columnLoop + 1].equals("+"))
-          {
-            boardArray[rowLoop][columnLoop + 1] = "C";
-            makeChoice = true;
+            if (boardArray[rowLoop][columnLoop].equals("+"))
+            {
+              boardArray[rowLoop][columnLoop] = "C";
+              makeChoice = true;
+            }
           }
         }
       }
-      for (int Index = 0; Index < boardArray.length && !makeChoice; Index++)
-      {
-        if (boardArray[Index][Index].equals("+"))
-        {
-          boardArray[Index][Index] = "C";
-          makeChoice = true;
-        }
-      }
-      for (int IndexRight = 0; IndexRight < boardArray.length && !makeChoice; IndexRight++)
-      {
-        for (int IndexIncreasing = boardArray.length - 1; IndexIncreasing >= 0 && !makeChoice; IndexIncreasing--)
-        {
-          if (boardArray[IndexRight][IndexIncreasing].equals("+"))
-          {
-            boardArray[IndexRight][IndexIncreasing] = "C";
-            makeChoice = true;
-          }
-        }
-      }
-      
-      
-      
-      
     }
   }
 }

@@ -38,6 +38,14 @@ public class TicTacToeApp
             System.out.println("We have a winner! The winner is: " + HumanSideObject.JudgeWinner());
             WinnerDecided = true;
           }
+          if(HumanSideObject.boardIsFull())
+          {
+            if(HumanSideObject.JudgeWinner().equals("Tie"))
+            {
+              System.out.println("There is no Winner! Tie Game");
+              WinnerDecided = true;
+            }
+          }
         }
       }
       if(HumanSideObject.JudgeWinner().equals("Tie"))
@@ -79,7 +87,7 @@ public class TicTacToeApp
             }
             if(ComputerSideObject.boardIsFull())
             {
-              if(HumanSideObject.JudgeWinner().equals("Tie"))
+              if(ComputerSideObject.JudgeWinner().equals("Tie"))
               {
                 System.out.println("There is no Winner! Tie Game");
                 WinnerDecided = true;
