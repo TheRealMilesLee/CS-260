@@ -11,24 +11,54 @@ public class CompPlayer extends Player
     }
     else
     {
-      for (int indexRow = 0; indexRow < boardArray.length && !makeChoice; indexRow++)
+      for (int indexRow = 0; indexRow < boardArray.length - 1 && !makeChoice; indexRow++)
       {
-        for (int columnLoop = 0; columnLoop < boardArray.length && !makeChoice; columnLoop++)
+        for (int columnLoop = 0; columnLoop < boardArray.length -1 && !makeChoice; columnLoop++)
         {
           if (boardArray[columnLoop][indexRow].equals("+"))
           {
             boardArray[columnLoop][indexRow] = "C";
             makeChoice = true;
           }
+          else if (boardArray[columnLoop + 1][indexRow].equals("+"))
+          {
+            boardArray[columnLoop + 1][indexRow] = "C";
+            makeChoice = true;
+          }
+          else if (boardArray[columnLoop + 1][indexRow + 1].equals("+"))
+          {
+            boardArray[columnLoop + 1][indexRow + 1] = "C";
+            makeChoice = true;
+          }
+          else if (boardArray[columnLoop][indexRow + 1].equals("+"))
+          {
+            boardArray[columnLoop][indexRow + 1] = "C";
+            makeChoice = true;
+          }
         }
       }
-      for (int rowLoop = 0; rowLoop < boardArray.length && !makeChoice; rowLoop++)
+      for (int rowLoop = 0; rowLoop < boardArray.length - 1 && !makeChoice; rowLoop++)
       {
-        for (int columnLoop = 0; columnLoop < boardArray.length && !makeChoice; columnLoop++)
+        for (int columnLoop = 0; columnLoop < boardArray.length - 1 && !makeChoice; columnLoop++)
         {
           if (boardArray[rowLoop][columnLoop].equals("+"))
           {
             boardArray[rowLoop][columnLoop] = "C";
+            makeChoice = true;
+          }
+          else if (boardArray[rowLoop + 1][columnLoop].equals("+"))
+          {
+            boardArray[rowLoop + 1][columnLoop] = "C";
+            makeChoice = true;
+          }
+          else if((boardArray[rowLoop + 1][columnLoop + 1].equals("+")))
+          {
+            boardArray[rowLoop + 1][columnLoop + 1] = "C";
+            makeChoice = true;
+          }
+          else if(boardArray[rowLoop][columnLoop + 1].equals("+"))
+          {
+            boardArray[rowLoop][columnLoop + 1] = "C";
             makeChoice = true;
           }
         }
@@ -52,6 +82,10 @@ public class CompPlayer extends Player
           }
         }
       }
+      
+      
+      
+      
     }
   }
 }
