@@ -1,11 +1,9 @@
 package com.edu.truman.li.cs260;
-
-
 import java.util.Scanner;
 
 public class HumanPlayer extends Player
 {
-  public void LetUserInput()
+  public void LetUserInput(String[][] boardArray)
   {
     boolean validate = false;
     do
@@ -41,10 +39,6 @@ public class HumanPlayer extends Player
         }
       }
     }while(!validate);
-  }
-  
-  public String returnRowAndColumn()
-  {
-    return (getRow() + " " + getColumn());
+    boardArray[getRow()][getColumn()] = "H";
   }
 }

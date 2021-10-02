@@ -1,33 +1,57 @@
 package com.edu.truman.li.cs260;
-import java.util.Random;
 
 public class CompPlayer extends Player
 {
-  public String generateComputerMove()
+  public void ComputerChangeBoard(String[][] boardArray)
   {
-    Random randomPosition = new Random();
-    int randomRow = randomPosition.nextInt(2);
-    int randomCol = randomPosition.nextInt(2);
-    int RandomNonDuplicateRow = 0;
-    int RandomNonDuplicateCol = 0;
-    int computerChoiceRow;
-    int computerChoiceCol;
-    if (randomRow == getRow())
+    boolean makeChoice = false;
+    if(boardArray[1][1].equals("+"))
     {
-      RandomNonDuplicateRow = randomPosition.nextInt(2);
-    }
-    else if (randomCol == getColumn())
-    {
-      RandomNonDuplicateCol = randomPosition.nextInt(2);
+      boardArray[1][1] = "C";
     }
     else
     {
-      RandomNonDuplicateRow = randomRow;
-      RandomNonDuplicateCol = randomCol;
+      for (int Index = 0; Index < boardArray.length && !makeChoice; Index++)
+      {
+        if (boardArray[Index][Index].equals("+"))
+        {
+          boardArray[Index][Index] = "C";
+          makeChoice = true;
+        }
+      }
+      for (int indexRow = 0; indexRow < boardArray.length && !makeChoice; indexRow++)
+      {
+        for (int columnLoop = 0; columnLoop < boardArray.length && !makeChoice; columnLoop++)
+        {
+          if (boardArray[columnLoop][indexRow].equals("+"))
+          {
+            boardArray[columnLoop][indexRow] = "C";
+            makeChoice = true;
+          }
+        }
+      }
+      for (int IndexRight = 0; IndexRight < boardArray.length && !makeChoice; IndexRight++)
+      {
+        for (int IndexIncreasing = boardArray.length - 1; IndexIncreasing >= 0; IndexIncreasing--)
+        {
+          if (boardArray[IndexRight][IndexIncreasing].equals("+"))
+          {
+            boardArray[IndexRight][IndexIncreasing] = "C";
+            makeChoice = true;
+          }
+        }
+      }
+      for (int rowLoop = 0; rowLoop < boardArray.length && !makeChoice; rowLoop++)
+      {
+        for (int columnLoop = 0; columnLoop < boardArray.length && !makeChoice; columnLoop++)
+        {
+          if (boardArray[rowLoop][columnLoop].equals("+"))
+          {
+            boardArray[rowLoop][columnLoop] = "C";
+            makeChoice = true;
+          }
+        }
+      }
     }
-    
-    computerChoiceRow = RandomNonDuplicateRow;
-    computerChoiceCol = RandomNonDuplicateCol;
-    return (computerChoiceRow + " " + computerChoiceCol);
   }
 }
