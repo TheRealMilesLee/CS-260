@@ -1,15 +1,16 @@
-package com.edu.truman.li.cs260;
+package com.edu.truman.li.cs260.TicTacToe;
 import java.util.Scanner;
 
 public class HumanPlayer extends Player
 {
   public void LetUserInput(String[][] boardArray)
   {
+	Scanner userInput = new Scanner(System.in);
     boolean validate = false;
     do
     {
       System.out.println("Now, make your move by typing the row and column separated with comma: ");
-      Scanner userInput = new Scanner(System.in);
+      
       String Location = userInput.nextLine();
       if(Location.isEmpty())
       {
@@ -38,6 +39,7 @@ public class HumanPlayer extends Player
           validate = true;
         }
       }
+      
     }while(!validate);
     boardArray[getRow()][getColumn()] = "H";
   }

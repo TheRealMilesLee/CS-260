@@ -1,4 +1,4 @@
-import com.edu.truman.li.cs260.Board;
+import com.edu.truman.li.cs260.TicTacToe.Board;
 import java.util.*;
 
 /**
@@ -11,7 +11,7 @@ public class TicTacToeApp
    *
    * @param args the input arguments
    */
-  public static void TicTacToeApp (String[] args)
+  public static void main (String[] args)
   {
     Board HumanSideObject = new Board();
     Board ComputerSideObject = new Board();
@@ -30,7 +30,7 @@ public class TicTacToeApp
       for (int fillPlate = 0; fillPlate < 5 && !WinnerDecided; fillPlate++)
       {
         HumanSideObject.HumanChangeBoard();
-        HumanSideObject.DisplayBoard();T
+        HumanSideObject.DisplayBoard();
         if (HumanSideObject.JudgeWinner().equals("Human") || HumanSideObject.JudgeWinner().equals("Computer"))
         {
           System.out.println("We have a winner! The winner is: " + HumanSideObject.JudgeWinner());
@@ -111,5 +111,6 @@ public class TicTacToeApp
         }
       }
     }
+    
   }
 }

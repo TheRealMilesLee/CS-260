@@ -1,4 +1,4 @@
-package com.edu.truman.li.cs260;
+package com.edu.truman.li.cs260.TicTacToe;
 
 /**
  * The type Board.
