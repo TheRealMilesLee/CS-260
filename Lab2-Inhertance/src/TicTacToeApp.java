@@ -1,8 +1,16 @@
 import com.edu.truman.li.cs260.Board;
 import java.util.*;
 
+/**
+ * The type Tic tac toe app.
+ */
 public class TicTacToeApp
 {
+  /**
+   * The entry point of application.
+   *
+   * @param args the input arguments
+   */
   public static void main (String[] args)
   {
     Board HumanSideObject = new Board();
@@ -38,19 +46,16 @@ public class TicTacToeApp
             System.out.println("We have a winner! The winner is: " + HumanSideObject.JudgeWinner());
             WinnerDecided = true;
           }
-          if(HumanSideObject.boardIsFull())
+        }
+        // Tie situation
+        if(HumanSideObject.boardIsFull())
+        {
+          if(HumanSideObject.JudgeWinner().equals("Tie"))
           {
-            if(HumanSideObject.JudgeWinner().equals("Tie"))
-            {
-              System.out.println("There is no Winner! Tie Game");
-              WinnerDecided = true;
-            }
+            System.out.println("There is no Winner! Tie Game");
+            WinnerDecided = true;
           }
         }
-      }
-      if(HumanSideObject.JudgeWinner().equals("Tie"))
-      {
-        System.out.println("There is no Winner! Tie Game");
       }
       System.out.println("Continue? (Press q to quit the game) ");
       String GameEndFlag = continuePlayFlag.next();
@@ -60,8 +65,11 @@ public class TicTacToeApp
       }
       else
       {
+        // Reset the status and clean the board
         WinnerDecided = false;
         ComputerSideObject.clearBoard();
+        
+        //Game start
         System.out.println("Computer Side choice! ");
         ComputerSideObject.ComputerSide();
         ComputerSideObject.DisplayBoard();
@@ -95,7 +103,6 @@ public class TicTacToeApp
             }
           }
         }
-        
         System.out.println("Continue? (Press q to quit the game) ");
         GameEndFlag = continuePlayFlag.next();
         if (GameEndFlag.equals("q") || GameEndFlag.equals("Q"))

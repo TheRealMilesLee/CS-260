@@ -1,9 +1,26 @@
 package com.edu.truman.li.cs260;
+
+/**
+ * The type Board.
+ */
 public class Board
 {
+  /**
+   * The Board array.
+   */
   protected String[][] boardArray;
+  /**
+   * The Human player object.
+   */
   HumanPlayer humanPlayerObject = new HumanPlayer();
+  /**
+   * The Computer object.
+   */
   CompPlayer ComputerObject = new CompPlayer();
+  
+  /**
+   * Instantiates a new Board.
+   */
   public Board()
   {
     boardArray = new String[3][3];
@@ -15,6 +32,10 @@ public class Board
       }
     }
   }
+  
+  /**
+   * Clear board.
+   */
   public void clearBoard()
   {
     for(int row = 0; row < boardArray.length; row++)
@@ -25,6 +46,10 @@ public class Board
       }
     }
   }
+  
+  /**
+   * Direction of game.
+   */
   public void Direction()
   {
     System.out.println("The + indicates that these positions are empty and can be selected.");
@@ -32,6 +57,10 @@ public class Board
     System.out.println("If you want to stop playing and exit, just type q to quit the game");
     System.out.println();
   }
+  
+  /**
+   * Display board.
+   */
   public void DisplayBoard()
   {
     System.out.println("This is the chess board");
@@ -47,16 +76,28 @@ public class Board
     }
     System.out.println(" -------------");
   }
-
+  
+  /**
+   * Human side change board.
+   */
   public void HumanChangeBoard()
   {
     humanPlayerObject.LetUserInput(boardArray);
   }
   
+  /**
+   * Computer side change board.
+   */
   public void ComputerSide()
   {
     ComputerObject.ComputerChangeBoard(boardArray);
   }
+  
+  /**
+   * Board is full boolean.
+   *
+   * @return the boolean value determine the board is full or not
+   */
   public boolean boardIsFull()
   {
     boolean initialState = true;
@@ -72,6 +113,12 @@ public class Board
     }
     return initialState;
   }
+  
+  /**
+   * Judge winner string.
+   *
+   * @return the string used to output the winner
+   */
   public String JudgeWinner()
   {
     String Winner = " ";
