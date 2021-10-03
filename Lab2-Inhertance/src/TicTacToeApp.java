@@ -11,7 +11,7 @@ public class TicTacToeApp
    *
    * @param args the input arguments
    */
-  public static void main (String[] args)
+  public static void TicTacToeApp (String[] args)
   {
     Board HumanSideObject = new Board();
     Board ComputerSideObject = new Board();
