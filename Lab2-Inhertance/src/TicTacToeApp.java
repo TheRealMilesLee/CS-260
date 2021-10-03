@@ -30,7 +30,7 @@ public class TicTacToeApp
       for (int fillPlate = 0; fillPlate < 5 && !WinnerDecided; fillPlate++)
       {
         HumanSideObject.HumanChangeBoard();
-        HumanSideObject.DisplayBoard();
+        HumanSideObject.DisplayBoard();T
         if (HumanSideObject.JudgeWinner().equals("Human") || HumanSideObject.JudgeWinner().equals("Computer"))
         {
           System.out.println("We have a winner! The winner is: " + HumanSideObject.JudgeWinner());

@@ -26,6 +26,7 @@ public class CompPlayer extends Player
         boardArray[1][0] = "C";
       }
 <<<<<<< HEAD
+<<<<<<< HEAD
       // Situation CHH in row 2
       else if (boardArray[2][0].equals("+") && boardArray[2][1].equals("H") && boardArray[2][2].equals("H"))
       {
@@ -37,6 +38,8 @@ public class CompPlayer extends Player
         boardArray[2][2] = "C";
       }
       // Situation HCH in column 2
+=======
+>>>>>>> parent of 53e1608 (IT'S FUCKING DONE)
 =======
 >>>>>>> parent of 53e1608 (IT'S FUCKING DONE)
       else if (boardArray[0][2].equals("H") && boardArray[2][2].equals("H") && boardArray[1][2].equals("+"))
