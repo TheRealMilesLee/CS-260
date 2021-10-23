@@ -49,11 +49,6 @@ public class Card extends AbstractCard
 
   public Card(int rank, String suit)
   {
-    // rank is an integer satisfying 1 <= rank <= 14, where 1 for joker, 2 for
-    // 2, 3 for 3, .., 10 for 10
-    // 11 for jack, 12 for queen, 13 for king, 14 for ace
-    // Note: as with the other constructor, if a joker is created, any valid
-    // suit can be passed but the card’s suit will be set to AbstractCard.SUITS[4]
     if (rank == 1)
     {
       rankNumberOfCards = rank;
@@ -132,8 +127,7 @@ public class Card extends AbstractCard
    *         less than, equal to, or greater than the specified object.
    *
    * @exception NullPointerException if the specified object is null
-   * @exception ClassCastException   if the specified object's type prevents
-   *                                 it from being compared to this object.
+   * @exception ClassCastException   if the specified object's type prevents it from being compared to this object.
    */
   @Override
   public int compareTo(AbstractCard o)
