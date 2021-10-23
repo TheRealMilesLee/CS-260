@@ -11,7 +11,6 @@ public abstract class AbstractCard implements Comparable<AbstractCard>
 
   public static final String[] SUITS = { "Diamonds", "Clubs", "Hearts", "Spades", "None"};
 
-  // Purpose: Get the current card’s rank as an integer
   /**
    * the numerical representation of the rank of the current card
    * ranks have the numerical values
@@ -22,7 +21,6 @@ public abstract class AbstractCard implements Comparable<AbstractCard>
    */
   public abstract int getRank();
 
-  // Purpose: Get the current card’s rank as a string
   /**
    * the string representation of the rank of the current card
    *
@@ -31,7 +29,6 @@ public abstract class AbstractCard implements Comparable<AbstractCard>
    */
   public abstract String getRankString();
 
-  // Purpose: Get the current card’s suit
   /**
    * the suit of the current card
    *
