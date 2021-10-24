@@ -5,17 +5,28 @@ public class Card extends AbstractCard
   String rankOfCards = "";
   int rankNumberOfCards = 0;
   String suitOfCards = "";
-
+/**
+ * This constructor is to initialize the Card with the string rank name and the string suit name
+ * @param rank is the string value of the rank of the card
+ * @param suit is a string value that represents the suit of the card.
+ */
   public Card(String rank, String suit)
   {
     int looptimes = 0;
     boolean found = false;
+    /**
+     * If the rank is AbstractCard.RANKS[15] then any  valid suit from AbstractCard.SUITS can be 
+     * given but the card’s suit will be set to AbstractCard.SUITS[4] 
+     * */
     if (rank.equals(AbstractCard.RANKS[15]))
     {
       suitOfCards = AbstractCard.SUITS[4];
     }
     else
     {
+      /**
+       * Find the rank of the cards that corresponds with the AbstractCard.RANKS
+       */
       while (!found && looptimes < AbstractCard.RANKS.length)
       {
         if (rank.equals(AbstractCard.RANKS[looptimes]))
@@ -29,6 +40,9 @@ public class Card extends AbstractCard
           looptimes++;
         }
       }
+      /**
+       * Find the suits that corresponds to the AbstractCard.SUITS.
+       */
       int loop = 0;
       boolean found_suit = false;
       while (!found_suit && loop < AbstractCard.SUITS.length)
@@ -47,6 +61,13 @@ public class Card extends AbstractCard
 
   }
 
+  /**
+   * This constructor is to initialize the rank and the suit of the card by using the int rank value 
+   * and the string suit value.
+   * @param rank is a int value that stores the rank of the card, satisfying 1 <= rank <= 14, where
+   *  1 for joker, 2 for 2, 3 for 3, .., 10 for 10, 11 for jack, 12 for queen, 13 for king, 14 for ace
+   * @param suit is a string value that stores the suit of the card.
+   */
   public Card(int rank, String suit)
   {
     if (rank == 1)
@@ -81,10 +102,9 @@ public class Card extends AbstractCard
   }
 
   /**
-   * the numerical representation of the rank of the current card ranks have
+   * This is the numerical representation of the rank of the current card ranks have
    * the numerical values 2 = 2, 3 = 3, ..., 10 = 10 Jack = 11, Queen = 12,
    * King = 13, Ace = 14 Joker = 1
-   *
    * @return the numerical rank of this card
    */
   @Override
@@ -94,10 +114,8 @@ public class Card extends AbstractCard
   }
 
   /**
-   * the string representation of the rank of the current card
-   *
-   * @return the string representation of the rank of this card (must be a
-   *         string from Card.RANKS)
+   * This is the string representation of the rank of the current card
+   * @return the string representation of the rank of this card
    */
   @Override
   public String getRankString()
@@ -106,8 +124,7 @@ public class Card extends AbstractCard
   }
 
   /**
-   * the suit of the current card
-   *
+   * This function is to get the suit of the current card
    * @return the suit of this card (must be a string from Card.SUITS)
    */
   @Override
@@ -120,11 +137,9 @@ public class Card extends AbstractCard
    * Compares this object with the specified object for order. Returns a
    * negative integer, zero, or a positive integer as this object is less
    * than, equal to, or greater than the specified object.
-   *
    * @param o the object to be compared.
-   *
-   * @return a negative integer, zero, or a positive integer as this object is
-   *         less than, equal to, or greater than the specified object.
+   * @return a negative integer, zero, or a positive integer as this object is less than, equal to, or 
+   * greater than the specified object.
    */
   @Override
   public int compareTo(AbstractCard o)
