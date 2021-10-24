@@ -7,6 +7,10 @@ import org.junit.Test;
 public class CardTest
 {
 
+  /**
+   * This is testing the numeric rank value is valid or not.
+   * Should return the numeric value of the corresponding rank
+   */
   @Test
   public void testNumericRank()
   {
@@ -20,13 +24,25 @@ public class CardTest
     assertEquals(expectedNumeric, acturalNumeric);
   }
 
+  /**
+   * This is testing the string, which is the name of the rank.
+   * Should return the string name of the rank of the cards.
+   */
   @Test
   public void testRankString()
   {
-    Card StringRankCard = new Card("Queen", "Diamonds");
-    String actual = StringRankCard.getRankString();
+    Card StringRankCardA = new Card("Queen", "Diamonds");
+    String actual = StringRankCardA.getRankString();
     String expected = "Queen";
     assertEquals(expected, actual);
+    Card StringRankCardB = new Card(4, "Spades");
+    String actualString = StringRankCardB.getRankString();
+    String expectedString = "4";
+    assertEquals(expectedString, actualString);
+    Card StringRankCardC = new Card(12, "Spades");
+    String actualStringB = StringRankCardC.getRankString();
+    String expectedStringB = "Queen";
+    assertEquals(expectedStringB, actualStringB);
   }
 
   @Test
