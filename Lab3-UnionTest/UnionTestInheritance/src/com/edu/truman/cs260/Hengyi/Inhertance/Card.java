@@ -2,9 +2,9 @@ package com.edu.truman.cs260.Hengyi.Inhertance;
 
 public class Card extends AbstractCard
 {
-  String rankOfCards = "";
-  int rankNumberOfCards = 0;
-  String suitOfCards = "";
+  private String rankOfCards = "";
+  private int rankNumberOfCards = 0;
+  private String suitOfCards = "";
 /**
  * This constructor is to initialize the Card with the string rank name and the string suit name
  * @param rank is the string value of the rank of the card
