@@ -36,11 +36,14 @@ public abstract class AbstractCard implements Comparable<AbstractCard>
    */
   public abstract String getSuit();
 
+  /**
+   * This function is to output a string representation of a card object.
+   */
   @Override
   public final String toString()
   {
-    // outputs a string representation of a card object
     int r = getRank();
+    // If the rank is not Joker
     if( r >= 2 && r <= 14 )
     {
       return r + getSuit().substring(0,1);
