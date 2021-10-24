@@ -45,6 +45,10 @@ public class CardTest
     assertEquals(expectedStringB, actualStringB);
   }
 
+  /**
+   * This function is to test the suit of the card
+   * It should return the suit name of the card
+   */
   @Test
   public void testSuit()
   {
@@ -54,15 +58,21 @@ public class CardTest
     assertEquals(expected, actual);
   }
 
+  /**
+   *  This test is exclusively for testing Joker situation
+   *  Tests the getSuit, getRank, getRankString
+   */
   @Test
   public void testJoker()
   {
     Card Joker = new Card(1, "None");
     String actual = Joker.getSuit();
     String expected = "None";
+    // Test the numeric value of the joker
     assertEquals(expected, actual);
     int actualRankInt = Joker.getRank();
     int expectedRankInt = 1;
+    //Test the String name of the joker
     assertEquals(expectedRankInt, actualRankInt);
     String acturalRankString = Joker.getRankString();
     String expectedRankString = "Joker";
@@ -73,6 +83,9 @@ public class CardTest
     assertEquals(expectedNameOutPut, actualNameOutPut);
   }
   
+  /**
+   * This function is to test the print out the object name
+   */
   @Test
   public void testPrintObjectName()
   {
@@ -82,6 +95,9 @@ public class CardTest
     assertEquals(expected, actural);
   }
   
+  /**
+   * This function is to test the invalid card situation
+   */
   @Test
   public void testPrintObjectInvalidCard()
   { 
@@ -89,13 +105,16 @@ public class CardTest
     String actual = InvalidCardTest.toString();
     String expected = "invalid card";
     assertEquals(expected, actual);
-    
-    Card InvalidCardNumermalTest = new Card(99, "invalid card");
-    String actualNumermal = InvalidCardNumermalTest.toString();
-    String expectedNumermal = "invalid card";
-    assertEquals(expectedNumermal, actualNumermal); 
+    //Situation that numeric is also invalid
+    Card InvalidCardNumericalTest = new Card(99, "invalid card");
+    String actualNumerical = InvalidCardNumericalTest.toString();
+    String expectedNumerical = "invalid card";
+    assertEquals(expectedNumerical, actualNumerical); 
   }
   
+  /**
+   * This function is to test that card a is smaller than card b
+   */
   @Test
   public void testCompareNegative()
   {
@@ -106,6 +125,9 @@ public class CardTest
     assertEquals(expected, actural);
   }
   
+  /**
+   * This function is to test that the card a is greater than card b
+   */
   @Test
   public void testComparePositive()
   { 
@@ -116,6 +138,9 @@ public class CardTest
     assertEquals(expected,actural);
   }
   
+  /**
+   * This function is to test the compare working on the joker situation
+   */
   @Test
   public void testCompareJoker()
   {
