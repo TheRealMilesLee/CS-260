@@ -10,19 +10,17 @@ public class CardTest
   @Test
   public void testRank()
   {
-    Card c = new Card("Queen", "Diamonds");
-    int actual = c.getRank();
+    Card RankCard = new Card("Queen", "Diamonds");
+    int actual = RankCard.getRank();
     int expected = 12;
-
     assertEquals(expected, actual);
-
   }
 
   @Test
   public void testRankString()
   {
-    Card c = new Card("Queen", "Diamonds");
-    String actual = c.getRankString();
+    Card StringRankCard = new Card("Queen", "Diamonds");
+    String actual = StringRankCard.getRankString();
     String expected = "Queen";
     assertEquals(expected, actual);
   }
@@ -30,11 +28,10 @@ public class CardTest
   @Test
   public void testSuit()
   {
-    Card c = new Card("Queen", "Diamonds");
-    String actual = c.getSuit();
+    Card SuitCard = new Card("Queen", "Diamonds");
+    String actual = SuitCard.getSuit();
     String expected = "Diamonds";
     assertEquals(expected, actual);
-
   }
 
   @Test
@@ -76,44 +73,46 @@ public class CardTest
     Card InvalidCardNumermalTest = new Card(99, "invalid card");
     String actualNumermal = InvalidCardNumermalTest.toString();
     String expectedNumermal = "invalid card";
-    assertEquals(expectedNumermal, actualNumermal);
-    
+    assertEquals(expectedNumermal, actualNumermal); 
   }
   
-  /*
   @Test
   public void testCompareNegative()
   {
-    fail("Not yet implemented");
-
-    // create two Card objects with appropriate parameters
-    // now test the two objects by using the compareTo function
-    // compare the two objects in a way so that the
-    // expected value is negative
-
+    Card negativeCompareA = new Card("Queen", "Diamonds");
+    Card negativeCompareB = new Card(4,"Spades");
+    int actural = negativeCompareA.compareTo(negativeCompareB);
+    int expected = -1;
+    assertEquals(expected, actural);
   }
-
+  
   @Test
   public void testComparePositive()
-  {
-    fail("Not yet implemented");
-
-    // create two Card objects with appropriate parameters
-    // now test the two objects by using the compareTo function
-    // compare the two objects in a way so that the
-    // expected value is positive
-
+  { 
+    Card positiveCompareA = new Card(4,"Spades");
+    Card positiveCompareB = new Card("Queen", "Diamonds");
+    int actural = positiveCompareA.compareTo(positiveCompareB);
+    int expected = 1;
+    assertEquals(expected,actural);
   }
-
+  
   @Test
   public void testCompareJoker()
   {
-    fail("Not yet implemented");
-
-    // see the last section of the sample input/output
-    // in the attached assignment description
-    // create a joker card and test the
-    // compareTo function by creating another object
+    Card JokerTestA = new Card(1,"None");
+    Card JokerTestB = new Card(1,"None");
+    Card JokerTestC = new Card (4,"Spades");
+    //Equal situation
+    int Equalactural = JokerTestA.compareTo(JokerTestB);
+    int EqualExpected = 0;
+    assertEquals(EqualExpected,Equalactural);
+    //Joker greater Other situation
+    int PositiveActural = JokerTestA.compareTo(JokerTestC);
+    int PositiveExpected = 1;
+    assertEquals(PositiveExpected,PositiveActural);
+    //Other less than Joker situation
+    int NegativeActural = JokerTestC.compareTo(JokerTestA);
+    int NegativeExpected = -1;
+    assertEquals(NegativeExpected, NegativeActural);
   }
-*/
 }

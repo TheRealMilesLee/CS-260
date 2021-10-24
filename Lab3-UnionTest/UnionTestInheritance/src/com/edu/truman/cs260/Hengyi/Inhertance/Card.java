@@ -125,14 +125,76 @@ public class Card extends AbstractCard
    *
    * @return a negative integer, zero, or a positive integer as this object is
    *         less than, equal to, or greater than the specified object.
-   *
-   * @exception NullPointerException if the specified object is null
-   * @exception ClassCastException   if the specified object's type prevents it from being compared to this object.
    */
   @Override
   public int compareTo(AbstractCard o)
   {
-
-    return 0;
+    if(o.getRank() == 1)
+    {
+      if(rankNumberOfCards == 1)
+      {
+        return 0;
+      }
+      else
+      {
+        return -1;
+      }
+    }
+    else if(rankNumberOfCards == 1)
+    {
+      if(o.getRank() == 1)
+      {
+        return 0;
+      }
+      else
+      {
+        return 1;
+      }
+    }
+    else if(rankNumberOfCards < o.getRank())
+    {
+      if(suitOfCards.compareTo(o.getSuit()) > 0) 
+      {
+       return 1; 
+      }
+      else if(suitOfCards.compareTo(o.getSuit()) < 0)
+      {
+        return -1;
+      }
+      else
+      {
+        return -1;
+      }
+    }
+    else if(rankNumberOfCards > o.getRank())
+    {
+      if(suitOfCards.compareTo(o.getSuit()) > 0) 
+      {
+       return 1; 
+      }
+      else if(suitOfCards.compareTo(o.getSuit()) < 0)
+      {
+        return -1;
+      }
+      else
+      {
+        return 1;
+      }
+    }
+    else
+    {
+      if(suitOfCards.compareTo(o.getSuit()) > 0) 
+      {
+       return 1; 
+      }
+      else if(suitOfCards.compareTo(o.getSuit()) < 0)
+      {
+        return -1;
+      }
+      else
+      {
+        return 0;
+      }
+    }
   }
 }
