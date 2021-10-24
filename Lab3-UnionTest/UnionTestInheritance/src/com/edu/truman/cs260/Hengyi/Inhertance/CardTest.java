@@ -8,12 +8,16 @@ public class CardTest
 {
 
   @Test
-  public void testRank()
+  public void testNumericRank()
   {
     Card RankCard = new Card("Queen", "Diamonds");
     int actual = RankCard.getRank();
     int expected = 12;
     assertEquals(expected, actual);
+    Card RankNumericCard = new Card(4, "Spades");
+    int acturalNumeric = RankNumericCard.getRank();
+    int expectedNumeric = 4;
+    assertEquals(expectedNumeric, acturalNumeric);
   }
 
   @Test
