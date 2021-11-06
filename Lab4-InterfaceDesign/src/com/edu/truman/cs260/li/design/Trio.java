@@ -1,5 +1,5 @@
 package com.edu.truman.cs260.li.design;
-import java.util.Vector;
+import java.util.List;
 
 /**
  * Expresses the commonality of IntegerTrio and DoubleTrio class. Both the
@@ -8,6 +8,6 @@ import java.util.Vector;
  */
 public interface Trio
 {
-  public void max();
-  public Vector<String> toList(Object value);
+  public String max();
+  public List<?> toList(Object value);
 }

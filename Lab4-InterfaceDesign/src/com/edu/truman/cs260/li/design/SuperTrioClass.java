@@ -1,24 +1,35 @@
 package com.edu.truman.cs260.li.design;
-import java.util.Vector;
+import java.util.List;
 /**
  * This class should contain three Strings.
  * ToList() should return a Vector<String> object.
  * Max() should return the String that is at least as large as the other two.
- * When compared using the compareTo() method of the String class.
  * @author arkia
  *
  */
 public class SuperTrioClass implements Trio
 {
-  public void max()
+  String valueA;
+  String valueB;
+  String valueC;
+  public String max()
   {
-
+    if (valueA.compareTo(valueB) > 0)
+    {
+      if(valueA.compareTo(valueC) > 0)
+      {
+        return valueA;
+      }
+    }
+    else if (valueB.compareTo(valueC) > 0)
+    {
+      return valueB;
+    }
+    return valueC;
   }
 
-  public Vector<String> toList(Object value)
+  public List<?> toList(Object value)
   {
-    Vector<String> elementsList = new Vector<>();
-    elementsList.add(value);
-    return elementsList;
+    return toList(value);
   }
 }
