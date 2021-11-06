@@ -28,7 +28,6 @@ public class IntegerTrio
     {
       return a;
     }
-      
     else if (b >= a && b >= c)
     {
       return b;

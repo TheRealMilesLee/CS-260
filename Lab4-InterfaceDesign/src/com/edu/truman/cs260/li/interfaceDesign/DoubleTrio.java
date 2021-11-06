@@ -42,7 +42,8 @@ public class DoubleTrio
       {
         return d1;
       }
-    } else if (d2 >= d3)
+    }
+    else if (d2 >= d3)
     {
       return d2;
     }
