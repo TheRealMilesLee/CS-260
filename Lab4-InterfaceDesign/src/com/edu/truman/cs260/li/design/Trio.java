@@ -8,6 +8,6 @@ import java.util.Vector;
  */
 public interface Trio
 {
-  public void Max();
-  public Vector<String> toList();
+  public void max();
+  public Vector<String> toList(Object value);
 }

@@ -1,52 +1,57 @@
 package com.edu.truman.cs260.li.design;
-
 import java.util.LinkedList;
+import java.util.List;
 
 /** Objects of this class hold three double values. */
 public class DoubleTrio
 {
-  private double d1, d2, d3;
+  private double doubleValueA;
+  private double doubleValueB;
+  private double doubleValueC;
 
-  /** Create a new object, initialized with the given values. */
+  /**
+   * Create a new object, initialized with the given values.
+   * @param alpha is the first double value
+   * @param beta is the second double value
+   * @param gamma is the third double value
+   */
   public DoubleTrio(double alpha, double beta, double gamma)
   {
-    d1 = alpha;
-    d2 = beta;
-    d3 = gamma;
+    doubleValueA = alpha;
+    doubleValueB = beta;
+    doubleValueC = gamma;
   }
 
   /**
    * Take the values in the object and put them in a list.
-   *
    * @return the new list
    */
-  public LinkedList<Double> toList()
+  public List<Double> toList()
   {
-    LinkedList<Double> dll = new LinkedList<Double>();
-    dll.add(d1);
-    dll.add(d2);
-    dll.add(d3);
-    return dll;
+    LinkedList<Double> doubleValueLinkedList = new LinkedList<>();
+    doubleValueLinkedList.add(doubleValueA);
+    doubleValueLinkedList.add(doubleValueB);
+    doubleValueLinkedList.add(doubleValueC);
+    return doubleValueLinkedList;
   }
 
   /**
    * Find and return the maximum of the three doubles, as a wrapper.
-   *
    * @return the maximum, wrapped
    */
   public Double max()
   {
-    if (d1 >= d2)
+    if (doubleValueA >= doubleValueB)
     {
-      if (d1 >= d3)
+      if (doubleValueA >= doubleValueC)
       {
-        return d1;
+        return doubleValueA;
       }
     }
-    else if (d2 >= d3)
+    else if (doubleValueB >= doubleValueC)
     {
-      return d2;
+      return doubleValueB;
     }
-    return d3;
+    return doubleValueC;
   }
 }

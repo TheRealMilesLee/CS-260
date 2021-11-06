@@ -1,48 +1,54 @@
 package com.edu.truman.cs260.li.design;
-
 import java.util.ArrayList;
+import java.util.List;
 
 /** A class to represent three integers. */
 public class IntegerTrio
 {
-  private int a, b, c;
+  private int intValueA;
+  private int intValueB;
+  private int intValueC;
 
-  /**
-   * Create and initialize a new object. @param x the first value
-   *
-   * @param y the second value @param z the third value
-   */
-  public IntegerTrio(int x, int y, int z)
+/**
+ *This function is to create and initialize a new object
+ * @param firstValue is the first int value
+ * @param secondValue is the second int value
+ * @param thirdValue is the third int value
+ */
+  public IntegerTrio(int firstValue, int secondValue, int thirdValue)
   {
-    a = x;
-    b = y;
-    c = z;
+    intValueA = firstValue;
+    intValueB = secondValue;
+    intValueC = thirdValue;
   }
 
   /**
-   * Create a list out of the trio's contents. @return the list
+   * Create a list out of the trio's contents.
+   * @return the list
    */
-  public ArrayList<Integer> toList()
+  public List<Integer> toList()
   {
-    ArrayList<Integer> newList = new ArrayList<Integer>();
-    newList.add(a);
-    newList.add(b);
-    newList.add(c);
+    ArrayList<Integer> newList = new ArrayList<>();
+    newList.add(intValueA);
+    newList.add(intValueB);
+    newList.add(intValueC);
     return newList;
   }
 
   /**
-   * Find and return the maximum of the three integers and return it as an
-   * object.
-   *
+   * Find and return the maximum of the three integers and return it as an object.
    * @return the maximum as an object
    */
   public Integer max()
   {
-    if (a >= b && a >= c)
-      return a;
-    if (b >= a && b >= c)
-      return b;
-    return c;
+    if (intValueA >= intValueB && intValueA >= intValueC)
+    {
+      return intValueA;
+    }
+    if (intValueB >= intValueA && intValueB >= intValueC)
+    {
+      return intValueB;
+    }
+    return intValueC;
   }
 }
