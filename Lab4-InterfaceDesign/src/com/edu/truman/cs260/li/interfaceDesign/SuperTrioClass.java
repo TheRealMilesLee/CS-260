@@ -1,5 +1,5 @@
 package com.edu.truman.cs260.li.interfaceDesign;
-
+import java.util.List;
 /**
  * This class should contain three Strings. ToList() should return a
  * Vector<String> object. Max() should return the String that is at least as
@@ -11,5 +11,14 @@ package com.edu.truman.cs260.li.interfaceDesign;
  */
 public class SuperTrioClass implements Trio
 {
+  public void Max()
+  {
+    
+  }
   
+  public List<Trio> toList()
+  {
+    return null;
+    
+  }
 }
