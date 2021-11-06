@@ -6,10 +6,10 @@ import java.util.ArrayList;
 public class IntegerTrio
 {
   private int a, b, c;
-  
+
   /**
    * Create and initialize a new object. @param x the first value
-   * 
+   *
    * @param y the second value @param z the third value
    */
   public IntegerTrio(int x, int y, int z)
@@ -18,7 +18,7 @@ public class IntegerTrio
     b = y;
     c = z;
   }
-  
+
   /**
    * Create a list out of the trio's contents. @return the list
    */
@@ -30,11 +30,11 @@ public class IntegerTrio
     newList.add(c);
     return newList;
   }
-  
+
   /**
    * Find and return the maximum of the three integers and return it as an
    * object.
-   * 
+   *
    * @return the maximum as an object
    */
   public Integer max()

@@ -5,7 +5,7 @@ import java.util.List;
  * Vector<String> object. Max() should return the String that is at least as
  * large as the other two When compared using the compareTo() method of the
  * String class.
- * 
+ *
  * @author arkia
  *
  */
@@ -13,12 +13,12 @@ public class SuperTrioClass implements Trio
 {
   public void Max()
   {
-    
+
   }
-  
+
   public List<Trio> toList()
   {
     return null;
-    
+
   }
 }
