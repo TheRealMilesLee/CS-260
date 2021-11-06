@@ -1,4 +1,4 @@
-package com.edu.truman.cs260.li.interfaceDesign;
+package com.edu.truman.cs260.li.design;
 import java.util.List;
 /**
  * This class should contain three Strings. ToList() should return a
@@ -11,12 +11,15 @@ import java.util.List;
  */
 public class SuperTrioClass implements Trio
 {
+  String element1;
+  String element2;
+  String element3;
   public void Max()
   {
 
   }
 
-  public List<Trio> toList()
+  public Vector<String> toList()
   {
     return null;
 

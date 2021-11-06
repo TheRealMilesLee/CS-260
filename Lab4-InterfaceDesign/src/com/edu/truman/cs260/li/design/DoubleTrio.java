@@ -1,4 +1,4 @@
-package com.edu.truman.cs260.li.interfaceDesign;
+package com.edu.truman.cs260.li.design;
 
 import java.util.LinkedList;
 

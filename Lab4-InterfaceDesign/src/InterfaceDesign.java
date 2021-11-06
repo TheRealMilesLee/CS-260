@@ -1,4 +1,4 @@
-import com.edu.truman.cs260.li.interfaceDesign.*;
+import com.edu.truman.cs260.li.design.*;
 
 public class InterfaceDesign {
 
