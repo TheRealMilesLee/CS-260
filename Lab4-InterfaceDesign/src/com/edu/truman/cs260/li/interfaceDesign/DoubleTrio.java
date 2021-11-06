@@ -6,7 +6,7 @@ import java.util.LinkedList;
 public class DoubleTrio
 {
   private double d1, d2, d3;
-  
+
   /** Create a new object, initialized with the given values. */
   public DoubleTrio(double alpha, double beta, double gamma)
   {
@@ -14,10 +14,10 @@ public class DoubleTrio
     d2 = beta;
     d3 = gamma;
   }
-  
+
   /**
    * Take the values in the object and put them in a list.
-   * 
+   *
    * @return the new list
    */
   public LinkedList<Double> toList()
@@ -28,10 +28,10 @@ public class DoubleTrio
     dll.add(d3);
     return dll;
   }
-  
+
   /**
    * Find and return the maximum of the three doubles, as a wrapper.
-   * 
+   *
    * @return the maximum, wrapped
    */
   public Double max()
