@@ -9,5 +9,5 @@ import java.util.List;
 public interface Trio
 {
   public String max();
-  public List<> toList(Object value);
+  public List<?> toList(Object value);
 }
