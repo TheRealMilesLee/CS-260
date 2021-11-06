@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /** A class to represent three integers. */
-public class IntegerTrio
+public class IntegerTrio extends SuperTrioClass
 {
   private int intValueA;
   private int intValueB;

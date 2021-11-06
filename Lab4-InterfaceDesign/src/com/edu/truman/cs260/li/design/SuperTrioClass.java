@@ -3,7 +3,7 @@ import java.util.List;
 /**
  * ToList() should return a Vector<String> object.
  */
-public class SuperTrioClass implements Trio
+public abstract class SuperTrioClass implements Trio
 {
   String valueA;
   String valueB;
