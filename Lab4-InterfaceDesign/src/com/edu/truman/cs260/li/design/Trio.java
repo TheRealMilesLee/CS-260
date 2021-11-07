@@ -1,13 +1,14 @@
 package com.edu.truman.cs260.li.design;
-import java.util.Vector;
+import java.util.*;
 
 /**
- * Expresses the commonality of IntegerTrio and DoubleTrio class.
- * Both the ArrayList and the LinkedList implement the interface java.util.List.
- * @author Hengyi Li
+ * This interface declare the commonality of DoubleTrio.java and IntegerTrio.java
+ * max() is to find the maximum among the given value
+ * toList() is convert value to a Vector<String> list.
+ * @author Hengyi Li.
  */
-public interface Trio
+public interface Trio<T>
 {
-  public String max();
-  public Vector<String> toList(String valueA, String valueB, String valueC);
+  public T max();
+  public List<T> toList();
 }

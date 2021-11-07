@@ -3,7 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /** Objects of this class hold three double values. */
-public class DoubleTrio implements Trio
+public class DoubleTrio implements Trio<Double>
 {
   private double doubleValueA;
   private double doubleValueB;
