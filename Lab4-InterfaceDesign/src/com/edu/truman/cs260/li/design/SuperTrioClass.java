@@ -1,9 +1,11 @@
 package com.edu.truman.cs260.li.design;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 /**
  * ToList() should return a Vector<String> object.
  */
-public class SuperTrioClass implements Trio
+public abstract class SuperTrioClass implements Trio
 {
   String valueA;
   String valueB;
@@ -23,9 +25,22 @@ public class SuperTrioClass implements Trio
     }
     return valueC;
   }
-
-  public List<?> toList(Object value)
+  @Override
+  public List<Double> toDoubleList()
   {
-    return toList(value);
+    LinkedList<Double> doubleValueLinkedList = new LinkedList<>();
+    doubleValueLinkedList.add(valueA);
+    doubleValueLinkedList.add(valueB);
+    doubleValueLinkedList.add(valueC);
+    return doubleValueLinkedList;
+  }
+  @Override
+  public List<Integer> toIntegerList()
+  {
+    ArrayList<Integer> newList = new ArrayList<>();
+    newList.add(valueA);
+    newList.add(valueB);
+    newList.add(valueC);
+    return newList;
   }
 }
