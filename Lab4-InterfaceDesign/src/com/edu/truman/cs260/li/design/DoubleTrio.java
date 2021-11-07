@@ -1,6 +1,5 @@
 package com.edu.truman.cs260.li.design;
 import java.util.LinkedList;
-import java.util.List;
 
 /** Objects of this class hold three double values. */
 public class DoubleTrio implements Trio<Double>
@@ -26,7 +25,7 @@ public class DoubleTrio implements Trio<Double>
    * Take the values in the object and put them in a list.
    * @return the new list
    */
-  public List<Double> toList()
+  public LinkedList<Double> toList()
   {
     LinkedList<Double> doubleValueLinkedList = new LinkedList<>();
     doubleValueLinkedList.add(doubleValueA);
