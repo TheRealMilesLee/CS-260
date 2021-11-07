@@ -23,7 +23,7 @@ public class IntegerTrio implements Trio<Integer>
   }
 
   /**
-   * Create a list out of the trio's contents.
+   * @Override Create a list out of the trio's contents.
    * @return the list
    */
   public ArrayList<Integer> toList()
@@ -36,9 +36,7 @@ public class IntegerTrio implements Trio<Integer>
   }
 
   /**
-   * Find and return the maximum of the three integers and return it as an
-   * object.
-   *
+   * @Override Find and return the maximum of the three integers and return it as an object.
    * @return the maximum as an object
    */
   public Integer max()

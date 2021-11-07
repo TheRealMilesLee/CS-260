@@ -22,7 +22,7 @@ public class SuperTrioClass implements Trio<String>
   }
 
   /**
-   * This function is to store everything into a list
+   * @Override This function is to store everything into a list
    */
   public Vector<String> toList()
   {
@@ -36,7 +36,6 @@ public class SuperTrioClass implements Trio<String>
   /**
    * @Override This function is to compare which one is bigger than the other.
    */
-  
   public String max()
   {
     if (valueA.compareTo(valueB) >= 0)

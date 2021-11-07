@@ -22,7 +22,7 @@ public class DoubleTrio implements Trio<Double>
   }
 
   /**
-   * Take the values in the object and put them in a list.
+   * @Override Take the values in the object and put them in a list.
    * @return the new list
    */
   public LinkedList<Double> toList()
@@ -35,7 +35,7 @@ public class DoubleTrio implements Trio<Double>
   }
 
   /**
-   * Find and return the maximum of the three doubles, as a wrapper.
+   * @Override Find and return the maximum of the three doubles, as a wrapper.
    * @return the maximum, wrapped
    */
   public Double max()
