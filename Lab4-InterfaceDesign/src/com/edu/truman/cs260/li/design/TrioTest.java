@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class TrioTest
 {
-  
+
   @Test
   public void testMax()
   {
@@ -19,7 +19,7 @@ public class TrioTest
     String expectedTest = "C";
     assertEquals(expectedTest, actualTest);
   }
-  
+
   @Test
   public void testToList()
   {
@@ -35,5 +35,5 @@ public class TrioTest
     Vector<String> actualList = testSuperTrio.toList();
     assertEquals(expectedList, actualList);
   }
-  
+
 }

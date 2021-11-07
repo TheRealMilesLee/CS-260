@@ -13,5 +13,5 @@ public class InterfaceDesign
     System.out.println(actualTest);
     System.out.println(testSuperTrio.toList());
   }
-  
+
 }

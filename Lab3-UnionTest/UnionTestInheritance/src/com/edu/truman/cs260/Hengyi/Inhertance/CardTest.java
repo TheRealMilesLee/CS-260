@@ -82,7 +82,7 @@ public class CardTest
     String expectedNameOutPut = "J";
     assertEquals(expectedNameOutPut, actualNameOutPut);
   }
-  
+
   /**
    * This function is to test the print out the object name
    */
@@ -94,13 +94,13 @@ public class CardTest
     String expected = "12D";
     assertEquals(expected, actural);
   }
-  
+
   /**
    * This function is to test the invalid card situation
    */
   @Test
   public void testPrintObjectInvalidCard()
-  { 
+  {
     Card InvalidCardTest = new Card("invalid card", "invalid card");
     String actual = InvalidCardTest.toString();
     String expected = "invalid card";
@@ -109,9 +109,9 @@ public class CardTest
     Card InvalidCardNumericalTest = new Card(99, "invalid card");
     String actualNumerical = InvalidCardNumericalTest.toString();
     String expectedNumerical = "invalid card";
-    assertEquals(expectedNumerical, actualNumerical); 
+    assertEquals(expectedNumerical, actualNumerical);
   }
-  
+
   /**
    * This function is to test that card a is smaller than card b
    */
@@ -124,20 +124,20 @@ public class CardTest
     int expected = -1;
     assertEquals(expected, actural);
   }
-  
+
   /**
    * This function is to test that the card a is greater than card b
    */
   @Test
   public void testComparePositive()
-  { 
+  {
     Card positiveCompareA = new Card(4,"Spades");
     Card positiveCompareB = new Card("Queen", "Diamonds");
     int actural = positiveCompareA.compareTo(positiveCompareB);
     int expected = 1;
     assertEquals(expected,actural);
   }
-  
+
   /**
    * This function is to test the compare working on the joker situation
    */
