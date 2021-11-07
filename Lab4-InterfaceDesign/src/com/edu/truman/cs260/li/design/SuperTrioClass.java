@@ -1,5 +1,4 @@
 package com.edu.truman.cs260.li.design;
-
 import java.util.*;
 
 public class SuperTrioClass implements Trio<String>
@@ -8,6 +7,12 @@ public class SuperTrioClass implements Trio<String>
   private String valueB;
   private String valueC;
 
+  /**
+   * This is the constructor of the SuperTrioClass.
+   * @param firstValue is the first string value
+   * @param secondValue is the second string value
+   * @param thirdValue is the third string value
+   */
   public SuperTrioClass(String firstValue, String secondValue,
       String thirdValue)
   {
@@ -16,6 +21,9 @@ public class SuperTrioClass implements Trio<String>
     valueC = thirdValue;
   }
 
+  /**
+   * This function is to store everything into a list
+   */
   public Vector<String> toList()
   {
     Vector<String> myList = new Vector<>();
@@ -25,6 +33,10 @@ public class SuperTrioClass implements Trio<String>
     return myList;
   }
 
+  /**
+   * @Override This function is to compare which one is bigger than the other.
+   */
+  
   public String max()
   {
     if (valueA.compareTo(valueB) >= 0)

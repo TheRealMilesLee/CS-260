@@ -11,7 +11,6 @@ public class IntegerTrio implements Trio<Integer>
 
   /**
    * This function is to create and initialize a new object
-   *
    * @param firstValue  is the first int value
    * @param secondValue is the second int value
    * @param thirdValue  is the third int value
@@ -25,7 +24,6 @@ public class IntegerTrio implements Trio<Integer>
 
   /**
    * Create a list out of the trio's contents.
-   *
    * @return the list
    */
   public ArrayList<Integer> toList()
