@@ -7,7 +7,7 @@ public class SuperTrioClass implements Trio<String>
   private String valueA;
   private String valueB;
   private String valueC;
-  
+
   public SuperTrioClass(String firstValue, String secondValue,
       String thirdValue)
   {
@@ -15,7 +15,7 @@ public class SuperTrioClass implements Trio<String>
     valueB = secondValue;
     valueC = thirdValue;
   }
-  
+
   public Vector<String> toList()
   {
     Vector<String> myList = new Vector<>();
@@ -24,7 +24,7 @@ public class SuperTrioClass implements Trio<String>
     myList.add(valueC);
     return myList;
   }
-  
+
   public String max()
   {
     if (valueA.compareTo(valueB) >= 0)
@@ -40,6 +40,4 @@ public class SuperTrioClass implements Trio<String>
     }
     return valueC;
   }
-  
-
 }
