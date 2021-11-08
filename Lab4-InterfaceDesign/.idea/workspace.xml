@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="746b851b-4351-4135-83d3-c2e2bf0f6108" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/junitgenerator-prj-settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="afb8da0a-ce45-4770-90fe-77f7ec869463" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,50 +18,32 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectId" id="20c0C7qicdyCWEIrWdSkrZIx2vg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="20c2AaEmUhd7zrZFdgZKt2hLgeV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <changelist id="746b851b-4351-4135-83d3-c2e2bf0f6108" name="变更" comment="" />
-      <created>1636328449717</created>
+      <changelist id="afb8da0a-ce45-4770-90fe-77f7ec869463" name="变更" comment="" />
+      <created>1636329422825</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1636328449717</updated>
-      <workItem from="1636328454510" duration="419000" />
+      <updated>1636329422825</updated>
+      <workItem from="1636329427398" duration="212000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
