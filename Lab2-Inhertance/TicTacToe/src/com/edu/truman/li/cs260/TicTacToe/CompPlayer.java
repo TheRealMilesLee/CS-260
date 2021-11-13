@@ -1,6 +1,8 @@
 package com.edu.truman.li.cs260.TicTacToe;
 
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * The type Computer player.
  */
@@ -11,7 +13,7 @@ public class CompPlayer extends Player
    *
    * @param boardArray the board array
    */
-  public void ComputerChangeBoard (String[][] boardArray)
+  public void ComputerChangeBoard (String[] @NotNull [] boardArray)
   {
     boolean makeChoice = false;
     // If the center is empty, place computer chess on the center
