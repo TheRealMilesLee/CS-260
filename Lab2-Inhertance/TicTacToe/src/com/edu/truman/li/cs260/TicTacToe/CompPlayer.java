@@ -11,92 +11,168 @@ public class CompPlayer extends Player
    *
    * @param boardArray the board array
    */
-  public void ComputerChangeBoard(String[][] boardArray)
+  public void ComputerChangeBoard (String[][] boardArray)
   {
     boolean makeChoice = false;
     // If the center is empty, place computer chess on the center
-    if(boardArray[1][1].equals("+"))
+    if (boardArray[1][1].equals("+"))
     {
       boardArray[1][1] = "C";
     }
-    else
+    else if (boardArray[1][1].equals("H"))
     {
-      // Situation HCH in column 0
-      if (boardArray[0][0].equals("H") && boardArray[2][0].equals("H") && boardArray[1][0].equals("+"))
-      {
-        boardArray[1][0] = "C";
-      }
-      // Situation CHH in row 2
-      else if (boardArray[2][0].equals("+") && boardArray[2][1].equals("H") && boardArray[2][2].equals("H"))
-      {
-        boardArray[2][0] = "C";
-      }
-      // Situation HHC in row 2
-      else if (boardArray[2][0].equals("H") && boardArray[2][1].equals("H") && boardArray[2][2].equals("+"))
+      if (boardArray[0][0].equals("H") && boardArray[2][2].equals("+"))
       {
         boardArray[2][2] = "C";
       }
-      // Situation HCH in column 2
-      else if (boardArray[0][2].equals("H") && boardArray[2][2].equals("H") && boardArray[1][2].equals("+"))
+      else if(boardArray[0][1].equals("H") && boardArray[2][1].equals("+"))
+      {
+        boardArray[2][1] = "C";
+      }
+      else if(boardArray[1][0].equals("H") && boardArray[1][2].equals("+"))
       {
         boardArray[1][2] = "C";
       }
-      // Situation CHH in column 1
-      else if(boardArray[0][1].equals("+") && boardArray[2][1].equals("H") && boardArray[1][1].equals("H"))
+      else if(boardArray[1][0].equals("+") && boardArray[1][2].equals("H"))
+      {
+        boardArray[1][0] = "C";
+      }
+      else if(boardArray[2][1].equals("H") && boardArray[0][1].equals("+"))
       {
         boardArray[0][1] = "C";
       }
-      // Situation HHC in column 1
-      else if(boardArray[0][1].equals("H") && boardArray[2][1].equals("+") && boardArray[1][1].equals("H"))
+      else if(boardArray[2][2].equals("H") && boardArray[0][0].equals("+"))
+      {
+        boardArray[0][0] = "C";
+      }
+      else if(boardArray[2][0].equals("H") && boardArray[2][1].equals("+") && boardArray[2][2].equals("H"))
       {
         boardArray[2][1] = "C";
+      }
+      else if(boardArray[0][0].equals("C") && boardArray[0][1].equals("+") && boardArray[0][2].equals("C"))
+      {
+        boardArray[0][1] = "C";
       }
       else
       {
         // Right diagonal find C
-        for (int IndexRight = 0; IndexRight < boardArray.length && !makeChoice; IndexRight++)
+        Find(boardArray, makeChoice);
+      }
+    }
+    else
+    {
+      if(boardArray[2][0].equals("H") && boardArray[2][1].equals("+") && boardArray[2][2].equals("H"))
+      {
+        boardArray[2][1] = "C";
+      }
+      else if(boardArray[0][0].equals("H") && boardArray[1][0].equals("+") && boardArray[2][0].equals("H") && (boardArray[2][1].equals("+") || boardArray[2][2].equals("H")))
+      {
+        boardArray[1][0] = "C";
+      }
+      else if(boardArray[0][2].equals("H") && boardArray[1][2].equals("+") && boardArray[2][2].equals("H") && boardArray[2][1].equals("+"))
+      {
+        boardArray[1][2] = "C";
+      }
+      else if(boardArray[0][2].equals("H") && boardArray[0][1].equals("H") && boardArray[0][0].equals("+"))
+      {
+        boardArray[0][0] = "C";
+      }
+      else if(boardArray[2][1].equals("C") && boardArray[1][1].equals("C") && boardArray[0][1].equals("+"))
+      {
+        boardArray[0][1] = "C";
+      }
+      else if(boardArray[0][0].equals("H") && boardArray[0][1].equals("+") && boardArray[0][2].equals("H"))
+      {
+        boardArray[0][1] = "C";
+      }
+      else if(boardArray[0][1].equals("C") && boardArray[1][1].equals("C") && boardArray[2][1].equals("+"))
+      {
+        boardArray[2][1] = "C";
+      }
+      else if(boardArray[0][0].equals("+") && boardArray[1][0].equals("H") && boardArray[2][0].equals("H"))
+      {
+        boardArray[0][0] = "C";
+      }
+      else
+      {
+        // Right diagonal find C
+        Find(boardArray, makeChoice);
+      }
+    }
+  }
+  
+  private void Find (String[][] boardArray, boolean makeChoice)
+  {
+    int indexDecreasing = 2;
+    while (indexDecreasing >=0 && !makeChoice)
+    {
+      for (int indexRow = 0; indexRow < 3 && !makeChoice; indexRow++)
+      {
+        if(boardArray[indexRow][indexDecreasing].equals("+"))
         {
-          for (int IndexIncreasing = boardArray.length - 1; IndexIncreasing >= 0 && !makeChoice; IndexIncreasing--)
-          {
-            if (boardArray[IndexRight][IndexIncreasing].equals("+"))
-            {
-              boardArray[IndexRight][IndexIncreasing] = "C";
-              makeChoice = true;
-            }
-          }
+          boardArray[indexRow][indexDecreasing] = "C";
+          makeChoice = true;
         }
-        //Left diagonal find C
-        for (int Index = 0; Index < boardArray.length && !makeChoice; Index++)
+        else
         {
-          if (boardArray[Index][Index].equals("+"))
-          {
-            boardArray[Index][Index] = "C";
-            makeChoice = true;
-          }
+          --indexDecreasing;
         }
-        // Column find C
-        for (int indexRow = 0; indexRow < boardArray.length - 1 && !makeChoice; indexRow++)
+      }
+    }
+    for (int Index = 2; Index >=0 && !makeChoice; Index--)
+    {
+      if(boardArray[0][0].equals("+") && boardArray[1][0].equals("H") && boardArray[2][0].equals("H"))
+      {
+        boardArray[0][0] = "C";
+        makeChoice = true;
+      }
+      else if (boardArray[Index][Index].equals("+"))
+      {
+        boardArray[Index][Index] = "C";
+        makeChoice = true;
+      }
+    }
+    
+    for(int row = 0; row < 3 && !makeChoice; row++)
+    {
+      if(boardArray[row][2].equals("+"))
+      {
+        boardArray[row][2] = "C";
+        makeChoice = true;
+      }
+    }
+    
+    for(int row = 0; row < 3 && !makeChoice; row++)
+    {
+      for (int column = 0; column < 3 && !makeChoice; column++)
+      {
+        if (boardArray[row][column].equals("+"))
         {
-          for (int columnLoop = 0; columnLoop < boardArray.length - 1 && !makeChoice; columnLoop++)
-          {
-            if (boardArray[columnLoop][indexRow].equals("+"))
-            {
-              boardArray[columnLoop][indexRow] = "C";
-              makeChoice = true;
-            }
-          }
+          boardArray[row][column] = "C";
+          makeChoice = true;
         }
-        // Row Find C
-        for (int rowLoop = 0; rowLoop < boardArray.length - 1 && !makeChoice; rowLoop++)
+      }
+    }
+    
+    for(int ParrelRow = 0; ParrelRow < 3 && !makeChoice; ParrelRow++)
+    {
+      for (int column = 0; column < 3 && !makeChoice; column++)
+      {
+        if(boardArray[column][ParrelRow].equals("+"))
         {
-          for (int columnLoop = 0; columnLoop < boardArray.length - 1 && !makeChoice; columnLoop++)
-          {
-            if (boardArray[rowLoop][columnLoop].equals("+"))
-            {
-              boardArray[rowLoop][columnLoop] = "C";
-              makeChoice = true;
-            }
-          }
+          boardArray[column][ParrelRow] = "C";
+          makeChoice = true;
+        }
+      }
+    }
+    for(int PallelRow = 0; PallelRow < 3 && !makeChoice; PallelRow++)
+    {
+      for (int column = 2; column >=0 && !makeChoice; column--)
+      {
+        if(boardArray[column][PallelRow].equals("+"))
+        {
+          boardArray[column][PallelRow] = "C";
+          makeChoice = true;
         }
       }
     }
