@@ -8,6 +8,7 @@ public class SmallProblems
     Dictionary dictionaryObject = new Dictionary();
     SetOperation setObject = new SetOperation();
 
-    frequencyObject.fileReadIn();
+    //frequencyObject.frequency();
+    dictionaryObject.Dic();
   }
 }

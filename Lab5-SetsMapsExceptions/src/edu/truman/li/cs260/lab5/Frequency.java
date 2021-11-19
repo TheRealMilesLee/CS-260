@@ -5,15 +5,15 @@ import java.util.*;
 
 public class Frequency
 {
-  private Map<String, Integer> wordCount = new HashMap<>();
-  public void fileReadIn()
+  private final Map<String, Integer> wordCount = new HashMap<>();
+  public void frequency ()
   {
     String linesOfWords = null;
     try
     {
       File file = new File("words.txt");
       Scanner infile = new Scanner(file);
-      while (infile.hasNext())
+      while (infile.hasNextLine())
       {
         linesOfWords = infile.nextLine().toLowerCase();
       }
@@ -29,16 +29,16 @@ public class Frequency
     {
       String[] words = linesOfWords.split(" ");
       words = removePunctuation(words);
-      for (int loop = 0; loop < words.length; loop++)
+      for (String word : words)
       {
-        for (int looptimes = 0; looptimes < words.length; looptimes++)
+        for (String string : words)
         {
-          if(words[loop].equals(words[looptimes]))
+          if (word.equals(string))
           {
             key++;
           }
         }
-        wordCount.put(words[loop], key);
+        wordCount.put(word, key);
         key = 0;
       }
     } catch (NullPointerException n)
