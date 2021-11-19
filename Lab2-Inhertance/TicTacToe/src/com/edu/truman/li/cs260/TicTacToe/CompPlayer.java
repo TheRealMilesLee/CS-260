@@ -143,7 +143,6 @@ public class CompPlayer extends Player
         makeChoice = true;
       }
     }
-    
     for(int row = 0; row < 3 && !makeChoice; row++)
     {
       for (int column = 0; column < 3 && !makeChoice; column++)
@@ -155,7 +154,6 @@ public class CompPlayer extends Player
         }
       }
     }
-    
     for(int ParrelRow = 0; ParrelRow < 3 && !makeChoice; ParrelRow++)
     {
       for (int column = 0; column < 3 && !makeChoice; column++)
