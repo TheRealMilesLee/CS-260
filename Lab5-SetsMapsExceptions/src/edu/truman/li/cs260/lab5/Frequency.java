@@ -16,7 +16,7 @@ public class Frequency
       Scanner infile = new Scanner(file);
       while (infile.hasNextLine())
       {
-        linesOfWords = infile.next().toLowerCase();
+        linesOfWords = infile.nextLine().toLowerCase();
       }
       infile.close();
     }
@@ -29,6 +29,7 @@ public class Frequency
   public void countSameWords()
   {
     int key = 0;
+    System.out.println(linesOfWords);
     String[] words = linesOfWords.split("\\s");
     for(int looptimes = 1; looptimes < words.length; looptimes++)
     {
