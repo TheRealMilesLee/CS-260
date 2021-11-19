@@ -9,6 +9,5 @@ public class SmallProblems
     SetOperation setObject = new SetOperation();
 
     frequencyObject.fileReadIn();
-    //frequencyObject.countSameWords();
   }
 }
