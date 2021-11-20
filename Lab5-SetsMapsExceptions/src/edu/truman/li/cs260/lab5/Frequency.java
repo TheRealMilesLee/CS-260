@@ -5,7 +5,7 @@ import java.util.*;
 public class Frequency
 {
   private final Map<String, Integer> wordCount = new HashMap<>();
-  public void frequency ()
+  public Frequency ()
   {
     String[] words = getString("words.txt").split(" ");
     removePunctuation(words);

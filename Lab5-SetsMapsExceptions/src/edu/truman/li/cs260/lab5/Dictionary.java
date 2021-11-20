@@ -4,7 +4,7 @@ import java.util.*;
 
 public class Dictionary
 {
-  public void dictionary ()
+  public Dictionary ()
   {
     Map<String, Integer> dictionaryWords = makeDictionary("dictionary.txt");
     File input = new File("words.txt");
