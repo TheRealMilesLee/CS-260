@@ -15,13 +15,15 @@ public class Dictionary
       do
       {
         int column = 1;
-        String wordsFromFile = inputFile.nextLine().toLowerCase();
-        String[] cleanString = cleanUpString(wordsFromFile);
-        for (String wordDetect : cleanString)
+        String wordsFromFile = inputFile.nextLine();
+        String Lowercase = wordsFromFile.toLowerCase();
+        String[] originalString = cleanUpString(wordsFromFile);
+        String[] cleanString = cleanUpString(Lowercase);
+        for (int loop = 0; loop < cleanString.length; loop++)
         {
-          if (!dictionaryWords.containsKey(wordDetect))
+          if (!dictionaryWords.containsKey(cleanString[loop]))
           {
-            System.out.println(wordDetect + " " + row + " " + column);
+            System.out.println(originalString[loop] + " " + row + " " + column);
           }
           column++;
         }

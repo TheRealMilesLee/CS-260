@@ -7,7 +7,7 @@ public class Frequency
   private final Map<String, Integer> wordCount = new HashMap<>();
   public void frequency ()
   {
-    String[] words = fileReading("words.txt").split(" ");
+    String[] words = getString("words.txt").split(" ");
     removePunctuation(words);
     for (String word : words)
     {
@@ -20,13 +20,6 @@ public class Frequency
       System.out.println(keyValue + " " + value);
     }
   }
-  public String fileReading (String filename)
-  {
-    String linesOfWords = null;
-    linesOfWords = getString(filename);
-    return linesOfWords;
-  }
-  
   public static String getString (String filename)
   {
     String stringFile = "";
