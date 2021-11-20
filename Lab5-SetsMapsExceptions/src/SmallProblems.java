@@ -8,7 +8,7 @@ public class SmallProblems
     Dictionary dictionaryObject = new Dictionary();
     SetOperation setObject = new SetOperation();
 
-    //frequencyObject.frequency();
-    dictionaryObject.dictionary();
+    frequencyObject.frequency();
+    //dictionaryObject.dictionary();
   }
 }
