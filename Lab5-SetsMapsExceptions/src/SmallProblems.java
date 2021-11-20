@@ -9,6 +9,6 @@ public class SmallProblems
     SetOperation setObject = new SetOperation();
 
     //frequencyObject.frequency();
-    dictionaryObject.Dic();
+    dictionaryObject.dictionary();
   }
 }

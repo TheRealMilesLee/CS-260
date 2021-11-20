@@ -47,8 +47,10 @@ public class Frequency
     }
     Set<String> keySet = wordCount.keySet();
     for (String keyValue : keySet)
-    { Integer value = wordCount.get(keyValue);
-      System.out.println(keyValue + " " + value); }
+    {
+      Integer value = wordCount.get(keyValue);
+      System.out.println(keyValue + " " + value);
+    }
   }
   
   public String[] removePunctuation(String[] lines)
