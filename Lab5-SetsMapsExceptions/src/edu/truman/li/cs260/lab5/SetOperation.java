@@ -40,7 +40,7 @@ public class SetOperation
         evenSet.add(studentEvenObject);
         oddSet.add(studentOddObject);
       }
-    } catch (FileNotFoundException FileException)
+    } catch (FileNotFoundException fileException)
     {
       System.out.println("File does not exists");
     }
@@ -48,31 +48,31 @@ public class SetOperation
   public void divideFiles ()
   {
     File readStudentFiles = new File("students.txt");
-    File oddFiles = new File ("oddlines.txt");
-    File evenFiles = new File ("evenlines.txt");
+    
     try
     {
-      PrintWriter outputWriter = new PrintWriter(oddFiles);
-      PrintWriter eventWriter = new PrintWriter(evenFiles);
       Scanner input = new Scanner(readStudentFiles);
+      PrintWriter oddWriter = new PrintWriter("oddlines.txt");
+      PrintWriter evenWriter = new PrintWriter("evenlines.txt");
       int lineCount = 0;
       while (input.hasNext())
       {
+        int studentID = input.nextInt();
+        String studentName = input.next();
         if (lineCount % 2 == 0)
         {
-          int student_id = input.nextInt();
-          System.out.println(student_id);
-          String student_name = input.next();
-          System.out.println(student_name);
-          eventWriter.println(student_id);
+          evenWriter.println(studentID + " " + studentName);
         }
         else
         {
-          outputWriter.println(input.nextInt() + " " + input.nextLine());
+          oddWriter.println(studentID + " " + studentName);
         }
         lineCount++;
       }
-    } catch (FileNotFoundException FileException)
+      input.close();
+      oddWriter.close();
+      evenWriter.close();
+    } catch (FileNotFoundException nothingInFile)
     {
       System.out.println("File does not exists");
     }
