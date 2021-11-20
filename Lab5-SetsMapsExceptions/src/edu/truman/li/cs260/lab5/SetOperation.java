@@ -2,16 +2,28 @@ package edu.truman.li.cs260.lab5;
 import java.io.*;
 import java.util.*;
 
+
+/**
+ * The type Set operation.
+ */
 public class SetOperation
 {
   private final Set<Student> evenSet = new HashSet<>();
   private final Set<Student> oddSet = new HashSet<>();
+  
+  /**
+   * Instantiates a new Set operation.
+   */
   public SetOperation()
   {
     divideFiles();
     fillSets();
     compareSets();
   }
+  
+  /**
+   * Compare sets.
+   */
   public void compareSets()
   {
     for (Student EvenSetAccess : evenSet)
@@ -25,6 +37,10 @@ public class SetOperation
       }
     }
   }
+  
+  /**
+   * Fill sets.
+   */
   public void fillSets()
   {
     File readOddLines = new File("oddlines.txt");
@@ -36,7 +52,7 @@ public class SetOperation
       while (readEven.hasNext())
       {
         Student studentEvenObject = new Student(readEven.nextInt(), readEven.nextLine());
-        Student studentOddObject = new Student (readOdd.nextInt(), readOdd.nextLine());
+        Student studentOddObject = new Student(readOdd.nextInt(), readOdd.nextLine());
         evenSet.add(studentEvenObject);
         oddSet.add(studentOddObject);
       }
@@ -45,6 +61,10 @@ public class SetOperation
       System.out.println("File does not exists");
     }
   }
+  
+  /**
+   * Divide files.
+   */
   public void divideFiles ()
   {
     File readStudentFiles = new File("students.txt");

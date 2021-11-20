@@ -2,8 +2,14 @@ package edu.truman.li.cs260.lab5;
 import java.io.*;
 import java.util.*;
 
+/**
+ * The type Dictionary.
+ */
 public class Dictionary
 {
+  /**
+   * Instantiates a new Dictionary.
+   */
   public Dictionary ()
   {
     Map<String, Integer> dictionaryWords = makeDictionary("dictionary.txt");
@@ -34,12 +40,26 @@ public class Dictionary
       System.out.println("The file is not found");
     }
   }
+  
+  /**
+   * Clean up string string [ ].
+   *
+   * @param dirtyString the dirty string
+   * @return the string [ ]
+   */
   public String[] cleanUpString (String dirtyString )
   {
     String[] getCleanUpWords = dirtyString.split(" ");
     removePunctuation(getCleanUpWords);
     return getCleanUpWords;
   }
+  
+  /**
+   * Make dictionary map.
+   *
+   * @param filename the filename
+   * @return the map
+   */
   public Map<String, Integer> makeDictionary (String filename)
   {
     Map<String, Integer> dictTemp = new HashMap<>();
@@ -61,6 +81,12 @@ public class Dictionary
     }
     return dictTemp;
    }
+  
+  /**
+   * Remove punctuation.
+   *
+   * @param lines the lines
+   */
   public static void removePunctuation (String[] lines)
   {
     for (int loop = 0; loop < lines.length; loop++)

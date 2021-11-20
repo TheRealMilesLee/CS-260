@@ -2,9 +2,16 @@ package edu.truman.li.cs260.lab5;
 import java.io.*;
 import java.util.*;
 
+/**
+ * The type Frequency.
+ */
 public class Frequency
 {
   private final Map<String, Integer> wordCount = new HashMap<>();
+  
+  /**
+   * Instantiates a new Frequency.
+   */
   public Frequency ()
   {
     String[] words = getString("words.txt").split(" ");
@@ -20,6 +27,13 @@ public class Frequency
       System.out.println(keyValue + " " + value);
     }
   }
+  
+  /**
+   * Gets string.
+   *
+   * @param filename the filename
+   * @return the string
+   */
   public static String getString (String filename)
   {
     String stringFile = "";
@@ -40,6 +54,11 @@ public class Frequency
     return stringFile;
   }
   
+  /**
+   * Remove punctuation.
+   *
+   * @param lines the lines
+   */
   public static void removePunctuation (String[] lines)
   {
     for (int loop = 0; loop < lines.length; loop++)
