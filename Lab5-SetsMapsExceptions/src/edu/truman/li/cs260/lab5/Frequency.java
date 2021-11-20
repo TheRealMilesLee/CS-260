@@ -8,7 +8,7 @@ public class Frequency
   public void frequency ()
   {
     String[] words = fileReading("words.txt").split(" ");
-    words = removePunctuation(words);
+    removePunctuation(words);
     for (String word : words)
     {
       wordCount.merge(word, 1, Integer::sum);
@@ -23,28 +23,36 @@ public class Frequency
   public String fileReading (String filename)
   {
     String linesOfWords = null;
+    linesOfWords = getString(filename);
+    return linesOfWords;
+  }
+  
+  public static String getString (String filename)
+  {
+    String stringFile = "";
     try
     {
       File file = new File(filename);
       Scanner infile = new Scanner(file);
       while (infile.hasNextLine())
       {
-        linesOfWords = infile.nextLine().toLowerCase();
+        stringFile = infile.nextLine().toLowerCase();
       }
       infile.close();
     }
-    catch (FileNotFoundException e)
+    catch (FileNotFoundException fileException)
     {
       System.out.println("Files does not exist.");
     }
-    return linesOfWords;
+    return stringFile;
   }
-  public String[] removePunctuation(String[] lines)
+  
+  public static void removePunctuation (String[] lines)
   {
     for (int loop = 0; loop < lines.length; loop++)
     {
       lines[loop] = lines[loop].replaceAll("\\p{Punct}", "");
     }
-    return lines;
   }
+  
 }

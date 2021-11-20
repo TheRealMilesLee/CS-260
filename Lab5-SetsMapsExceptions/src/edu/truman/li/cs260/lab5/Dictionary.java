@@ -6,32 +6,64 @@ public class Dictionary
 {
   public void dictionary ()
   {
-    // Read the dictionary and the document
-    Map<Integer, String> dictionaryWords = makeDictionary("dictionary.txt");
-
-  }
-  
-  public Map<Integer, String> makeDictionary (String filename)
-  {
-    Map<Integer, String> dictTemp = new HashMap<>();
+    Map<String, Integer> dictionaryWords = makeDictionary("dictionary.txt");
+    File input = new File("words.txt");
     try
     {
-      File readFile = new File(filename);
-      Scanner inputFile = new Scanner(readFile);
-      // Use any characters other than a-z or A-Z as delimiters
-      inputFile.useDelimiter("[^a-zA-Z]+");
-      int key = 0;
-      while (inputFile.hasNext())
+      Scanner inputFile = new Scanner(input);
+      int row = 1;
+      do
       {
-        dictTemp.put(key, inputFile.next().toLowerCase());
+        int column = 1;
+        String wordsFromFile = inputFile.nextLine().toLowerCase();
+        String[] cleanString = cleanUpString(wordsFromFile);
+        for (String wordDetect : cleanString)
+        {
+          if (!dictionaryWords.containsKey(wordDetect))
+          {
+            System.out.println(wordDetect + " " + row + " " + column);
+          }
+          column++;
+        }
+        row++;
+      }while (inputFile.hasNextLine());
+    } catch (FileNotFoundException FileException)
+    {
+      System.out.println("The file is not found");
+    }
+  }
+  public String[] cleanUpString (String dirtyString )
+  {
+    String[] getCleanUpWords = dirtyString.split(" ");
+    removePunctuation(getCleanUpWords);
+    return getCleanUpWords;
+  }
+  public Map<String, Integer> makeDictionary (String filename)
+  {
+    Map<String, Integer> dictTemp = new HashMap<>();
+    try
+    {
+      File file = new File(filename);
+      Scanner infile = new Scanner(file);
+      int key = 0;
+      while (infile.hasNext())
+      {
+        dictTemp.put(infile.next().toLowerCase(), key);
         key++;
       }
-      inputFile.close();
+      infile.close();
     }
-    catch (FileNotFoundException e)
+    catch (FileNotFoundException fileException)
     {
-      System.out.println("file not exist!");
+      System.out.println("Files does not exist.");
     }
     return dictTemp;
    }
+  public static void removePunctuation (String[] lines)
+  {
+    for (int loop = 0; loop < lines.length; loop++)
+    {
+      lines[loop] = lines[loop].replaceAll("\\p{Punct}", "");
+    }
+  }
 }
