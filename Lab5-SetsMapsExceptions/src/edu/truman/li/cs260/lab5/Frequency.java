@@ -7,7 +7,6 @@ import java.util.*;
  */
 public class Frequency
 {
-  private final Map<String, Integer> wordCount = new HashMap<>();
   
   /**
    * Use constructor as the main program running
@@ -16,6 +15,7 @@ public class Frequency
   {
     String[] words = getString("words.txt").split(" ");
     removePunctuation(words);
+    Map<String, Integer> wordCount = new HashMap<>();
     for (String word : words)
     {
       wordCount.merge(word, 1, Integer::sum);
