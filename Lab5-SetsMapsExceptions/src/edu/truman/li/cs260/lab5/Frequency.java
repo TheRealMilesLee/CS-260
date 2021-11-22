@@ -3,14 +3,14 @@ import java.io.*;
 import java.util.*;
 
 /**
- * The type Frequency.
+ * This program shows the word frequency
  */
 public class Frequency
 {
   private final Map<String, Integer> wordCount = new HashMap<>();
   
   /**
-   * Instantiates a new Frequency.
+   * Use constructor as the main program running
    */
   public Frequency ()
   {
@@ -30,8 +30,7 @@ public class Frequency
   
   /**
    * Gets string.
-   *
-   * @param filename the filename
+   * @param filename is the name of the file to get
    * @return the string
    */
   public static String getString (String filename)
@@ -50,14 +49,14 @@ public class Frequency
     catch (FileNotFoundException fileException)
     {
       System.out.println("Files does not exist.");
+      fileException.printStackTrace();
     }
     return stringFile;
   }
   
   /**
    * Remove punctuation.
-   *
-   * @param lines the lines
+   * @param lines is the lines to be removed the punctuation.
    */
   public static void removePunctuation (String[] lines)
   {

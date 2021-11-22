@@ -35,6 +35,7 @@ public class Dictionary
         }
         row++;
       }while (inputFile.hasNextLine());
+      inputFile.close();
     } catch (FileNotFoundException FileException)
     {
       System.out.println("The file is not found");
@@ -42,10 +43,9 @@ public class Dictionary
   }
   
   /**
-   * Clean up string string [ ].
-   *
-   * @param dirtyString the dirty string
-   * @return the string [ ]
+   * Clean up string.
+   * @param dirtyString is the string that has punctuations
+   * @return the string [ ] which does not has punctuations
    */
   public String[] cleanUpString (String dirtyString )
   {
@@ -56,7 +56,6 @@ public class Dictionary
   
   /**
    * Make dictionary map.
-   *
    * @param filename the filename
    * @return the map
    */
@@ -84,8 +83,7 @@ public class Dictionary
   
   /**
    * Remove punctuation.
-   *
-   * @param lines the lines
+   * @param lines is the string that needs to remove the punctuation
    */
   public static void removePunctuation (String[] lines)
   {

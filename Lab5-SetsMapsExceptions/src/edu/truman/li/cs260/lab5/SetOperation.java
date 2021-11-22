@@ -12,7 +12,7 @@ public class SetOperation
   private final Set<Student> oddSet = new HashSet<>();
   
   /**
-   * Instantiates a new Set operation.
+   * Main program running using constructor to call each functions
    */
   public SetOperation()
   {
@@ -56,6 +56,8 @@ public class SetOperation
         evenSet.add(studentEvenObject);
         oddSet.add(studentOddObject);
       }
+      readEven.close();
+      readOdd.close();
     } catch (FileNotFoundException fileException)
     {
       System.out.println("File does not exists");

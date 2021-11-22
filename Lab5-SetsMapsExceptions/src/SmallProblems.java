@@ -1,13 +1,12 @@
 import edu.truman.li.cs260.lab5.*;
 
 /**
- * The type Small problems.
+ * Small problems.
  */
 public class SmallProblems
 {
   /**
    * The entry point of application.
-   *
    * @param args the input arguments
    */
   public static void main(String[] args)
