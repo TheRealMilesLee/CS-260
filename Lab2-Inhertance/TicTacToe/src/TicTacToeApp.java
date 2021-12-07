@@ -68,7 +68,7 @@ public class TicTacToeApp
         // Reset the status and clean the board
         WinnerDecided = false;
         ComputerSideObject.clearBoard();
-        
+
         //Game start
         System.out.println("Computer Side choice! ");
         ComputerSideObject.ComputerSide();
@@ -111,6 +111,6 @@ public class TicTacToeApp
         }
       }
     }
-    
+
   }
 }

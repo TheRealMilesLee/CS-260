@@ -1,4 +1,3 @@
-import org.jetbrains.annotations.NotNull;
 
 /**
  * The type Computer player.
@@ -10,7 +9,7 @@ public class CompPlayer extends Player
    *
    * @param boardArray the board array
    */
-  public void ComputerChangeBoard (String[] @NotNull [] boardArray)
+  public void ComputerChangeBoard (String[][] boardArray)
   {
     boolean makeChoice = false;
     // If the center is empty, place computer chess on the center
