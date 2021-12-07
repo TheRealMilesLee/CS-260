@@ -1,6 +1,6 @@
 /**
  * @author Hengyi Li
- * @className TikTakToe
+ * @className TicTacToeGUI
  * @description This class is the GUI for the TicTacToe
  * @date 2021/12/07 12:07:02
  */
@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TikTakToe implements ActionListener
+public class TicTacToeGUI implements ActionListener
 {
 
   final int SIZE = 9;
@@ -28,7 +28,7 @@ public class TikTakToe implements ActionListener
   int gameMoveCount = 0; // counts the number of moves to determine draw, etc
 
   // constructor
-  public TikTakToe (String title)
+  public TicTacToeGUI (String title)
   {
 
     // creating a JFrame window with the title
@@ -90,8 +90,8 @@ public class TikTakToe implements ActionListener
   // main driver program
   public static void main (String[] args)
   {
-    // create an object of the TikTakToe class
-    TikTakToe gameWindow = new TikTakToe("TikTakToe Game");
+    // create an object of the TicTacToeGUI class
+    TicTacToeGUI gameWindow = new TicTacToeGUI("TicTacToeGUI Game");
   }
 
   // this resets the buttons text values
