@@ -1,7 +1,4 @@
-/**
- *
- */
-
+import edu.truman.li.cs260.gui.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,11 +6,9 @@ import java.awt.event.ActionListener;
 
 public class TicTacToeApp implements ActionListener
 {
-  
-  static final int SIZE = 9;
+  static final int NUMBER_OF_BUTTONS = 9;
   // Buttons to hold the selection values
-  JButton[] boardButtons = new JButton[SIZE];
-  
+  JButton[] boardButtons = new JButton[NUMBER_OF_BUTTONS];
   JButton restartGame;
   JButton quitGame;
   
@@ -36,7 +31,7 @@ public class TicTacToeApp implements ActionListener
     // The JPanel holds the buttons
     JPanel upperLayerPanel = new JPanel();
     upperLayerPanel.setLayout(new GridLayout(rowSize, columnSize));
-    for (int index = 0; index < SIZE; index++)
+    for (int index = 0; index < NUMBER_OF_BUTTONS; index++)
     {
       boardButtons[index] = new JButton();
       boardButtons[index].setText(Integer.toString(index + 1));
@@ -92,7 +87,7 @@ public class TicTacToeApp implements ActionListener
    */
   public void resetGame ()
   {
-    for (int index = 0; index < SIZE; index++)
+    for (int index = 0; index < NUMBER_OF_BUTTONS; index++)
     {
       boardButtons[index].setText(Integer.toString(index + 1));
       boardButtons[index].setForeground(Color.BLACK);
@@ -106,7 +101,7 @@ public class TicTacToeApp implements ActionListener
    */
   public void actionPerformed (ActionEvent event)
   {
-    
+    Board boardObject = new Board();
     // if the event source is the restart button then reset the title and the text
     if (event.getSource().equals(restartGame))
     {
@@ -116,14 +111,15 @@ public class TicTacToeApp implements ActionListener
     }
     else
     { // determine which cell button triggered the action event
-      for (int index = 0; index < SIZE; index++)
+      for (int index = 0; index < NUMBER_OF_BUTTONS; index++)
       {
         if (event.getSource().equals(boardButtons[index]) && ((!boardButtons[index].getText().equals("H")) && (!boardButtons[index].getText().equals("C"))))
         {
           gameStatusLabel.setText("  You have selected cell No. " + (index + 1)); // this is the selected cell number
-          
           if (moveToggleFlag)
           {
+            // Computer move in here
+            boardObject.ComputerSide();
             gameWindow.setTitle("TicTacToe [Your Turn]");
             boardButtons[index].setText("C");
             boardButtons[index].setForeground(Color.RED);
@@ -135,15 +131,21 @@ public class TicTacToeApp implements ActionListener
             boardButtons[index].setForeground(Color.BLUE);
           }
           moveToggleFlag = !moveToggleFlag;
+          if (boardObject.JudgeWinner().equals("Human") || boardObject.JudgeWinner().equals("Computer"))
+          {
+            gameStatusLabel.setText("We have a winner! The winner is: " + boardObject.JudgeWinner());
+            gameStatusLabel.setText("    The Game Over! Restart the game to continue ...");
+            gameWindow.setTitle("TicTacToe [Game Over!]");
+          }
           gameMoveCount++; // keep counting the moves
           
-          if (gameMoveCount == SIZE)
+          if (gameMoveCount == NUMBER_OF_BUTTONS)
           { // if this is the last move
+            gameStatusLabel.setText("There is no Winner! Tie Game");
             gameStatusLabel.setText("    The Game Over! Restart the game to continue ...");
             gameWindow.setTitle("TicTacToe [Game Over!]");
           }
         } // new move: if condition ends
-        
       } // main if inside the loop ends
     } // for loop ends
   } // else block ends

@@ -1,3 +1,5 @@
+package edu.truman.li.cs260.gui;
+
 public class Player
 {
   private int row;
