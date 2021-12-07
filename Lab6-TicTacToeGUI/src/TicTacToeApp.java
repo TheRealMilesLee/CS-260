@@ -1,7 +1,7 @@
 /**
  * @author Hengyi Li
  * @className TicTacToeGUI
- * @description This class is the GUI for the TicTacToe
+ * @description This class is the GUI version for the TicTacToe
  * @date 2021/12/07 12:07:02
  */
 import javax.swing.*;
