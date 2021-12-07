@@ -1,6 +1,6 @@
 /**
  * @author Hengyi Li
- * @className TicTacToeGUI
+ * @className TicTacToeApp
  * @description This class is the GUI version for the TicTacToe
  * @date 2021/12/07 12:07:02
  */
@@ -9,117 +9,109 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TicTacToeGUI implements ActionListener
+public class TicTacToeApp implements ActionListener
 {
 
-  final int SIZE = 9;
+  static final int SIZE = 9;
   // Buttons to hold the selection values
   JButton[] boardButtons = new JButton[SIZE];
 
-  // buttons to restart or exit teh game
-  JButton bRestart;
-  JButton bExit;
+  JButton restartGame;
+  JButton quitGame;
 
   // to provide status message
   JLabel gameStatusLabel;
-  JFrame gWindow; // main window object
+  JFrame gameWindow; // main window object
 
   boolean moveToggleFlag = false; // toggles computer/user move
-  int gameMoveCount = 0; // counts the number of moves to determine draw, etc
+  int gameMoveCount = 0; // counts the number of moves to determine draw
 
   // constructor
-  public TicTacToeGUI (String title)
+  public TicTacToeApp (String title)
   {
-
-    // creating a JFrame window with the title
-    gWindow = new JFrame(title);
+    int columnSize = 3;
+    int rowSize = 3;
+    int fontSize = 20;
+    String fontTypes = "SansSerif";
+    gameWindow = new JFrame(title); // creating a JFrame window with the title
 
     // The JPanel holds the buttons
     JPanel upperLayerPanel = new JPanel();
-    upperLayerPanel.setLayout(new GridLayout(3, 3));
-    // creating memory for the buttons
-    for (int i = 0; i < SIZE; i++)
+    upperLayerPanel.setLayout(new GridLayout(rowSize, columnSize));
+    for (int index = 0; index < SIZE; index++)
     {
-      boardButtons[i] = new JButton();
-      boardButtons[i].setText(Integer.toString(i + 1));
-      boardButtons[i].setFont(new Font("SansSerif", Font.PLAIN, 20));
-      boardButtons[i].addActionListener(this);
-
-      // adding the button to the Panel
-      upperLayerPanel.add(boardButtons[i]);
+      boardButtons[index] = new JButton();
+      boardButtons[index].setText(Integer.toString(index + 1));
+      boardButtons[index].setFont(new Font(fontTypes, Font.PLAIN, fontSize));
+      boardButtons[index].addActionListener(this);
+      upperLayerPanel.add(boardButtons[index]); // adding the button to the Panel
     }
-
 
     // Panel holding buttons at the south side
     JPanel southPanel = new JPanel();
     southPanel.setLayout(new GridLayout(2, 1));
 
-    bRestart = new JButton("Restart Game");
-    bRestart.setFont(new Font("SansSerif", Font.PLAIN, 16));
-    bRestart.addActionListener(this);
+    restartGame = new JButton("Restart Game");
+    restartGame.setFont(new Font(fontTypes, Font.PLAIN, 16));
+    restartGame.addActionListener(this);
 
-    bExit = new JButton("Exit Game");
-    bExit.setFont(new Font("SansSerif", Font.PLAIN, 16));
-    bExit.addActionListener(this);
+    quitGame = new JButton("Exit Game");
+    quitGame.setFont(new Font(fontTypes, Font.PLAIN, 16));
+    quitGame.addActionListener(this);
 
 
     gameStatusLabel = new JLabel("   Welcome. Your Turn. Select any button above to begin ..");
-    gameStatusLabel.setFont(new Font("SansSerif", Font.PLAIN, 16));
+    gameStatusLabel.setFont(new Font(fontTypes, Font.PLAIN, 16));
     gameStatusLabel.setPreferredSize(new Dimension(100, 40));
 
     southPanel.add(gameStatusLabel, BorderLayout.CENTER);
 
     JPanel lowerButtonPanel = new JPanel();
     lowerButtonPanel.setLayout(new GridLayout(1, 2));
-    lowerButtonPanel.add(bRestart, BorderLayout.WEST);
-    lowerButtonPanel.add(bExit, BorderLayout.EAST);
+    lowerButtonPanel.add(restartGame, BorderLayout.WEST);
+    lowerButtonPanel.add(quitGame, BorderLayout.EAST);
     southPanel.add(lowerButtonPanel);
 
 
     // adding all the panels to the main window
-    gWindow.setLayout(new BorderLayout());
-    gWindow.add(upperLayerPanel, BorderLayout.CENTER);
-    gWindow.add(southPanel, BorderLayout.SOUTH);
+    gameWindow.setLayout(new BorderLayout());
+    gameWindow.add(upperLayerPanel, BorderLayout.CENTER);
+    gameWindow.add(southPanel, BorderLayout.SOUTH);
 
 
-    gWindow.setSize(500, 500);
-    gWindow.setVisible(true);
-    gWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    gameWindow.setSize(500, 500);
+    gameWindow.setVisible(true);
+    gameWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
   }
 
-  // main driver program
   public static void main (String[] args)
   {
-    // create an object of the TicTacToeGUI class
-    TicTacToeGUI gameWindow = new TicTacToeGUI("TicTacToeGUI Game");
+    TicTacToeApp gameWindow = new TicTacToeApp("TicTacToeGUI Game");
   }
 
-  // this resets the buttons text values
+/**
+ * This function is to reset the game
+ */
   public void resetGame ()
   {
-    // creating memory for the buttons
-    for (int i = 0; i < SIZE; i++)
+    for (int index = 0; index < SIZE; index++)
     {
-      boardButtons[i].setText(Integer.toString(i + 1));
-      boardButtons[i].setForeground(Color.BLACK);
-
+      boardButtons[index].setText(Integer.toString(index + 1));
+      boardButtons[index].setForeground(Color.BLACK);
     }
-
     gameMoveCount = 0;
-
-    // other actions can be taken here
   }
 
-  // Handles clicks on Compute button by computing the BMI.
+  // Handle clicks on Compute button by computing the BMI.
   public void actionPerformed (ActionEvent event)
   {
 
     // if the event source is the restart button then
-    if (event.getSource().equals(bRestart))
+    if (event.getSource().equals(restartGame))
     {
       resetGame();
       this.gameStatusLabel.setText("   Game has restarted. Select any button above to begin ..");
-      gWindow.setTitle("TicTacToe [Your Turn]"); // this can be randomized
+      gameWindow.setTitle("TicTacToe [Your Turn]"); // this can be randomized
     }
     else
     { // determine which cell button triggered the action event
@@ -137,13 +129,13 @@ public class TicTacToeGUI implements ActionListener
 
             if (moveToggleFlag == true)
             {
-              gWindow.setTitle("TicTacToe [Your Turn]");
+              gameWindow.setTitle("TicTacToe [Your Turn]");
               boardButtons[i].setText("C");
               boardButtons[i].setForeground(Color.RED);
             }
             else
             {
-              gWindow.setTitle("TicTacToe [Computers Turn]");
+              gameWindow.setTitle("TicTacToe [Computers Turn]");
               boardButtons[i].setText("H");
               boardButtons[i].setForeground(Color.BLUE);
             }
@@ -153,7 +145,7 @@ public class TicTacToeGUI implements ActionListener
             if (gameMoveCount == SIZE)
             { // if this is the last move
               gameStatusLabel.setText("    The Game Over! Restart the game to continue ...");
-              gWindow.setTitle("TicTacToe [Game Over!]");
+              gameWindow.setTitle("TicTacToe [Game Over!]");
             }
           } // new move: if condition ends
 

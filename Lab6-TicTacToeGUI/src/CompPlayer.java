@@ -1,6 +1,3 @@
-package com.edu.truman.li.cs260.TicTacToe;
-
-
 import org.jetbrains.annotations.NotNull;
 
 /**

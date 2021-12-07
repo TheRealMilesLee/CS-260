@@ -1,5 +1,3 @@
-package com.edu.truman.li.cs260.TicTacToe;
-
 public class Player
 {
   private int row;

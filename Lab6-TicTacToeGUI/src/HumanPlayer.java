@@ -1,4 +1,3 @@
-package com.edu.truman.li.cs260.TicTacToe;
 import java.util.Scanner;
 
 public class HumanPlayer extends Player
