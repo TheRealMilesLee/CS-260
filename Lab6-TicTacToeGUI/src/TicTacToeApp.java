@@ -131,15 +131,13 @@ public class TicTacToeApp implements ActionListener
           if (playerObject.JudgeWinner(boardObject.getBoards()).equals("Human") || playerObject.JudgeWinner(boardObject.getBoards()).equals("Computer"))
           {
             gameStatusLabel.setText("We have a winner! The winner is: " + playerObject.JudgeWinner(boardObject.getBoards()));
-            gameStatusLabel.setText("    The Game Over! Restart the game to continue ...");
             gameWindow.setTitle("TicTacToe [Game Over!]");
           }
           gameMoveCount++; // keep counting the moves
           
           if (gameMoveCount == NUMBER_OF_BUTTONS)
           { // if this is the last move
-            gameStatusLabel.setText("There is no Winner! Tie Game");
-            gameStatusLabel.setText("    The Game Over! Restart the game to continue ...");
+            gameStatusLabel.setText("There is no Winner! Tie Game. Restart the game to continue ...");
             gameWindow.setTitle("TicTacToe [Game Over!]");
           }
         } // new move: if condition ends
