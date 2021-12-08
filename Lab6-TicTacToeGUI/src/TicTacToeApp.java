@@ -102,6 +102,7 @@ public class TicTacToeApp implements ActionListener
   public void actionPerformed (ActionEvent event)
   {
     Board boardObject = new Board();
+    Player playerObject = new Player();
     // if the event source is the restart button then reset the title and the text
     if (event.getSource().equals(restartGame))
     {
@@ -131,9 +132,9 @@ public class TicTacToeApp implements ActionListener
             boardButtons[index].setForeground(Color.BLUE);
           }
           moveToggleFlag = !moveToggleFlag;
-          if (boardObject.JudgeWinner().equals("Human") || boardObject.JudgeWinner().equals("Computer"))
+          if (playerObject.JudgeWinner(boardObject.getBoards()).equals("Human") || playerObject.JudgeWinner(boardObject.getBoards()).equals("Computer"))
           {
-            gameStatusLabel.setText("We have a winner! The winner is: " + boardObject.JudgeWinner());
+            gameStatusLabel.setText("We have a winner! The winner is: " + playerObject.JudgeWinner(boardObject.getBoards()));
             gameStatusLabel.setText("    The Game Over! Restart the game to continue ...");
             gameWindow.setTitle("TicTacToe [Game Over!]");
           }
