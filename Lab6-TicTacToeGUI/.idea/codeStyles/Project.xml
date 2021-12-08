@@ -1,5 +1,6 @@
 <component name="ProjectCodeStyleConfiguration">
   <code_scheme name="Project" version="173">
+    <option name="ENABLE_SECOND_REFORMAT" value="true" />
     <JavaCodeStyleSettings>
       <option name="JD_KEEP_INVALID_TAGS" value="false" />
       <option name="JD_USE_THROWS_NOT_EXCEPTION" value="false" />

@@ -19,7 +19,6 @@ public class TicTacToeApp implements ActionListener
   boolean moveToggleFlag = false; // toggles computer/user move
   int gameMoveCount = 0; // counts the number of moves to determine draw
   
-  // constructor
   public TicTacToeApp (String title)
   {
     int columnSize = 3;
@@ -52,7 +51,6 @@ public class TicTacToeApp implements ActionListener
     quitGame.setFont(new Font(fontTypes, Font.PLAIN, 16));
     quitGame.addActionListener(this);
     
-    
     gameStatusLabel = new JLabel("   Welcome. Your Turn. Select any button above to begin ..");
     gameStatusLabel.setFont(new Font(fontTypes, Font.PLAIN, 16));
     gameStatusLabel.setPreferredSize(new Dimension(100, 40));
@@ -65,12 +63,10 @@ public class TicTacToeApp implements ActionListener
     lowerButtonPanel.add(quitGame, BorderLayout.EAST);
     southPanel.add(lowerButtonPanel);
     
-    
     // adding all the panels to the main window
     gameWindow.setLayout(new BorderLayout());
     gameWindow.add(upperLayerPanel, BorderLayout.CENTER);
     gameWindow.add(southPanel, BorderLayout.SOUTH);
-    
     
     gameWindow.setSize(500, 500);
     gameWindow.setVisible(true);

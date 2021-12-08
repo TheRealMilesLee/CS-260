@@ -101,71 +101,49 @@ public class CompPlayer extends Player
   
   private void Find (Integer[] boardArray, boolean makeChoice)
   {
-    int indexDecreasing = 2;
-    while (indexDecreasing >= 0 && !makeChoice)
+
+    //Right Diagonal
+    for (int index = 2; index < 9 && !makeChoice; index += 2)
     {
-      for (int indexRow = 0; indexRow < 3 && !makeChoice; indexRow++)
+      if (boardArray[index] == 0)
       {
-        if(boardArray[indexRow][indexDecreasing].equals("+"))
-        {
-          boardArray[indexRow][indexDecreasing] = "C";
-          makeChoice = true;
-        }
-        else
-        {
-          --indexDecreasing;
-        }
-      }
-    }
-    for (int Index = 2; Index >=0 && !makeChoice; Index--)
-    {
-      if(boardArray[0][0].equals("+") && boardArray[1][0].equals("H") && boardArray[2][0].equals("H"))
-      {
-        boardArray[0][0] = "C";
-        makeChoice = true;
-      }
-      else if (boardArray[Index][Index].equals("+"))
-      {
-        boardArray[Index][Index] = "C";
+        boardArray[index] = 2;
         makeChoice = true;
       }
     }
-    int loop = 0;
-    while (loop < 9 && !makeChoice())
+    //left Diagonal
+    for (int index = 0; index < 9 && !makeChoice; index += 4)
     {
-      if (boardArray[loop] == 0)
+      if (boardArray[index] == 0)
       {
-        boardArray[loop] = 2;
-        makeChoice() = true;
-      }
-      loop += 3;
-    }
-    
-    for (int column = 0; column < 3 && !makeChoice; column++)
-    {
-      if (boardArray[column] == 0)
-      {
-        boardArray[column] = 2;
+        boardArray[index] = 2;
         makeChoice = true;
       }
     }
-    
-    for(int ParrelRow = 0; ParrelRow < 3 && !makeChoice; ParrelRow++)
+    // column 3
+    for (int index = 2; index < 9 && !makeChoice; index += 3)
     {
-      for (int column = 0; column < 3 && !makeChoice; column++)
+      if (boardArray[index] == 0)
       {
-        if(boardArray[column][ParrelRow].equals("+"))
-        {
-          boardArray[column][ParrelRow] = "C";
-          makeChoice = true;
-        }
+        boardArray[index] = 2;
+        makeChoice = true;
       }
     }
-    for(int PallelRow = 0; PallelRow < 3 && !makeChoice; PallelRow++)
+    // column 2
+    for (int index = 1; index < 9 && !makeChoice; index += 3)
     {
-      if(boardArray[column][PallelRow].equals("+"))
+      if (boardArray[index] == 0)
       {
-        boardArray[column][PallelRow] = "C";
+        boardArray[index] = 2;
+        makeChoice = true;
+      }
+    }
+    //column 1
+    for (int index = 0; index < 9 && !makeChoice; index += 3)
+    {
+      if (boardArray[index] == 0)
+      {
+        boardArray[index] = 2;
         makeChoice = true;
       }
     }
