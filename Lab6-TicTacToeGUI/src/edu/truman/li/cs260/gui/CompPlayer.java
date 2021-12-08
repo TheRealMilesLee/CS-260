@@ -53,7 +53,6 @@ public class CompPlayer extends Player
       }
       else
       {
-        // Right diagonal find C
         Find(boardArray, makeChoice);
       }
     }
@@ -93,7 +92,6 @@ public class CompPlayer extends Player
       }
       else
       {
-        // Right diagonal find C
         Find(boardArray, makeChoice);
       }
     }
