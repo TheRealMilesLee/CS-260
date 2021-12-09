@@ -65,4 +65,19 @@ public class Board
   {
     return boardArray;
   }
+  
+  public boolean isFull()
+  {
+    boolean isFull = true;
+    boolean found = false;
+    for (int loop = 0; loop < 9 && !found; loop++)
+    {
+      if(boardArray[loop] == 0)
+      {
+        isFull = false;
+        found = true;
+      }
+    }
+    return isFull;
+  }
 }

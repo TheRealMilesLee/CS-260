@@ -115,36 +115,54 @@ public class TicTacToeApp implements ActionListener
         { // button found
           // if the cell has already been selected then do not do anything
             // this is the selected cell number
-            if (playerObject.JudgeWinner(boardObject.getBoards()).equals("Human") || playerObject.JudgeWinner(boardObject.getBoards()).equals("Computer"))
+            if(gameMoveCount == NUMBER_OF_BUTTONS || boardObject.isFull())
             {
-              gameStatusLabel.setText("    We have a Winner! The Winner is: " + playerObject.JudgeWinner(boardObject.getBoards()));
-              gameWindow.setTitle("TicTacToe [Game Over!]");
-              foundWinner = true;
-            }
-            gameStatusLabel.setText("  You have selected cell no " + (index + 1) );
-            
-            humanAction(index);
-            if (playerObject.JudgeWinner(boardObject.getBoards()).equals("Human") || playerObject.JudgeWinner(boardObject.getBoards()).equals("Computer"))
-            {
-              gameStatusLabel.setText("    We have a Winner! The Winner is: " + playerObject.JudgeWinner(boardObject.getBoards()));
-              gameWindow.setTitle("TicTacToe [Game Over!]");
-              foundWinner = true;
-            }
-            computerAction();
-            if (playerObject.JudgeWinner(boardObject.getBoards()).equals("Human") || playerObject.JudgeWinner(boardObject.getBoards()).equals("Computer"))
-            {
-              gameStatusLabel.setText("    We have a Winner! The Winner is: " + playerObject.JudgeWinner(boardObject.getBoards()));
-              gameWindow.setTitle("TicTacToe [Game Over!]");
-              foundWinner = true;
-            }
-            gameMoveCount++; // keep counting the moves
-            boardObject.displayBoard();
-            System.out.println("\n");
-            if(gameMoveCount == NUMBER_OF_BUTTONS)
-            { // if this is the last move
               gameStatusLabel.setText("    Tie Game! Restart the game to continue ...");
               gameWindow.setTitle("TicTacToe [Game Over!]");
               foundWinner = true;
+            }
+            if (playerObject.JudgeWinner(boardObject.getBoards()).equals("Human") || playerObject.JudgeWinner(boardObject.getBoards()).equals("Computer"))
+            {
+              gameStatusLabel.setText("    We have a Winner! The Winner is: " + playerObject.JudgeWinner(boardObject.getBoards()));
+              gameWindow.setTitle("TicTacToe [Game Over!]");
+              foundWinner = true;
+            }
+            else
+            {
+              gameStatusLabel.setText("  You have selected cell no " + (index + 1) );
+              humanAction(index);
+              if(gameMoveCount == NUMBER_OF_BUTTONS || boardObject.isFull())
+              {
+                gameStatusLabel.setText("    Tie Game! Restart the game to continue ...");
+                gameWindow.setTitle("TicTacToe [Game Over!]");
+                foundWinner = true;
+              }
+            }
+            if (playerObject.JudgeWinner(boardObject.getBoards()).equals("Human") || playerObject.JudgeWinner(boardObject.getBoards()).equals("Computer"))
+            {
+              gameStatusLabel.setText("    We have a Winner! The Winner is: " + playerObject.JudgeWinner(boardObject.getBoards()));
+              gameWindow.setTitle("TicTacToe [Game Over!]");
+              foundWinner = true;
+            }
+            else
+            {
+              computerAction();
+              if (playerObject.JudgeWinner(boardObject.getBoards()).equals("Human") || playerObject.JudgeWinner(boardObject.getBoards()).equals("Computer"))
+              {
+                gameStatusLabel.setText("    We have a Winner! The Winner is: " + playerObject.JudgeWinner(boardObject.getBoards()));
+                gameWindow.setTitle("TicTacToe [Game Over!]");
+                foundWinner = true;
+              }
+              gameMoveCount++; // keep counting the moves
+              boardObject.displayBoard();
+              System.out.println("\n");
+  
+              if (gameMoveCount == NUMBER_OF_BUTTONS || boardObject.isFull())
+              {
+                gameStatusLabel.setText("    Tie Game! Restart the game to continue ...");
+                gameWindow.setTitle("TicTacToe [Game Over!]");
+                foundWinner = true;
+              }
             }
         } // new move: if condition ends
       } // main if inside the loop ends

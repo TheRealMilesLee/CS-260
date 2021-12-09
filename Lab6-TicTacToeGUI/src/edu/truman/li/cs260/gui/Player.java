@@ -32,7 +32,7 @@ public class Player
       (boardArray[3] == 1 && boardArray[4] == 1 && boardArray[5] == 1) ||
       (boardArray[6] == 1 && boardArray[7] == 1 && boardArray[8] == 1) ||
       (boardArray[0] == 1 && boardArray[4] == 1 && boardArray[8] == 1) ||
-      (boardArray[2] == 1 && boardArray[4] == 1 && boardArray[5] == 1) ||
+      (boardArray[2] == 1 && boardArray[4] == 1 && boardArray[6] == 1) ||
       (boardArray[0] == 1 && boardArray[3] == 1 && boardArray[6] == 1) ||
       (boardArray[1] == 1 && boardArray[4] == 1 && boardArray[7] == 1) ||
       (boardArray[2] == 1 && boardArray[5] == 1 && boardArray[8] == 1))
@@ -43,7 +43,7 @@ public class Player
       (boardArray[3] == 2 && boardArray[4] == 2 && boardArray[5] == 2) ||
       (boardArray[6] == 2 && boardArray[7] == 2 && boardArray[8] == 2) ||
       (boardArray[0] == 2 && boardArray[4] == 2 && boardArray[8] == 2) ||
-      (boardArray[2] == 2 && boardArray[4] == 2 && boardArray[5] == 2) ||
+      (boardArray[2] == 2 && boardArray[4] == 2 && boardArray[6] == 2) ||
       (boardArray[0] == 2 && boardArray[3] == 2 && boardArray[6] == 2) ||
       (boardArray[1] == 2 && boardArray[4] == 2 && boardArray[7] == 2) ||
       (boardArray[2] == 2 && boardArray[5] == 2 && boardArray[8] == 2))
