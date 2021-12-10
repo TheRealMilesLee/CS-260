@@ -16,7 +16,6 @@ public class TicTacToeApp implements ActionListener
   JButton quitGame;
   JLabel gameStatusLabel;   // to provide status message
   JFrame gameWindow; // main window object
-  boolean moveToggleFlag = false; // toggles computer/user move
   int gameMoveCount = 0; // counts the number of moves to determine draw
   
   // Constructor doing the UI things
