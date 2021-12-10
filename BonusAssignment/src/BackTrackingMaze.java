@@ -7,12 +7,10 @@ public class BackTrackingMaze
   private String[][] mazeArray;
   public void fileReading (String fileName)
   {
+    File file = new File("1.txt");
     try
     {
-      File file = new File(fileName);
-      
       Scanner fileReader = new Scanner(file);
-      System.out.println("The file we read in is: " + fileName);
       int rowIndex = 0;
       int columnIndex = 0;
       while (fileReader.hasNextLine())
