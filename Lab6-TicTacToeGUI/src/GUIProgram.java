@@ -3,19 +3,30 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The type Gui program.
+ */
 public class GUIProgram implements ActionListener
 {
+  /**
+   * The Number of buttons.
+   */
   static final int NUMBER_OF_BUTTONS = 4;
+  // Number buttons
   JButton[] boardButtons = new JButton[NUMBER_OF_BUTTONS];
   JButton nowPlaying;
   JButton mediaGuide;
-  JButton Library;
-  JButton HelpAndInfo;
-  JButton OkButton;
+  JButton library;
+  JButton helpAndInfo;
+  JButton okButton;
   JLabel infoLabel;
   JFrame applicationWindow;
   JTextArea textSection;
   
+  /**
+   * Instantiates a new Gui program.
+   * @param title the title of the frame
+   */
   public GUIProgram(String title)
   {
     int fontSize = 20;
@@ -27,25 +38,28 @@ public class GUIProgram implements ActionListener
     mediaGuide = new JButton("Media Guide");
     mediaGuide.setFont(new Font(fontTypes, Font.PLAIN, 16));
     mediaGuide.addActionListener(this);
-    Library = new JButton("Library");
-    Library.setFont(new Font(fontTypes, Font.PLAIN, 16));
-    Library.addActionListener(this);
-    HelpAndInfo = new JButton("Help & Info");
-    HelpAndInfo.setFont(new Font(fontTypes, Font.PLAIN, 16));
-    HelpAndInfo.addActionListener(this);
+    library = new JButton("Library");
+    library.setFont(new Font(fontTypes, Font.PLAIN, 16));
+    library.addActionListener(this);
+    helpAndInfo = new JButton("Help & Info");
+    helpAndInfo.setFont(new Font(fontTypes, Font.PLAIN, 16));
+    helpAndInfo.addActionListener(this);
     
+    // Left side panel
     JPanel leftButtonPanel = new JPanel();
     leftButtonPanel.setLayout(new GridLayout(4, 1));
     leftButtonPanel.add(nowPlaying, BorderLayout.NORTH);
     leftButtonPanel.add(mediaGuide, BorderLayout.NORTH);
-    leftButtonPanel.add(Library, BorderLayout.NORTH);
-    leftButtonPanel.add(HelpAndInfo, BorderLayout.NORTH);
+    leftButtonPanel.add(library, BorderLayout.NORTH);
+    leftButtonPanel.add(helpAndInfo, BorderLayout.NORTH);
   
+    // Text Panel
     textSection = new JTextArea(35, 30);
     JPanel centerPanel = new JPanel();
     centerPanel.setLayout(new FlowLayout());
     centerPanel.add(textSection, BorderLayout.CENTER);
     
+    // Number button
     JPanel NumberButtonPanel = new JPanel();
     NumberButtonPanel.setLayout(new GridLayout(2, 2));
     for (int index = 0; index < NUMBER_OF_BUTTONS; index++)
@@ -57,18 +71,21 @@ public class GUIProgram implements ActionListener
       NumberButtonPanel.add(boardButtons[index], BorderLayout.EAST); // adding the button to the Panel
     }
     
+    // OK Button
     JPanel OKButtonPanel = new JPanel();
     OKButtonPanel.setLayout(new FlowLayout());
-    OkButton = new JButton("OK");
-    OkButton.setFont(new Font(fontTypes, Font.PLAIN, 16));
-    OkButton.setPreferredSize(new Dimension(160, 280));
-    OkButton.addActionListener(this);
-    OKButtonPanel.add(OkButton, BorderLayout.SOUTH);
+    okButton = new JButton("OK");
+    okButton.setFont(new Font(fontTypes, Font.PLAIN, 16));
+    okButton.setPreferredSize(new Dimension(160, 280));
+    okButton.addActionListener(this);
+    OKButtonPanel.add(okButton, BorderLayout.SOUTH);
   
+    // Button on the right side
     JPanel rightButtonPanel = new JPanel();
     rightButtonPanel.setLayout(new GridLayout(2,1));
     rightButtonPanel.add(NumberButtonPanel,BorderLayout.NORTH);
     rightButtonPanel.add(OKButtonPanel, BorderLayout.SOUTH);
+    
     
     JPanel contentPanel = new JPanel();
     contentPanel.setLayout(new FlowLayout());
@@ -76,6 +93,7 @@ public class GUIProgram implements ActionListener
     contentPanel.add(centerPanel, BorderLayout.CENTER);
     contentPanel.add(rightButtonPanel, BorderLayout.NORTH);
     
+    // Text information panel
     JPanel infoPanel = new JPanel();
     infoPanel.setLayout(new GridLayout(2, 8));
     infoLabel = new JLabel("                                       Movies   Music   Videos   DVD   Web Pages");
@@ -93,18 +111,24 @@ public class GUIProgram implements ActionListener
     applicationWindow.setVisible(true);
     applicationWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
   }
+  
+  /**
+   * The entry point of application.
+   * @param args the input arguments
+   */
   public static void main (String[] args)
   {
     GUIProgram window = new GUIProgram("Movie on Thursday");
   }
   
+  // Event when button clicked
   public void actionPerformed (ActionEvent event)
   {
     if(event.getSource().equals(nowPlaying))
     {
       this.textSection.append("Now Playing \n");
     }
-    else if (event.getSource().equals(Library))
+    else if (event.getSource().equals(library))
     {
       this.textSection.append("Library \n");
     }
@@ -112,7 +136,7 @@ public class GUIProgram implements ActionListener
     {
       this.textSection.append("Media Guide \n");
     }
-    else if (event.getSource().equals(HelpAndInfo))
+    else if (event.getSource().equals(helpAndInfo))
     {
       this.textSection.append("Help & Info \n");
     }

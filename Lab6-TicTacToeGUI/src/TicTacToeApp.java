@@ -1,24 +1,66 @@
+/**
+ * This file is to show the Tic Tac Toe app in GUI
+ */
+
 import edu.truman.li.cs260.gui.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The type Tic tac toe app.
+ */
 public class TicTacToeApp implements ActionListener
 {
+  /**
+   * The Found winner switch.
+   */
   boolean foundWinner = false;
+  /**
+   * The Board object.
+   */
   Board boardObject = new Board();
+  /**
+   * The Player object.
+   */
   Player playerObject = new Player();
+  /**
+   * The Number of buttons.
+   */
   static final int NUMBER_OF_BUTTONS = 9;
-  // Buttons to hold the selection values
+  /**
+   * The Board buttons.
+   */
+// Buttons to hold the selection values
   JButton[] boardButtons = new JButton[NUMBER_OF_BUTTONS];
+  /**
+   * Restart game button.
+   */
   JButton restartGame;
+  /**
+   * Quit game button.
+   */
   JButton quitGame;
+  /**
+   * Game status label.
+   */
   JLabel gameStatusLabel;   // to provide status message
+  /**
+   * The Game window.
+   */
   JFrame gameWindow; // main window object
+  /**
+   * The Game move count.
+   */
   int gameMoveCount = 0; // counts the number of moves to determine draw
   
-  // Constructor doing the UI things
+  /**
+   * Instantiates a new Tic tac toe app.
+   *
+   * @param title the title
+   */
+// Constructor doing the UI things
   public TicTacToeApp (String title)
   {
     int columnSize = 3;
@@ -41,10 +83,12 @@ public class TicTacToeApp implements ActionListener
     JPanel optionPanel = new JPanel();
     optionPanel.setLayout(new GridLayout(2, 1));
     
+    // Button of restart game
     restartGame = new JButton("Restart Game");
     restartGame.setFont(new Font(fontTypes, Font.PLAIN, 16));
     restartGame.addActionListener(this);
     
+    //Button of Exit Game
     quitGame = new JButton("Exit Game");
     quitGame.setFont(new Font(fontTypes, Font.PLAIN, 16));
     quitGame.addActionListener(this);
@@ -71,11 +115,18 @@ public class TicTacToeApp implements ActionListener
     gameWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
   }
   
+  /**
+   * The entry point of application.
+   * @param args the input arguments
+   */
   public static void main (String[] args)
   {
     TicTacToeApp gameWindow = new TicTacToeApp("TicTacToeGUI Game");
   }
   
+  /**
+   * Reset game.
+   */
   public void resetGame ()
   {
     for (int index = 0; index < NUMBER_OF_BUTTONS; index++)
@@ -153,8 +204,6 @@ public class TicTacToeApp implements ActionListener
                 foundWinner = true;
               }
               gameMoveCount++; // keep counting the moves
-              boardObject.displayBoard();
-              System.out.println("\n");
   
               if (gameMoveCount == NUMBER_OF_BUTTONS || boardObject.isFull())
               {
@@ -168,6 +217,9 @@ public class TicTacToeApp implements ActionListener
     } // for loop ends
   } // else block ends
   
+  /**
+   * Computer action.
+   */
   public void computerAction ()
   {
     gameWindow.setTitle("TicTacToe [Your Turn]");
@@ -176,6 +228,10 @@ public class TicTacToeApp implements ActionListener
     boardButtons[computerIndex].setForeground(Color.RED);
   }
   
+  /**
+   * Human action.
+   * @param index the index that human selected
+   */
   public void humanAction (int index)
   {
     gameWindow.setTitle("TicTacToe [Computers Turn]");

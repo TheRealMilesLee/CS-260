@@ -24,20 +24,6 @@ public class Board
     boardArray = new Integer[9];
     Arrays.fill(boardArray, 0);
   }
-  public void displayBoard()
-  {
-    for (int loop = 0; loop < 9; loop++)
-    {
-      if(loop == 2 || loop == 5|| loop == 9)
-      {
-        System.out.println(boardArray[loop]);
-      }
-      else
-      {
-        System.out.print(boardArray[loop]);
-      }
-    }
-  }
   /**
    * Clear board.
    */
