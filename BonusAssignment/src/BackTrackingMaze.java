@@ -12,20 +12,27 @@ public class BackTrackingMaze
     File file = new File(fileName);
     Scanner fileReaderLine = new Scanner(file);
     Scanner fileReaderColumn = new Scanner(file);
-    String line = "";
-    String columnFile = "";
-    while (fileReaderLine.hasNextLine())
+    ArrayList<String> linesFromFile = new ArrayList<>();
+    while (fileReaderLine.hasNext())
     {
-      line = fileReaderLine.nextLine();
-      row++;
+      linesFromFile.add(fileReaderLine.next());
+      if(fileReaderLine.next().equals("\n"))
+      {
+        row++;
+      }
+      else
+      {
+        column++;
+      }
     }
-    while (fileReaderColumn.next().isEmpty())
+    mazeArray = new String[row][column];
+    for (int index = 0; index < linesFromFile.size(); index++)
     {
-      columnFile = fileReaderColumn.next();
-      column++;
+      for (int loop = 0; loop < linesFromFile.size(); loop++)
+      {
+        mazeArray[index][loop] = linesFromFile.get(loop);
+      }
     }
-    System.out.println(row);
-    System.out.println(column);
     fileReaderColumn.close();
   }
   

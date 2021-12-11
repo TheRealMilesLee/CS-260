@@ -9,5 +9,3 @@ A
 src/MazeLoop.java,5/1/519fbdaf0157142af06beb3afb6ba5d467c3b32f
 S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
-I
-src/BackTrackingMaze.java,7/3/73903a69b279b9176ca2bf3faf5e4e2f308234f6
