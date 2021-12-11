@@ -5,64 +5,60 @@ import java.io.*;
 public class BackTrackingMaze
 {
   private String[][] mazeArray;
-  public void fileReading (String fileName)
+  private int column = 0;
+  private int row = 0;
+  public void fileReading (String fileName) throws FileNotFoundException
   {
-    File file = new File("1.txt");
-    try
+    File file = new File(fileName);
+    Scanner fileReaderLine = new Scanner(file);
+    Scanner fileReaderColumn = new Scanner(file);
+    String line = "";
+    String columnFile = "";
+    while (fileReaderLine.hasNextLine())
     {
-      Scanner fileReader = new Scanner(file);
-      int rowIndex = 0;
-      int columnIndex = 0;
-      while (fileReader.hasNextLine())
-      {
-        mazeArray[rowIndex][columnIndex] = fileReader.nextLine();
-     
-        if (fileReader.next().equals("\0"))
-        {
-          rowIndex++;
-        }
-        else
-        {
-          columnIndex++;
-        }
-      }
-      fileReader.close();
-    } catch (Exception notFound)
-    {
-      System.err.println(" File not found");
+      line = fileReaderLine.nextLine();
+      row++;
     }
+    while (fileReaderColumn.next().isEmpty())
+    {
+      columnFile = fileReaderColumn.next();
+      column++;
+    }
+    System.out.println(row);
+    System.out.println(column);
+    fileReaderColumn.close();
   }
   
   public void displayMaze()
   {
-    try
+    for (int row = 0; row < 8; row++)
     {
-      for (String[] strings : mazeArray)
+      for (int column = 0; column < mazeArray.length; column++)
       {
-        for (int column = 0; column < mazeArray.length; column++)
+        if (mazeArray[row][column].equals(" "))
         {
-          if (strings[column].equals("\n"))
-          {
-            System.out.println();
-          }
-          else
-          {
-            System.out.print(strings[column]);
-          }
+          System.out.println();
+        }
+        else
+        {
+          System.out.print(mazeArray[row][column]);
         }
       }
-    } catch (Exception n)
-    {
-      System.err.println("The array is empty!");
     }
   }
   
   public static void main(String[] args)
   {
     BackTrackingMaze mazeObject = new BackTrackingMaze();
-    mazeObject.fileReading("1.txt");
+    try
+    {
+      mazeObject.fileReading("maze.txt");
+    } catch (FileNotFoundException fileException)
+    {
+      System.out.println("The file is not found");
+    }
     System.out.println("This is the current maze: ");
-    mazeObject.displayMaze();
+   // mazeObject.displayMaze();
   }
   
 }
