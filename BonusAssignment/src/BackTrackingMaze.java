@@ -11,46 +11,35 @@ public class BackTrackingMaze
   {
     File file = new File(fileName);
     Scanner fileReaderLine = new Scanner(file);
-    Scanner fileReaderColumn = new Scanner(file);
+    Scanner dummyReader = new Scanner(file);
     ArrayList<String> linesFromFile = new ArrayList<>();
-    while (fileReaderLine.hasNext())
+    while (fileReaderLine.hasNextLine())
     {
-      linesFromFile.add(fileReaderLine.next());
-      if(fileReaderLine.next().equals("\n"))
-      {
-        row++;
-      }
-      else
-      {
-        column++;
-      }
+      linesFromFile.add(fileReaderLine.nextLine());
+      row++;
     }
+    column = dummyReader.nextLine().length();
     mazeArray = new String[row][column];
-    for (int index = 0; index < linesFromFile.size(); index++)
+    for (int rowIndex = 0; rowIndex < row; rowIndex++)
     {
-      for (int loop = 0; loop < linesFromFile.size(); loop++)
+      for (int columnIndex = 0; columnIndex < column; columnIndex++)
       {
-        mazeArray[index][loop] = linesFromFile.get(loop);
+        mazeArray[rowIndex][columnIndex] = String.valueOf(linesFromFile.get(rowIndex).charAt(columnIndex));
       }
     }
-    fileReaderColumn.close();
+
+    fileReaderLine.close();
   }
   
   public void displayMaze()
   {
-    for (int row = 0; row < 8; row++)
+    for (int rowIndex = 0; rowIndex < row; rowIndex++)
     {
-      for (int column = 0; column < mazeArray.length; column++)
+      for (int columnIndex = 0; columnIndex < column; columnIndex++)
       {
-        if (mazeArray[row][column].equals(" "))
-        {
-          System.out.println();
-        }
-        else
-        {
-          System.out.print(mazeArray[row][column]);
-        }
+        System.out.print(mazeArray[rowIndex][columnIndex]);
       }
+      System.out.println();
     }
   }
   
@@ -65,7 +54,7 @@ public class BackTrackingMaze
       System.out.println("The file is not found");
     }
     System.out.println("This is the current maze: ");
-   // mazeObject.displayMaze();
+    mazeObject.displayMaze();
   }
   
 }
