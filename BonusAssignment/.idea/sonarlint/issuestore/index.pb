@@ -7,3 +7,9 @@ T
 $.idea/codeStyles/codeStyleConfig.xml,d/d/dd7b3350c29c49497756c7f32c69a3bed18b1cba
 A
 src/MazeLoop.java,5/1/519fbdaf0157142af06beb3afb6ba5d467c3b32f
+5
+1.txt,3/5/3586c170e3e4262f0eb95a0cc24c5ebb3de14504
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+I
+src/BackTrackingMaze.java,7/3/73903a69b279b9176ca2bf3faf5e4e2f308234f6
