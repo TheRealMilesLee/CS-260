@@ -11,5 +11,3 @@ S
 #.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
 8
 maze.txt,1/c/1cf6a989a03e467a5ab301dbd207575b7081dce3
-I
-src/BackTrackingMaze.java,7/3/73903a69b279b9176ca2bf3faf5e4e2f308234f6
