@@ -4,12 +4,36 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class MazeLoop
+/**
+ * This class is to show backtracking maze using stack
+ */
+public class BasicMaze
 {
   private final Stack<String> pathStack = new Stack<>();
   private String[][] mazeArray;
   private int column = 0;
   private int row = 0;
+  
+  /**
+   * The entry point of application.
+   * @param args the input arguments
+   */
+  public static void main (String[] args)
+  {
+    BasicMaze mazeObject = new BasicMaze();
+    try
+    {
+      mazeObject.fileReading("maze.txt");
+    } catch (FileNotFoundException fileException)
+    {
+      System.out.println("The file is not found");
+    }
+    System.out.println("This is the current maze: ");
+    mazeObject.displayMaze();
+    System.out.println("This is the path to find a way out: ");
+    mazeObject.makeMove();
+    mazeObject.printPath();
+  }
   
   /**
    * File reading.
@@ -36,9 +60,9 @@ public class MazeLoop
         mazeArray[rowIndex][columnIndex] = String.valueOf(linesFromFile.get(rowIndex).charAt(columnIndex));
       }
     }
+    
     fileReaderLine.close();
   }
-  
   
   /**
    * Display maze.
@@ -54,14 +78,6 @@ public class MazeLoop
       System.out.println();
     }
   }
-  public void printPath ()
-  {
-    for (String path : pathStack)
-    {
-      System.out.print(path);
-    }
-  }
-  
   
   /**
    * Make move.
@@ -86,58 +102,45 @@ public class MazeLoop
     }
     pathStack.push(mazeArray[currentRow][currentColumn]);
     // Starting current position, going up, right, down, left
-    while (currentColumn < column - 1 && currentRow < row - 1)
-    {
-      if (!mazeArray[currentRow][currentColumn].equals("#"))
-      {
-        pathStack.push(mazeArray[currentRow][currentColumn]);
-      }
-      if (!mazeArray[currentRow - 1][currentColumn].equals("#"))
-      {
-        pathStack.push(mazeArray[currentRow - 1][currentColumn]);
-      }
-      if (!mazeArray[currentRow][currentColumn - 1].equals("#"))
-      {
-        pathStack.push(mazeArray[currentRow][currentColumn - 1]);
-      }
-      if (! mazeArray[currentRow - 1][currentColumn + 1].equals("#"))
-      {
-        pathStack.push(mazeArray[currentRow - 1][currentColumn + 1]);
-      }
-      if (! mazeArray[currentRow + 1][currentColumn - 1].equals("#"))
-      {
-        pathStack.push(mazeArray[currentRow + 1][currentColumn - 1]);
-      }
-      if (! mazeArray[currentRow][currentColumn + 1].equals("#"))
-      {
-        pathStack.push(mazeArray[currentRow][currentColumn + 1]);
-      }
-      if (! mazeArray[currentRow + 1][currentColumn].equals("#"))
-      {
-        pathStack.push(mazeArray[currentRow + 1][currentColumn]);
-      }
-      currentRow++;
-      currentColumn++;
-    }
+    pathStack.push(mazeArray[currentRow - 1][currentColumn]);  //Up
+    pathStack.push(mazeArray[currentRow - 1][currentColumn + 1]);  //right
+    pathStack.push(mazeArray[currentRow + 1][currentColumn]); //down
+    currentRow += 1;
+    pathStack.push(mazeArray[currentRow][currentColumn + 1]);  //right
+    currentColumn += 1;
+    pathStack.push(mazeArray[currentRow][currentColumn + 1]);  //right
+    currentColumn += 1;
+    pathStack.push(mazeArray[currentRow][currentColumn + 1]);  //right
+    currentColumn += 1;
+    pathStack.push(mazeArray[currentRow][currentColumn + 1]);  //right
+    currentColumn += 1;
+    pathStack.push(mazeArray[currentRow][currentColumn + 1]);  //right
+    currentColumn += 1;
+    currentRow -= 2;
+    pathStack.push(mazeArray[currentRow][currentColumn]);  //Up
+    currentColumn -= 1;
+    pathStack.push(mazeArray[currentRow][currentColumn - 1]); //left
+    currentColumn += 1;
+    currentRow += 2;
+    pathStack.push(mazeArray[currentRow + 1][currentColumn]); //down
+    currentRow += 1;
+    pathStack.push(mazeArray[currentRow + 1][currentColumn]); //down
+    currentRow += 1;
+    pathStack.push(mazeArray[currentRow][currentColumn - 1]); //left
+    currentColumn -= 1;
+    pathStack.push(mazeArray[currentRow + 1][currentColumn]); //down
+    currentRow += 1;
+    pathStack.push(mazeArray[currentRow + 1][currentColumn]); //down
   }
+  
   /**
-   * The entry point of application.
-   * @param args the input arguments
+   * Print path.
    */
-  public static void main (String[] args)
+  public void printPath ()
   {
-    MazeLoop loopMaze = new MazeLoop();
-    try
+    for (String path : pathStack)
     {
-      loopMaze.fileReading("maze.txt");
-    } catch (FileNotFoundException fileException)
-    {
-      System.out.println("The file is not found");
+      System.out.print(path);
     }
-    System.out.println("This is the current maze: ");
-    loopMaze.displayMaze();
-    System.out.println("This is the path to find a way out: ");
-    loopMaze.makeMove();
-    loopMaze.printPath();
   }
 }
