@@ -86,6 +86,39 @@ public class MazeLoop
     }
     pathStack.push(mazeArray[currentRow][currentColumn]);
     // Starting current position, going up, right, down, left
+    while (currentColumn < column - 1 && currentRow < row - 1)
+    {
+      if (!mazeArray[currentRow][currentColumn].equals("#"))
+      {
+        pathStack.push(mazeArray[currentRow][currentColumn]);
+      }
+      if (!mazeArray[currentRow - 1][currentColumn].equals("#"))
+      {
+        pathStack.push(mazeArray[currentRow - 1][currentColumn]);
+      }
+      if (!mazeArray[currentRow][currentColumn - 1].equals("#"))
+      {
+        pathStack.push(mazeArray[currentRow][currentColumn - 1]);
+      }
+      if (! mazeArray[currentRow - 1][currentColumn + 1].equals("#"))
+      {
+        pathStack.push(mazeArray[currentRow - 1][currentColumn + 1]);
+      }
+      if (! mazeArray[currentRow + 1][currentColumn - 1].equals("#"))
+      {
+        pathStack.push(mazeArray[currentRow + 1][currentColumn - 1]);
+      }
+      if (! mazeArray[currentRow][currentColumn + 1].equals("#"))
+      {
+        pathStack.push(mazeArray[currentRow][currentColumn + 1]);
+      }
+      if (! mazeArray[currentRow + 1][currentColumn].equals("#"))
+      {
+        pathStack.push(mazeArray[currentRow + 1][currentColumn]);
+      }
+      currentRow++;
+      currentColumn++;
+    }
   }
   /**
    * The entry point of application.
@@ -104,6 +137,7 @@ public class MazeLoop
     System.out.println("This is the current maze: ");
     loopMaze.displayMaze();
     System.out.println("This is the path to find a way out: ");
+    loopMaze.makeMove();
     loopMaze.printPath();
   }
 }
