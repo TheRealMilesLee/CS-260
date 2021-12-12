@@ -4,6 +4,7 @@ import java.io.*;
 
 public class BackTrackingMaze
 {
+  private final Stack<String> pathStack = new Stack<>();
   private String[][] mazeArray;
   private int column = 0;
   private int row = 0;
@@ -42,6 +43,69 @@ public class BackTrackingMaze
       System.out.println();
     }
   }
+  public void makeMove()
+  {
+    boolean done = false;
+    // Find current position
+    int currentRow = 0;
+    int currentColumn = 0;
+    for (int rowIndex = 0; rowIndex < row && !done; rowIndex++)
+    {
+      for (int columnIndex = 0; columnIndex < column && !done; columnIndex++)
+      {
+        if(mazeArray[rowIndex][columnIndex].equals("^"))
+        {
+          currentRow = rowIndex;
+          currentColumn = columnIndex;
+          done = true;
+        }
+      }
+    }
+    // Push current position on stack
+    pathStack.push(mazeArray[currentRow][currentColumn]);
+    // Find the exit place
+    int exitRow = 0;
+    int exitColumn = 0;
+    for (int rowIndex = 0; rowIndex < row && !done; rowIndex += (row - 1))
+    {
+      for (int columnIndex = 0; columnIndex < column && !done; columnIndex++)
+      {
+        if(!mazeArray[rowIndex][columnIndex].equals("#"))
+        {
+          exitRow = rowIndex;
+          exitColumn = columnIndex;
+          done = true;
+        }
+      }
+    }
+  
+    for (int rowIndex = 0; rowIndex < row && !done; rowIndex++)
+    {
+      for (int columnIndex = 0; columnIndex < column && !done; columnIndex += (column-1))
+      {
+        if(!mazeArray[rowIndex][columnIndex].equals("#"))
+        {
+          exitRow = rowIndex;
+          exitColumn = columnIndex;
+          done = true;
+        }
+      }
+    }
+  }
+  
+  public void findWayOut()
+  {
+    boolean done = false;
+    
+  
+  }
+  public void printPath()
+  {
+    for (String path : pathStack)
+    {
+      System.out.print(path);
+    }
+  }
   
   public static void main(String[] args)
   {
@@ -55,6 +119,9 @@ public class BackTrackingMaze
     }
     System.out.println("This is the current maze: ");
     mazeObject.displayMaze();
+    System.out.println("This is the path to find a way out: ");
+    mazeObject.makeMove();
+    mazeObject.printPath();
   }
   
 }
