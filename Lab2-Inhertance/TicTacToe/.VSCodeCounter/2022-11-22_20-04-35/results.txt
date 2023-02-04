@@ -1,0 +1,48 @@
+Date : 2022-11-22 20:04:35
+Directory : /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe
+Total : 13 files,  549 codes, 64 comments, 22 blanks, all 635 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| Java     |          5 |        450 |         64 |         22 |        536 |
+| XML      |          8 |         99 |          0 |          0 |         99 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                                 | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                                    |         13 |        549 |         64 |         22 |        635 |
+| .idea                                                                                                                                |          7 |         78 |          0 |          0 |         78 |
+| .idea/artifacts                                                                                                                      |          1 |          9 |          0 |          0 |          9 |
+| .idea/codeStyles                                                                                                                     |          2 |         39 |          0 |          0 |         39 |
+| src                                                                                                                                  |          5 |        450 |         64 |         22 |        536 |
+| src/com                                                                                                                              |          4 |        350 |         51 |         20 |        421 |
+| src/com/edu                                                                                                                          |          4 |        350 |         51 |         20 |        421 |
+| src/com/edu/truman                                                                                                                   |          4 |        350 |         51 |         20 |        421 |
+| src/com/edu/truman/li                                                                                                                |          4 |        350 |         51 |         20 |        421 |
+| src/com/edu/truman/li/cs260                                                                                                          |          4 |        350 |         51 |         20 |        421 |
+| src/com/edu/truman/li/cs260/TicTacToe                                                                                                |          4 |        350 |         51 |         20 |        421 |
++--------------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                                                                             | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/.idea/artifacts/TicTacToe_jar.xml                      | XML      |          9 |          0 |          0 |          9 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/.idea/codeStyles/Project.xml                           | XML      |         34 |          0 |          0 |         34 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/.idea/codeStyles/codeStyleConfig.xml                   | XML      |          5 |          0 |          0 |          5 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/.idea/misc.xml                                         | XML      |          6 |          0 |          0 |          6 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/.idea/modules.xml                                      | XML      |          8 |          0 |          0 |          8 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/.idea/runConfigurations.xml                            | XML      |         10 |          0 |          0 |         10 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/.idea/vcs.xml                                          | XML      |          6 |          0 |          0 |          6 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/TicTacToe.iml                                          | XML      |         21 |          0 |          0 |         21 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/src/TicTacToeApp.java                                  | Java     |        100 |         13 |          2 |        115 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/src/com/edu/truman/li/cs260/TicTacToe/Board.java       | Java     |        114 |         40 |         10 |        164 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/src/com/edu/truman/li/cs260/TicTacToe/CompPlayer.java  | Java     |        163 |         11 |          4 |        178 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/src/com/edu/truman/li/cs260/TicTacToe/HumanPlayer.java | Java     |         51 |          0 |          4 |         55 |
+| /Users/Silverhand/Developer/TrumanCodeSpaces/CS-260/Lab2-Inhertance/TicTacToe/src/com/edu/truman/li/cs260/TicTacToe/Player.java      | Java     |         22 |          0 |          2 |         24 |
+| Total                                                                                                                                |          |        549 |         64 |         22 |        635 |
++--------------------------------------------------------------------------------------------------------------------------------------+----------+------------+------------+------------+------------+
