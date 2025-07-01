@@ -1,49 +1,7 @@
 # CS-260
-CS-260 is a collection of programming assignments and labs designed for a computer science course. It includes various topics such as course introduction, inheritance, union tests, interface design, sets, maps, exceptions, and a graphical Tic-Tac-Toe game. This project provides a structured way to explore and practice fundamental programming concepts.
-## Features and Functionality
-- **Course Introduction**: Setup and environment configuration for the course.
-- **Inheritance**: Implementation of object-oriented programming concepts.
-- **Union Test**: Exercises on union and inheritance structures.
-- **Interface Design**: Design and implementation of user interfaces.
-- **Sets, Maps, Exceptions**: Practice with data structures and error handling.
-- **Tic-Tac-Toe GUI**: A graphical version of the classic game with a user interface.
-## Installation Instructions
-### For iOS/macOS Projects
-#### Deployment Targets
-- iOS: 13.0 or later
-- macOS: 10.15 or later
-#### Xcode Version Requirements
-- Xcode 14.0 or later
-#### Swift Version Compatibility
-- Swift 5.9 or later
-#### CocoaPods Setup
-1. Install CocoaPods if you haven't already:
-   ```bash
-   sudo gem install cocoapods
-   ```
-2. Navigate to the project directory and run:
-   ```bash
-   pod install
-   ```
-#### Swift Package Manager Setup
-1. Open your Xcode project.
-2. Go to `File > Swift Packages > Add Package Dependency`.
-3. Enter the repository URL and add the package.
-#### Build and Run Instructions
-1. Open the `.xcworkspace` file in Xcode.
-2. Select a simulator or device.
-3. Click the "Run" button to build and run the project.
-## Usage Examples
-### Running the Course Introduction Lab
-```bash
-cd Lab1-CourseIntroduction/HelloWorld
-Then, open the project in Xcode and run the app.
-### Running the Tic-Tac-Toe GUI
-```bash
-cd Lab6-TicTacToeGUI
-Open the project in Xcode and run the app to play the game.
-## Project Structure Explanation
-```
+## Project Overview
+This repository contains course materials and assignments for CS-260. The project includes multiple labs, bonus assignments, and submission folders organized by topic.
+## Directory Structure
 .
 ├── BonusAssignment
 ├── Lab1-CourseIntroduction
@@ -54,100 +12,131 @@ Open the project in Xcode and run the app to play the game.
 ├── Lab6-TicTacToeGUI
 ├── SubmissionFolder
 └── README.md
-- **BonusAssignment**: Contains bonus assignments and additional tasks.
-- **Lab1-CourseIntroduction**: Initial lab for course setup.
-- **Lab2-Inheritance**: Lab focusing on inheritance concepts.
-- **Lab3-UnionTest**: Lab involving union and inheritance structures.
-- **Lab4-InterfaceDesign**: Lab for designing user interfaces.
-- **Lab5-SetsMapsExceptions**: Lab on sets, maps, and exceptions.
-- **Lab6-TicTacToeGUI**: Graphical Tic-Tac-Toe game implementation.
-- **SubmissionFolder**: Folder for submitting assignments and projects.
-- **README.md**: Main documentation file for the project.
-## Dependencies and Requirements
-- **Java**: Required for running some labs and assignments.
-- **CocoaPods**: For managing third-party libraries (iOS/macOS).
-- **Swift Package Manager**: For managing Swift packages (iOS/macOS).
-- **Xcode**: Required for building and running iOS/macOS projects.
-## Contributing Guidelines
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and ensure they are well-documented.
-4. Commit your changes with clear and concise messages.
-5. Push your changes to your forked repository.
-6. Submit a pull request for review.
-## License Information
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+## Key Files
+- `README.md` (this file)
+- `.gitignore`
+- `LICENSE`
+- `SubmissionFolder/` (contains submission artifacts)
+- `BonusAssignment/` (bonus coding challenges)
+- `Lab6-TicTacToeGUI/` (GUI implementation for Tic-Tac-Toe)
+## Programming Language
+- Java (39 files)
+## Resources
+- Java source files organized by lab in `src/` directories
+- Documentation and diagrams in `Screenshot/` and `Diagram/` folders
+- Build configuration files in `.idea/`, `.settings/`, and `.VSCodeCounter/` directories
 
 ---
 
 ## 中文版本
 
-# 项目分析报告
-=============
-## 项目信息
-- **项目名称**: CS-260
-- **项目路径**: CS-260
-- **分析时间**: 2025-06-22 18:02:35
-## 目录结构
-```
+# CS-260
+## 项目结构
 .
 ├── BonusAssignment
-│   └── .idea
-│       ├── codeStyles
-│       ├── inspectionProfiles
-│       └── sonarlint
-│           └── issuestore
-│               ├── 1
-│               │   └── c
-│               ├── 5
-│               │   └── 1
-│               ├── 6
-│               │   └── e
-│               ├── 7
-│               │   └── 1
-│               ├── 9
-│               │   └── f
-│               ├── d
-│               │   └── d
-│               ├── e
-│               │   └── 7
-│               └── ...
-├── src
+│   ├── .idea
+│   │   ├── codeStyles
+│   │   ├── inspectionProfiles
+│   │   └── sonarlint
+│   │       └── issuestore
+│   │           ├── 1
+│   │           │   └── c
+│   │           ├── 5
+│   │           │   └── 1
+│   │           ├── 6
+│   │           │   └── e
+│   │           ├── 7
+│   │           │   └── 1
+│   │           ├── 9
+│   │           │   └── f
+│   │           ├── d
+│   │           │   └── d
+│   │           ├── e
+│   │           │   └── 7
+│   │           └── ...
+│   └── src
 ├── Lab1-CourseIntroduction
-│   └── .idea
-│       ├── artifacts
-│       └── codeStyles
-├── HelloWorld
-│   └── .idea
-│       ├── artifacts
-│       └── codeStyles
+│   ├── .idea
+│   │   ├── artifacts
+│   │   └── codeStyles
+│   └── HelloWorld
+│       ├── .idea
+│       │   ├── artifacts
+│       │   └── codeStyles
+│       └── src
+│           └── META-INF
 ├── Homework1-GetEnvironmentSetUp
-│   └── .idea
-│       ├── artifacts
-│       └── codeStyles
+│   ├── .idea
+│   │   ├── artifacts
+│   │   └── codeStyles
+│   └── src
+│       ├── META-INF
+│       └── edu
+│           └── truman
+│               └── cs260
+│                   └── Li
+│                       └── lab
 ├── Speaker
-│   └── .idea
-│       ├── artifacts
-│       └── codeStyles
+│   ├── .idea
+│   │   ├── artifacts
+│   │   └── codeStyles
+│   └── src
+│       ├── META-INF
+│       └── edu
+│           └── truman
+│               └── cs260
+│                   └── hengyili
+│                       └── lab
 ├── Lab2-Inhertance
-│   └── .idea
-├── TicTacToe
-│   ├── .VSCodeCounter
-│   │   └── 2022-11-22_20-04-35
-│   └── .idea
-│       ├── artifacts
-│       └── codeStyles
+│   ├── .idea
+│   └── TicTacToe
+│       ├── .VSCodeCounter
+│       │   └── 2022-11-22_20-04-35
+│       ├── .idea
+│       │   ├── artifacts
+│       │   └── codeStyles
+│       ├── META-INF
+│       └── src
+│           ├── META-INF
+│           └── com
+│               └── edu
+│                   └── truman
+│                       └── li
+│                           └── cs260
+│                               └── TicTacToe
 ├── Lab3-UnionTest
-│   └── Screenshot
-├── UnionTestInheritance
-│   └── .settings
+│   ├── Screenshot
+│   └── UnionTestInheritance
+│       ├── .settings
+│       └── src
+│           └── com
+│               └── edu
+│                   └── truman
+│                       └── cs260
+│                           └── Hengyi
+│                               └── Inhertance
 ├── Lab4-InterfaceDesign
 │   ├── .idea
 │   │   └── codeStyles
 │   ├── .settings
-│   └── Submission
-│       └── Jar
-│           └── InterfaceDesign
+│   ├── Submission
+│   │   └── Jar
+│   │       └── InterfaceDesign
+│   │           └── com
+│   │               └── edu
+│   │                   └── truman
+│   │                       └── cs260
+│   │                           └── li
+│   │                               └── design
+│   ├── Screenshot
+│   │   └── Diagram
+│   └── src
+│       └── com
+│           └── edu
+│               └── truman
+│                   └── cs260
+│                       └── li
+│                           └── design
 ├── Lab5-SetsMapsExceptions
 │   ├── .idea
 │   │   ├── codeStyles
@@ -157,27 +146,56 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 │   │           │   ├── 0
 │   │           │   ├── a
 │   │           │   ├── 3
+│   │           │   │   ├── 2
 │   │           │   ├── 4
+│   │           │   │   ├── 0
+│   │           │   │   └── 1
 │   │           │   ├── 8
+│   │           │   │   ├── 4
+│   │           │   │   └── 0
 │   │           │   ├── b
-│   │           │   └── d
+│   │           │   │   ├── 5
+│   │           │   ├── d
+│   │           │   │   ├── 1
+│   │           │   └── e
+│   │           │       └── e
 │   │           └── ...
+│   ├── .settings
 │   └── src
+│       └── edu
+│           └── truman
+│               └── li
+│                   └── cs260
+│                       └── lab5
 ├── Lab6-TicTacToeGUI
 │   ├── .idea
-│   │   └── codeStyles
-│   └── sonarlint
-│       └── issuestore
-│           ├── 0
-│           ├── 5
-│           ├── a
-│           └── e
-└── SubmissionFolder
-    ├── Bonus
-    ├── GUI
-    └── Lab5-SmallProblems
-```
-## 文件类型统计
+│   │   ├── codeStyles
+│   │   └── sonarlint
+│   │       └── issuestore
+│   │           ├── 0
+│   │           │   └── d
+│   │           ├── 5
+│   │           │   └── 2
+│   │           ├── a
+│   │           │   ├── 0
+│   │           │   └── 5
+│   │           └── e
+│   │               └── 7
+│   └── src
+│       └── edu
+│           └── truman
+│               └── li
+│                   └── cs260
+│                       └── gui
+├── SubmissionFolder
+│   ├── Bonus
+│   │   └── Li
+│   ├── GUI
+│   │   └── Li
+│   │       └── value
+│   └── 2-TicTacToe
+└── Lab5-SmallProblems
+## 文件统计
 | 文件类型 | 数量 |
 |---------|-----|
 | `.xml`  | 71  |
@@ -205,6 +223,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - `readme.md`
 - `.gitignore`
 - `LICENSE`
-## 其他说明
-- 未找到明显的入口文件
-- 主要编程语言: **Java** (39 个文件)
+## 说明
+1. 项目主要使用 Java 编写
+2. 未发现明显的入口文件
+3. 项目包含多个实验和作业模块，涉及面向对象编程、继承、接口设计、集合框架等内容
